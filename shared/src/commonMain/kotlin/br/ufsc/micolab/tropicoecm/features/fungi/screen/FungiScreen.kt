@@ -1,0 +1,16 @@
+package br.ufsc.micolab.tropicoecm.features.fungi.screen
+
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import br.ufsc.micolab.tropicoecm.features.fungi.view.FungiView
+
+@Composable
+fun FungiScreen(
+    onBackPressed: () -> Unit,
+) {
+    FungiView(
+        modifier = Modifier.fillMaxSize(),
+        onBackPressed = onBackPressed,
+    )
+}

@@ -5,7 +5,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import br.ufsc.micolab.tropicoecm.features.about.screen.AboutScreen
+import br.ufsc.micolab.tropicoecm.features.ectomycorrhizae.screen.EctomycorrhizaeScreen
+import br.ufsc.micolab.tropicoecm.features.fungi.screen.FungiScreen
+import br.ufsc.micolab.tropicoecm.features.glossary.screen.GlossaryScreen
 import br.ufsc.micolab.tropicoecm.features.home.screen.HomeScreen
+import br.ufsc.micolab.tropicoecm.features.hosts.screen.HostsScreen
+import br.ufsc.micolab.tropicoecm.features.howToCollect.screen.HowToCollectScreen
 import br.ufsc.micolab.tropicoecm.navigation.routes.AppRoutes
 
 @Composable
@@ -41,22 +47,22 @@ fun AppNavHost(
             )
         }
         composable<AppRoutes.Ectomycorrhizae> {
-
+            EctomycorrhizaeScreen(onBackPressed = navHostController::popBackStack)
         }
         composable<AppRoutes.HowToCollect> {
-
+            HowToCollectScreen(onBackPressed = navHostController::popBackStack)
         }
         composable<AppRoutes.Glossary> {
-
+            GlossaryScreen(onBackPressed = navHostController::popBackStack)
         }
         composable<AppRoutes.Fungi> {
-
+            FungiScreen(onBackPressed = navHostController::popBackStack)
         }
         composable<AppRoutes.Hosts> {
-
+            HostsScreen(onBackPressed = navHostController::popBackStack)
         }
         composable<AppRoutes.About> {
-
+            AboutScreen(onBackPressed = navHostController::popBackStack)
         }
     }
 }

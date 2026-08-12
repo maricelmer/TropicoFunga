@@ -14,7 +14,7 @@ fun App() {
     AppTheme {
         AppNavHost(
             modifier = Modifier.fillMaxSize(),
-            navHostController = rememberNavController()
+            navHostController = rememberNavController(),
         )
     }
 }

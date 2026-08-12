@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -22,6 +22,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.compose.AppTheme
+import com.example.compose.onSurfaceLight
+import com.example.compose.surfaceLight
 
 @Composable
 fun FeatureCardView(
@@ -30,25 +32,35 @@ fun FeatureCardView(
     icon: Painter,
     onClick: () -> Unit,
 ) {
+    val contentColor = onSurfaceLight
     Card(
         modifier = modifier,
         onClick = onClick,
-        ) {
+        colors = CardDefaults.cardColors().copy(
+            containerColor = surfaceLight,
+            contentColor = contentColor
+        )
+    ) {
         Column(
             modifier = Modifier.fillMaxSize().padding(8.dp),
-            verticalArrangement = Arrangement.spacedBy(4.dp, alignment = Alignment.CenterVertically),
+            verticalArrangement = Arrangement.spacedBy(
+                4.dp,
+                alignment = Alignment.CenterVertically
+            ),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
                 painter = icon,
                 modifier = Modifier.size(32.dp),
+                tint = contentColor,
                 contentDescription = null,
             )
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = title,
                 style = MaterialTheme.typography.labelSmall,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = contentColor,
             )
         }
     }

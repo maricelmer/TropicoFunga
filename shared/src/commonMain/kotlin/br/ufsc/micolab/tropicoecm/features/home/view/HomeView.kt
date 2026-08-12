@@ -50,8 +50,8 @@ fun HomeView(
         blurRadius = 3f                         // Edge softness
     )
     val cardModifier = Modifier.size(112.dp)
-    Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
-        Box(modifier = modifier) {
+    Scaffold(modifier = modifier) { paddingValues ->
+        Box(modifier = Modifier.fillMaxSize()) {
             Image(
                 modifier = Modifier.fillMaxSize(),
                 painter = painterResource(Res.drawable.home_background),
@@ -89,8 +89,14 @@ fun HomeView(
 
                 FlowRow(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp, alignment = Alignment.CenterHorizontally),
-                    verticalArrangement = Arrangement.spacedBy(8.dp, alignment = Alignment.CenterVertically),
+                    horizontalArrangement = Arrangement.spacedBy(
+                        8.dp,
+                        alignment = Alignment.CenterHorizontally
+                    ),
+                    verticalArrangement = Arrangement.spacedBy(
+                        8.dp,
+                        alignment = Alignment.CenterVertically
+                    ),
                     itemVerticalAlignment = Alignment.CenterVertically,
                 ) {
                     FeatureCardView(
@@ -137,7 +143,7 @@ fun HomeView(
 
 @Preview(showBackground = true)
 @Composable
-private fun HomeViewPreview() {
+private fun HomePreview() {
     AppTheme {
         HomeView(
             modifier = Modifier.fillMaxSize(),
