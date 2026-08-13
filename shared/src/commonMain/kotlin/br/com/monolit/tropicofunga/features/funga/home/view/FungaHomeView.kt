@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.monolit.tropicofunga.features.shared.views.StillBeingBuiltView
 import com.example.compose.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -63,10 +64,7 @@ fun FungaHomeView(
                     style = MaterialTheme.typography.displayLarge,
                     fontWeight = FontWeight.SemiBold,
                 )
-                Text(
-                    text = "Still being built...",
-                    style = MaterialTheme.typography.bodyMedium
-                )
+                StillBeingBuiltView()
             }
         }
     }
