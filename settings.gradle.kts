@@ -1,4 +1,4 @@
-rootProject.name = "TropicoECM"
+rootProject.name = "TropicoFunga"
 
 pluginManagement {
     repositories {

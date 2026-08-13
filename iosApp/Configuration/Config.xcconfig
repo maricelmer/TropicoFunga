@@ -1,7 +1,7 @@
 TEAM_ID=
 
-PRODUCT_NAME=TropicoECM
-PRODUCT_BUNDLE_IDENTIFIER=br.ufsc.micolab.tropicoecm.TropicoECM$(TEAM_ID)
+PRODUCT_NAME=TropicoFunga
+PRODUCT_BUNDLE_IDENTIFIER=br.com.monolit.tropicofunga.TropicoFunga$(TEAM_ID)
 
 CURRENT_PROJECT_VERSION=1
 MARKETING_VERSION=1.0

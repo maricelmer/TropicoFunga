@@ -17,11 +17,11 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "br.ufsc.micolab.tropicoecm.MainKt"
+        mainClass = "br.com.monolit.tropicofunga.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "br.ufsc.micolab.tropicoecm"
+            packageName = "br.com.monolit.tropicofunga"
             packageVersion = "1.0.0"
         }
     }

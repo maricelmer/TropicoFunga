@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		B33B617EAA5C518771970D78 /* TropicoECM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TropicoECM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33B617EAA5C518771970D78 /* TropicoFunga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TropicoFunga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -59,7 +59,7 @@
 		C2309B983F5F6C79DDE8DF85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B33B617EAA5C518771970D78 /* TropicoECM.app */,
+				B33B617EAA5C518771970D78 /* TropicoFunga.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			packageProductDependencies = (
 			);
 			productName = iosApp;
-			productReference = B33B617EAA5C518771970D78 /* TropicoECM.app */;
+			productReference = B33B617EAA5C518771970D78 /* TropicoFunga.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

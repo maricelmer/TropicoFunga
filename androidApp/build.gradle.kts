@@ -20,11 +20,11 @@ dependencies {
 }
 
 android {
-    namespace = "br.ufsc.micolab.tropicoecm"
+    namespace = "br.com.monolit.tropicofunga"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "br.ufsc.micolab.tropicoecm"
+        applicationId = "br.com.monolit.tropicofunga"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

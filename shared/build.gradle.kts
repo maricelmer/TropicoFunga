@@ -22,7 +22,7 @@ kotlin {
     jvm()
 
     android {
-        namespace = "br.ufsc.micolab.tropicoecm.shared"
+        namespace = "br.com.monolit.tropicofunga.shared"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 
