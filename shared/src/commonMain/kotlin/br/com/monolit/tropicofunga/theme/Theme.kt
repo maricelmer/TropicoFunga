@@ -6,6 +6,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
 import br.com.monolit.tropicofunga.theme.getAppTypography
 
 private val lightScheme = lightColorScheme(
@@ -94,11 +96,13 @@ fun AppTheme(
     } else {
         lightScheme
     }
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = getAppTypography(),
-        content = content
-    )
+    CompositionLocalProvider(LocalIsDarkTheme provides darkTheme) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = getAppTypography(),
+            content = content
+        )
+    }
 }
 
+val LocalIsDarkTheme = staticCompositionLocalOf { false }

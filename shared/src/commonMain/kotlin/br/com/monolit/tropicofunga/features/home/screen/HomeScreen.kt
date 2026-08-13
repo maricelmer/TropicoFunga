@@ -7,20 +7,12 @@ import br.com.monolit.tropicofunga.features.home.view.HomeView
 
 @Composable
 fun HomeScreen(
-    openEctomycorrhizae: () -> Unit,
-    openHowToCollect: () -> Unit,
-    openGlossary: () -> Unit,
-    openFungi: () -> Unit,
-    openHosts: () -> Unit,
-    openAbout: () -> Unit,
+    openFunga: () -> Unit,
+    openAtlasMycorrhizae: () -> Unit,
 ) {
     HomeView(
         modifier = Modifier.fillMaxSize(),
-        openEctomycorrhizae = openEctomycorrhizae,
-        openHowToCollect = openHowToCollect,
-        openGlossary = openGlossary,
-        openFungi = openFungi,
-        openHosts = openHosts,
-        openAbout = openAbout,
+        openFunga = openFunga,
+        openAtlasMycorrhizae = openAtlasMycorrhizae,
     )
 }

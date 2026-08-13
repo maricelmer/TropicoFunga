@@ -9,20 +9,33 @@ sealed interface AppRoutes {
     data object Home : AppRoutes
 
     @Serializable
-    data object Ectomycorrhizae : AppRoutes
+
+    sealed interface Funga : AppRoutes {
+        @Serializable
+        data object Home : Funga
+    }
 
     @Serializable
-    data object HowToCollect : AppRoutes
+    sealed interface AtlasMycorrhizae : AppRoutes {
+        @Serializable
+        data object Home : AtlasMycorrhizae
 
-    @Serializable
-    data object Glossary : AppRoutes
+        @Serializable
+        data object Ectomycorrhizae : AtlasMycorrhizae
 
-    @Serializable
-    data object Fungi : AppRoutes
+        @Serializable
+        data object HowToCollect : AtlasMycorrhizae
 
-    @Serializable
-    data object Hosts : AppRoutes
+        @Serializable
+        data object Glossary : AtlasMycorrhizae
 
-    @Serializable
-    data object About : AppRoutes
+        @Serializable
+        data object Fungi : AtlasMycorrhizae
+
+        @Serializable
+        data object Hosts : AtlasMycorrhizae
+
+        @Serializable
+        data object About : AtlasMycorrhizae
+    }
 }

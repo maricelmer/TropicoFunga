@@ -10,144 +10,111 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.compose.AppTheme
-import com.example.compose.primaryContainerDark
+import com.example.compose.LocalIsDarkTheme
 import org.jetbrains.compose.resources.painterResource
 import tropicofunga.shared.generated.resources.Res
-import tropicofunga.shared.generated.resources.home_background
+import tropicofunga.shared.generated.resources.background_home
+import tropicofunga.shared.generated.resources.micolab_logo_black
 
 @Composable
 fun HomeView(
     modifier: Modifier,
-    openEctomycorrhizae: () -> Unit,
-    openHowToCollect: () -> Unit,
-    openGlossary: () -> Unit,
-    openFungi: () -> Unit,
-    openHosts: () -> Unit,
-    openAbout: () -> Unit,
+    openFunga: () -> Unit,
+    openAtlasMycorrhizae: () -> Unit,
 ) {
     val scrollState = rememberScrollState()
+    val isDarkTheme = LocalIsDarkTheme.current
 
-    val textShadow = Shadow(
-        color = Color.Black, // Shadow tint
-        offset = Offset(x = 6f, y = 6f),        // Direction and distance
-        blurRadius = 3f                         // Edge softness
-    )
-    val cardModifier = Modifier.size(112.dp)
+    val cardSize = 112.dp
+    val cardModifier = Modifier.size(cardSize)
     Scaffold(modifier = modifier) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
-            Image(
+            Icon(
                 modifier = Modifier.fillMaxSize(),
-                painter = painterResource(Res.drawable.home_background),
-                contentScale = ContentScale.Crop,
-                alignment = Alignment.TopEnd,
+                painter = painterResource(Res.drawable.background_home),
                 contentDescription = null,
             )
             Column(
                 modifier = Modifier.fillMaxSize()
                     .padding(paddingValues)
-                    .padding(horizontal = 16.dp, vertical = 16.dp)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
                     .verticalScroll(scrollState),
-                verticalArrangement = Arrangement.SpaceBetween
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                    modifier = Modifier.fillMaxWidth().weight(1f),
+                    verticalArrangement = Arrangement.SpaceEvenly,
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Text(
-                        text = buildAnnotatedString {
-                            append("Atlas de Micorrizas ")
-                            withStyle(SpanStyle(color = primaryContainerDark)) {
-                                append("Neotropicais")
-                            }
-                        },
-                        style = MaterialTheme.typography.displayLarge.copy(shadow = textShadow),
-                        color = Color.White,
-                        fontWeight = FontWeight.SemiBold,
-                    )
-                    Text(
-                        text = "Guia ilustrado para identificação de micorrizas",
-                        color = Color.White,
-                        style = MaterialTheme.typography.bodyMedium.copy(shadow = textShadow)
-                    )
+                    Column {
+                        Text(
+                            text = "Neotropical diversity of",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                        Text(
+                            text = "Fungy and Mycorrhizae",
+                            color = MaterialTheme.colorScheme.primary,
+                            style = MaterialTheme.typography.headlineMedium,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                    }
+
+                    FlowRow(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(
+                            8.dp,
+                            alignment = Alignment.CenterHorizontally
+                        ),
+                        verticalArrangement = Arrangement.spacedBy(
+                            8.dp,
+                            alignment = Alignment.CenterVertically
+                        ),
+                        itemVerticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        FeatureCardView(
+                            modifier = cardModifier,
+                            title = "Funga",
+                            icon = rememberVectorPainter(Icons.Outlined.Info),
+                            onClick = openFunga,
+                        )
+                        FeatureCardView(
+                            modifier = cardModifier,
+                            title = "Atlas of Mycorrhizae",
+                            icon = rememberVectorPainter(Icons.Outlined.Info),
+                            onClick = openAtlasMycorrhizae,
+                        )
+                    }
                 }
 
-                Spacer(Modifier)
-
-                FlowRow(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(
-                        8.dp,
-                        alignment = Alignment.CenterHorizontally
-                    ),
-                    verticalArrangement = Arrangement.spacedBy(
-                        8.dp,
-                        alignment = Alignment.CenterVertically
-                    ),
-                    itemVerticalAlignment = Alignment.CenterVertically,
-                ) {
-                    FeatureCardView(
-                        modifier = cardModifier,
-                        title = "Ectomicorrizas",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
-                        onClick = openEctomycorrhizae,
-                    )
-                    FeatureCardView(
-                        modifier = cardModifier,
-                        title = "Como coletar",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
-                        onClick = openHowToCollect,
-                    )
-                    FeatureCardView(
-                        modifier = cardModifier,
-                        title = "Glossário",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
-                        onClick = openGlossary,
-                    )
-                    FeatureCardView(
-                        modifier = cardModifier,
-                        title = "Fungos",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
-                        onClick = openFungi,
-                    )
-                    FeatureCardView(
-                        modifier = cardModifier,
-                        title = "Hospedeiros",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
-                        onClick = openHosts,
-                    )
-                    FeatureCardView(
-                        modifier = cardModifier,
-                        title = "Sobre",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
-                        onClick = openAbout,
-                    )
-                }
-
-                Spacer(Modifier)
+                Image(
+                    modifier = Modifier.width(cardSize),
+                    painter = if (isDarkTheme) {
+                        painterResource(Res.drawable.micolab_logo_black)
+                    } else {
+                        painterResource(Res.drawable.micolab_logo_black) // TODO change this
+                    },
+                    contentDescription = null,
+                )
             }
-
         }
     }
 }
@@ -155,15 +122,11 @@ fun HomeView(
 @Preview(showBackground = true)
 @Composable
 private fun HomePreview() {
-    AppTheme {
+    AppTheme(darkTheme = false) {
         HomeView(
             modifier = Modifier.fillMaxSize(),
-            openEctomycorrhizae = {},
-            openHowToCollect = {},
-            openGlossary = {},
-            openFungi = {},
-            openHosts = {},
-            openAbout = {},
+            openFunga = {},
+            openAtlasMycorrhizae = {},
         )
     }
 }
