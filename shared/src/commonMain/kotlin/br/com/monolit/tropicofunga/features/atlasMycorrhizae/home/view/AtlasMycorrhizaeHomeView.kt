@@ -14,6 +14,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -46,6 +48,12 @@ import com.example.compose.surfaceVariantLight
 import org.jetbrains.compose.resources.painterResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.atlas_mycorrhizae_background
+import tropicofunga.shared.generated.resources.ecm_icon
+import tropicofunga.shared.generated.resources.funga_icon
+import tropicofunga.shared.generated.resources.fungi_icon
+import tropicofunga.shared.generated.resources.glossary_icon
+import tropicofunga.shared.generated.resources.hosts_icon
+import tropicofunga.shared.generated.resources.shovel_icon
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -112,19 +120,17 @@ fun AtlasMycorrhizaeHomeView(
                 ) {
                     Text(
                         text = buildAnnotatedString {
-                            // TODO verify this style
-                            append("Atlas of ")
+                            append("Atlas of Neotropical ") // TODO internationalize
                             withStyle(SpanStyle(color = primaryContainerDark)) {
-                                append("Neotropical")
+                                append("Mycorrhizae") // TODO internationalize
                             }
-                            append(" Mycorrhizae")
                         },
                         style = MaterialTheme.typography.displayLarge.copy(shadow = textShadow),
                         color = Color.White,
                         fontWeight = FontWeight.SemiBold,
                     )
                     Text(
-                        text = "Illustrated guide to mycorrhiza identification",
+                        text = "Illustrated guide to mycorrhiza identification",  // TODO internationalize
                         color = Color.White,
                         style = MaterialTheme.typography.bodyMedium.copy(shadow = textShadow)
                     )
@@ -145,43 +151,43 @@ fun AtlasMycorrhizaeHomeView(
                     itemVerticalAlignment = Alignment.CenterVertically,
                 ) {
                     FeatureCardView(
-                        modifier = cardModifier,
+                        modifier = cardModifier, // TODO internationalize
                         title = "Ectomycorrhizae",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
+                        icon = painterResource(Res.drawable.ecm_icon),
                         colors = cardColors,
                         onClick = openEctomycorrhizae,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "How to collect",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
+                        title = "How to collect", // TODO internationalize
+                        icon = painterResource(Res.drawable.shovel_icon),
                         colors = cardColors,
                         onClick = openHowToCollect,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "Glossary",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
+                        title = "Glossary", // TODO internationalize
+                        icon = painterResource(Res.drawable.glossary_icon),
                         colors = cardColors,
                         onClick = openGlossary,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "Fungi",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
+                        title = "Fungi", // TODO internationalize
+                        icon = painterResource(Res.drawable.fungi_icon),
                         colors = cardColors,
                         onClick = openFungi,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "Hosts",
-                        icon = rememberVectorPainter(Icons.Outlined.Info),
+                        title = "Hosts", // TODO internationalize
+                        icon = painterResource(Res.drawable.hosts_icon),
                         colors = cardColors,
                         onClick = openHosts,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "About",
+                        title = "About", // TODO internationalize
                         icon = rememberVectorPainter(Icons.Outlined.Info),
                         colors = cardColors,
                         onClick = openAbout,

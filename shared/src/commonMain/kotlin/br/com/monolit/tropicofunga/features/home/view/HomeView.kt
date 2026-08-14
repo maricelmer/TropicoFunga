@@ -1,6 +1,7 @@
 package br.com.monolit.tropicofunga.features.home.view
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,14 +16,20 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.StrokeCap.Companion.Square
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,7 +37,10 @@ import com.example.compose.AppTheme
 import com.example.compose.LocalIsDarkTheme
 import org.jetbrains.compose.resources.painterResource
 import tropicofunga.shared.generated.resources.Res
-import tropicofunga.shared.generated.resources.background_home
+import tropicofunga.shared.generated.resources.atlas_mycorrhizae_icon
+import tropicofunga.shared.generated.resources.background_home_dark
+import tropicofunga.shared.generated.resources.background_home_light
+import tropicofunga.shared.generated.resources.funga_icon
 import tropicofunga.shared.generated.resources.micolab_logo_black
 
 @Composable
@@ -46,9 +56,17 @@ fun HomeView(
     val cardModifier = Modifier.size(cardSize)
     Scaffold(modifier = modifier) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
-            Icon(
+            Image(
                 modifier = Modifier.fillMaxSize(),
-                painter = painterResource(Res.drawable.background_home),
+                painter = painterResource(
+                    if (isDarkTheme) {
+                        Res.drawable.background_home_dark
+                    } else {
+                        Res.drawable.background_home_light
+                    }
+                ),
+                contentScale = ContentScale.Crop,
+                alignment = Alignment.TopCenter,
                 contentDescription = null,
             )
             Column(
@@ -66,12 +84,12 @@ fun HomeView(
                 ) {
                     Column {
                         Text(
-                            text = "Neotropical diversity of",
+                            text = "Neotropical diversity of", // TODO internationalize
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                         )
                         Text(
-                            text = "Fungy and Mycorrhizae",
+                            text = "Fungy and Mycorrhizae", // TODO internationalize
                             color = MaterialTheme.colorScheme.primary,
                             style = MaterialTheme.typography.headlineMedium,
                             fontWeight = FontWeight.SemiBold,
@@ -92,28 +110,26 @@ fun HomeView(
                     ) {
                         FeatureCardView(
                             modifier = cardModifier,
-                            title = "Funga",
-                            icon = rememberVectorPainter(Icons.Outlined.Info),
+                            title = "Funga", // TODO internationalize
+                            icon = painterResource(Res.drawable.funga_icon),
                             onClick = openFunga,
                         )
                         FeatureCardView(
                             modifier = cardModifier,
-                            title = "Atlas of Mycorrhizae",
-                            icon = rememberVectorPainter(Icons.Outlined.Info),
+                            title = "Atlas of Mycorrhizae", // TODO internationalize
+                            icon = painterResource(Res.drawable.atlas_mycorrhizae_icon),
                             onClick = openAtlasMycorrhizae,
                         )
                     }
                 }
 
-                Image(
-                    modifier = Modifier.width(cardSize),
-                    painter = if (isDarkTheme) {
-                        painterResource(Res.drawable.micolab_logo_black)
-                    } else {
-                        painterResource(Res.drawable.micolab_logo_black) // TODO change this
-                    },
-                    contentDescription = null,
-                )
+                Card(shape = RectangleShape) {
+                    Image(
+                        modifier = Modifier.width(cardSize),
+                        painter = painterResource(Res.drawable.micolab_logo_black),
+                        contentDescription = null,
+                    )
+                }
             }
         }
     }

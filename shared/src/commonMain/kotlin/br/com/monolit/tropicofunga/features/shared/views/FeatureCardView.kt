@@ -50,7 +50,7 @@ fun FeatureCardView(
         ) {
             Icon(
                 painter = icon,
-                modifier = Modifier.size(32.dp),
+                modifier = Modifier.size(48.dp),
                 contentDescription = null,
             )
             Text(
@@ -69,7 +69,7 @@ fun FeatureCardView(
 private fun FeatureCardViewPreview() {
     AppTheme {
         FeatureCardView(
-            modifier = Modifier.size(64.dp),
+            modifier = Modifier.size(112.dp),
             title = "Sobre",
             icon = rememberVectorPainter(Icons.Outlined.Info),
             onClick = {},
