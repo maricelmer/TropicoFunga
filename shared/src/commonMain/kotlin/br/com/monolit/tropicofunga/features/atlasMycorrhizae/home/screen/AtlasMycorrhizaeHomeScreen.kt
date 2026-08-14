@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.home.view.AtlasMycorrhizaeHomeView
-import br.com.monolit.tropicofunga.features.home.view.HomeView
 
 @Composable
 fun AtlasMycorrhizaeHomeScreen(

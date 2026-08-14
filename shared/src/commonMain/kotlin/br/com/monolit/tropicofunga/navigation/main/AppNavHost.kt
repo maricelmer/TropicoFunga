@@ -10,10 +10,10 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.scr
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.screen.FungiScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.screen.GlossaryScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.home.screen.AtlasMycorrhizaeHomeScreen
-import br.com.monolit.tropicofunga.features.home.screen.HomeScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.screen.HostsScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.howToCollect.screen.HowToCollectScreen
 import br.com.monolit.tropicofunga.features.funga.home.screen.FungaHomeScreen
+import br.com.monolit.tropicofunga.features.home.screen.HomeScreen
 import br.com.monolit.tropicofunga.navigation.routes.AppRoutes
 
 @Composable

@@ -1,0 +1,149 @@
+package br.com.monolit.tropicofunga.features.shared.views
+
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.DrawerState
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalNavigationDrawer
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun DefaultSearchableView(
+    modifier: Modifier,
+    searchQuery: String,
+    placeholder: String,
+    drawerState: DrawerState,
+    filters: LazyListScope.() -> Unit,
+    onQueryChanged: (String) -> Unit,
+    onBackPressed: () -> Unit,
+    onFilterPressed: () -> Unit,
+    content: @Composable () -> Unit,
+) {
+    DefaultScaffold(
+        modifier = modifier,
+        topBar = {
+            DefaultSearchAppBar(
+                query = searchQuery,
+                placeholder = placeholder,
+                onQueryChanged = onQueryChanged,
+                onBackPressed = onBackPressed,
+                onFilterPressed = onFilterPressed,
+            )
+        },
+    ) {
+        ModalNavigationDrawer(
+            drawerState = drawerState,
+            drawerContent = {
+                Surface(
+                    modifier = Modifier.width(300.dp).fillMaxHeight()
+                ) {
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(vertical = 8.dp),
+                    ) {
+                        item {
+                            Text(
+                                modifier = Modifier.padding(horizontal = 16.dp),
+                                text = "Filters", //TODO internationalize,
+                                style = MaterialTheme.typography.headlineSmall,
+                            )
+                        }
+
+                        filters()
+                    }
+                }
+            },
+            content = content
+        )
+    }
+}
+
+fun LazyListScope.filterSection(
+    title: @Composable () -> String,
+    expanded: Boolean,
+    onClick: () -> Unit,
+    content: LazyListScope.() -> Unit,
+) {
+    item {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable(onClick = onClick)
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(text = title())
+            AnimatedContent(expanded) {
+                if (it) {
+                    Icon(
+                        imageVector = Icons.Default.ExpandLess,
+                        contentDescription = "Collapse icon" //TODO internationalize
+                    )
+                } else {
+                    Icon(
+                        imageVector = Icons.Default.ExpandMore,
+                        contentDescription = "Expand icon" //TODO internationalize
+                    )
+                }
+            }
+        }
+    }
+
+    if (expanded) {
+        content()
+    }
+
+    item {
+        HorizontalDivider()
+    }
+}
+
+fun LazyListScope.filterSelectableItem(
+    title: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+) {
+    item {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable(onClick = onClick)
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.labelSmall
+            )
+            Checkbox(
+                checked = selected,
+                modifier = Modifier.size(18.dp),
+                onCheckedChange = null // We handle the click event in the row
+            )
+        }
+    }
+}

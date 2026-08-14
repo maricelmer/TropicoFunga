@@ -17,6 +17,9 @@ dependencies {
 
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
+
+    // koin - Inject dependency
+    implementation(libs.koin.android)
 }
 
 android {

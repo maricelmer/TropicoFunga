@@ -14,8 +14,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.MenuBook
-import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -49,7 +47,6 @@ import org.jetbrains.compose.resources.painterResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.atlas_mycorrhizae_background
 import tropicofunga.shared.generated.resources.ecm_icon
-import tropicofunga.shared.generated.resources.funga_icon
 import tropicofunga.shared.generated.resources.fungi_icon
 import tropicofunga.shared.generated.resources.glossary_icon
 import tropicofunga.shared.generated.resources.hosts_icon

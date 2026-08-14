@@ -48,6 +48,8 @@ kotlin {
             implementation(libs.compose.uiTooling)
         }
         commonMain.dependencies {
+            implementation(libs.kotlinx.collections.immutable)
+
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
@@ -58,14 +60,19 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
 
             //Navigation
-            implementation(libs.compose.navigation)
-            implementation(libs.jetbrains.navigation3.ui)
+            implementation(libs.androidx.navigation.compose)
+            implementation(libs.androidx.navigation3.ui)
 
-            implementation(libs.jetbrains.material3.adaptiveNavigation3)
-            implementation(libs.jetbrains.lifecycle.viewmodelNavigation3)
+            implementation(libs.compose.material3.adaptiveNavigation3)
+            implementation(libs.androidx.lifecycle.viewmodelNavigation3)
 
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            // koin - Inject dependency
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
