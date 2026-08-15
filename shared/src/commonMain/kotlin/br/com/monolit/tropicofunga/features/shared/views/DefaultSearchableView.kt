@@ -13,9 +13,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material3.Checkbox
+import androidx.compose.material.icons.filled.CheckBox
+import androidx.compose.material.icons.filled.CheckBoxOutlineBlank
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -95,20 +94,14 @@ fun LazyListScope.filterSection(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text(text = title())
-            AnimatedContent(expanded) {
-                if (it) {
-                    Icon(
-                        imageVector = Icons.Default.ExpandLess,
-                        contentDescription = "Collapse icon" //TODO internationalize
-                    )
-                } else {
-                    Icon(
-                        imageVector = Icons.Default.ExpandMore,
-                        contentDescription = "Expand icon" //TODO internationalize
-                    )
-                }
-            }
+            Text(
+                text = title(),
+                style = MaterialTheme.typography.labelSmall,
+            )
+            ExpandOrCollapseIcon(
+                modifier = Modifier.size(18.dp),
+                expanded = expanded
+            )
         }
     }
 
@@ -139,11 +132,23 @@ fun LazyListScope.filterSelectableItem(
                 text = title,
                 style = MaterialTheme.typography.labelSmall
             )
-            Checkbox(
-                checked = selected,
-                modifier = Modifier.size(18.dp),
-                onCheckedChange = null // We handle the click event in the row
-            )
+            AnimatedContent(selected) {
+                if (it) {
+                    Icon(
+                        imageVector = Icons.Default.CheckBox,
+                        modifier = Modifier.size(18.dp),
+                        tint = MaterialTheme.colorScheme.primary,
+                        contentDescription = "Selected icon" //TODO internationalize
+                    )
+                } else {
+                    Icon(
+                        imageVector = Icons.Default.CheckBoxOutlineBlank,
+                        modifier = Modifier.size(18.dp),
+                        tint = MaterialTheme.colorScheme.primary,
+                        contentDescription = "Unselected icon" //TODO internationalize
+                    )
+                }
+            }
         }
     }
 }

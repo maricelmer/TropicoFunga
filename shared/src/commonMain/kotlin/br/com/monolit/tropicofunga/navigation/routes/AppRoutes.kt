@@ -1,6 +1,7 @@
 package br.com.monolit.tropicofunga.navigation.routes
 
 import kotlinx.serialization.Serializable
+import kotlin.uuid.Uuid
 
 @Serializable
 sealed interface AppRoutes {
@@ -22,6 +23,9 @@ sealed interface AppRoutes {
 
         @Serializable
         data object Ectomycorrhizae : AtlasMycorrhizae
+
+        @Serializable
+        data class EctomycorrhizaDetails(val id: Uuid) : AtlasMycorrhizae
 
         @Serializable
         data object HowToCollect : AtlasMycorrhizae

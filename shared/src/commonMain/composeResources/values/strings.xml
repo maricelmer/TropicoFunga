@@ -1,4 +1,5 @@
 <resources>
     <string name="host">Host</string>
     <string name="fungus">Fungus</string>
+    <string name="type">Type</string>
 </resources>

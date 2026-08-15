@@ -1,49 +1,25 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel
 
 import androidx.lifecycle.ViewModel
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilter
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilterType
-import kotlinx.collections.immutable.PersistentMap
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.coroutines.flow.MutableStateFlow
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaItem
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilter
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilterType
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeOrder
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeViewState
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 
-class EctomycorrhizaeViewModel : ViewModel() {
+abstract class EctomycorrhizaeViewModel : ViewModel() {
+    abstract val searchQuery: StateFlow<String>
 
-    private val _searchQuery = MutableStateFlow("")
-    val searchQuery = _searchQuery.asStateFlow()
+    abstract val filters: StateFlow<Map<EctomycorrhizaeFilterType, EctomycorrhizaeFilter>>
+    abstract val ordersList: List<EctomycorrhizaeOrder>
+    abstract val selectedOrder: StateFlow<EctomycorrhizaeOrder>
+    abstract val viewState: StateFlow<EctomycorrhizaeViewState>
 
-    private val _filters =
-        MutableStateFlow<PersistentMap<EctomycorrhizaeFilterType, EctomycorrhizaeFilter>>(
-            persistentMapOf()
-        )
-    val filters: StateFlow<Map<EctomycorrhizaeFilterType, EctomycorrhizaeFilter>> =
-        _filters.asStateFlow()
+    abstract fun load()
 
-    init {
-        _filters.update {
-            persistentMapOf(
-                EctomycorrhizaeFilterType.HOST to EctomycorrhizaeFilter.MultipleSelection(
-                    options = listOf("Host 1", "Host 2", "Host 3"),
-                    selected = emptySet(),
-                    expanded = false,
-                ),
-                EctomycorrhizaeFilterType.FUNGUS to EctomycorrhizaeFilter.MultipleSelection(
-                    options = listOf("Fungus 1", "Fungus 2", "Fungus 3"),
-                    selected = emptySet(),
-                    expanded = false,
-                )
-            )
-        }
-    }
+    abstract fun changeQuery(query: String)
+    abstract fun updateFilter(filterType: EctomycorrhizaeFilterType, filter: EctomycorrhizaeFilter)
 
-    fun changeQuery(query: String) {
-        _searchQuery.update { query }
-    }
-
-    fun updateFilter(filterType: EctomycorrhizaeFilterType, filter: EctomycorrhizaeFilter) {
-        _filters.update { it.putting(filterType, filter) }
-    }
+    abstract fun updateOrder(order: EctomycorrhizaeOrder)
 }

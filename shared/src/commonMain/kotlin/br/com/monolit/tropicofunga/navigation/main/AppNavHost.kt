@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.about.screen.AboutScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.screen.EctomycorrhizaeScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.screen.FungiScreen
@@ -15,6 +16,9 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.howToCollect.screen
 import br.com.monolit.tropicofunga.features.funga.home.screen.FungaHomeScreen
 import br.com.monolit.tropicofunga.features.home.screen.HomeScreen
 import br.com.monolit.tropicofunga.navigation.routes.AppRoutes
+import br.com.monolit.tropicofunga.navigation.utils.UuidNavType
+import kotlin.reflect.typeOf
+import kotlin.uuid.Uuid
 
 @Composable
 fun AppNavHost(
@@ -68,7 +72,18 @@ fun AppNavHost(
             )
         }
         composable<AppRoutes.AtlasMycorrhizae.Ectomycorrhizae> {
-            EctomycorrhizaeScreen(onBackPressed = navHostController::popBackStack)
+            EctomycorrhizaeScreen(
+                onBackPressed = navHostController::popBackStack,
+                openEctomycorrhizaDetails = { id ->
+                    navHostController.navigate(AppRoutes.AtlasMycorrhizae.EctomycorrhizaDetails(id))
+                },
+            )
+        }
+        composable<AppRoutes.AtlasMycorrhizae.EctomycorrhizaDetails>(
+            typeMap = mapOf(typeOf<Uuid>() to UuidNavType)
+        ) { entry ->
+            val route = entry.toRoute<AppRoutes.AtlasMycorrhizae.EctomycorrhizaDetails>()
+            // TODO
         }
         composable<AppRoutes.AtlasMycorrhizae.HowToCollect> {
             HowToCollectScreen(onBackPressed = navHostController::popBackStack)

@@ -1,6 +1,5 @@
 package br.com.monolit.tropicofunga.features.shared.views
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -32,7 +31,6 @@ fun DefaultSearchAppBar(
     onFilterPressed: () -> Unit,
     modifier: Modifier = Modifier.fillMaxWidth()
 ) {
-
     TopAppBar(
         modifier = modifier,
         title = {
@@ -57,7 +55,7 @@ fun DefaultSearchAppBar(
                             )
                         },
                         trailingIcon = {
-                            AnimatedVisibility(query.isNotBlank()) {
+                            if (query.isNotBlank()) {
                                 IconButton(
                                     onClick = {
                                         onQueryChanged("")

@@ -73,6 +73,9 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
+
+            // Coil
+            implementation(libs.coil)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

@@ -19,7 +19,7 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "br.com.monolit.tropicofunga.MainKt"
+        mainClass = "br.com.monolit.tropicofunga.main.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)

@@ -12,14 +12,18 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.vie
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaeViewModel
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
+import kotlin.uuid.Uuid
 
 @Composable
 fun EctomycorrhizaeScreen(
     onBackPressed: () -> Unit,
+    openEctomycorrhizaDetails: (Uuid) -> Unit,
     viewModel: EctomycorrhizaeViewModel = koinViewModel(),
 ) {
     val searchQuery by viewModel.searchQuery.collectAsState()
     val filters by viewModel.filters.collectAsState()
+    val selectedOrder by viewModel.selectedOrder.collectAsState()
+    val viewState by viewModel.viewState.collectAsState()
 
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -28,6 +32,9 @@ fun EctomycorrhizaeScreen(
         modifier = Modifier.fillMaxSize(),
         searchQuery = searchQuery,
         filters = filters,
+        selectedOrder = selectedOrder,
+        ordersList = viewModel.ordersList,
+        viewState = viewState,
         drawerState = drawerState,
         onQueryChanged = viewModel::changeQuery,
         onBackPressed = onBackPressed,
@@ -40,6 +47,9 @@ fun EctomycorrhizaeScreen(
                 }
             }
         },
-        updateFilterRequested = viewModel::updateFilter
+        updateFilterRequested = viewModel::updateFilter,
+        updateOrderRequested = viewModel::updateOrder,
+        openEctomycorrhizaDetails = openEctomycorrhizaDetails,
+        onTryLoadAgainRequest = viewModel::load
     )
 }
