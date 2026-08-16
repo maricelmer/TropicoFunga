@@ -2,4 +2,6 @@
     <string name="host">Huésped</string>
     <string name="fungus">Hongo</string>
     <string name="type">Tipo</string>
+    <string name="specie">Especie</string>
+    <string name="family">Familia</string>
 </resources>

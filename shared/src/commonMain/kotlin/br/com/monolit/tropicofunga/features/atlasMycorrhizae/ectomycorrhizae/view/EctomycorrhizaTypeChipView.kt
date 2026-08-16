@@ -9,14 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaType
 import br.com.monolit.tropicofunga.features.shared.views.getColorFromText
 import br.com.monolit.tropicofunga.repository.impl.staticData.ectomycorrhizaTypesData
 import com.example.compose.AppTheme
 
 @Composable
 fun EctomycorrhizaTypeChipView(
-    type: EctomycorrhizaType,
+    type: br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaType,
     modifier: Modifier = Modifier,
 ) {
     val color = getColorFromText(type.name)

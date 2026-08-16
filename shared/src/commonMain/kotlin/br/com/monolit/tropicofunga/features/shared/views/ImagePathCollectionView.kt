@@ -27,7 +27,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.DataImage
 import br.com.monolit.tropicofunga.repository.impl.staticData.examplePhoto
 import coil3.compose.AsyncImage
 import com.example.compose.AppTheme
@@ -36,7 +35,7 @@ import tropicofunga.shared.generated.resources.Res
 @Composable
 fun ImagePathCollectionView(
     modifier: Modifier,
-    imagesPaths: List<DataImage>,
+    imagesPaths: List<br.com.monolit.tropicofunga.data.DataImage>,
     onViewImageRequest: (Int) -> Unit,
 ) {
     Row(

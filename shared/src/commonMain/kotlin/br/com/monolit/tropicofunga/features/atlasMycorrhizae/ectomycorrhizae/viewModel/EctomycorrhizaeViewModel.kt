@@ -1,10 +1,10 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel
 
 import androidx.lifecycle.ViewModel
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilter
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilterType
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeOrder
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate.EctomycorrhizaeViewState
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilter
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilterType
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeOrder
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeViewState
 import kotlinx.coroutines.flow.StateFlow
 
 abstract class EctomycorrhizaeViewModel : ViewModel() {

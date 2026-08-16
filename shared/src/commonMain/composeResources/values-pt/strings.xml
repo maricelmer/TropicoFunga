@@ -2,4 +2,6 @@
     <string name="host">Hospedeiro</string>
     <string name="fungus">Fungo</string>
     <string name="type">Tipo</string>
+    <string name="specie">Espécie</string>
+    <string name="family">Família</string>
 </resources>

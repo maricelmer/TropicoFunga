@@ -1,5 +1,7 @@
 <resources>
     <string name="host">Host</string>
     <string name="fungus">Fungus</string>
-    <string name="type">Type</string>
+    <string name="type">Type</string>\
+    <string name="specie">Specie</string>
+    <string name="family">Family</string>
 </resources>

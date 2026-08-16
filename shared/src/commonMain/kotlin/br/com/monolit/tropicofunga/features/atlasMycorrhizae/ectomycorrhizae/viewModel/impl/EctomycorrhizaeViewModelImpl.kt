@@ -1,13 +1,11 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.impl
 
 import androidx.lifecycle.viewModelScope
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.Ectomycorrhiza
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaItem
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilter
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilterType
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeOrder
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.toItems
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate.EctomycorrhizaeViewState
+import br.com.monolit.tropicofunga.data.ectomycorrhiza.toItems
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilter
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilterType
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeOrder
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaeViewModel
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
@@ -36,7 +34,9 @@ class EctomycorrhizaeViewModelImpl(
     override val selectedOrder = MutableStateFlow(EctomycorrhizaeOrder.FUNGUS_ASC)
 
     private val _viewState =
-        MutableStateFlow<EctomycorrhizaeViewState>(EctomycorrhizaeViewState.Loading)
+        MutableStateFlow<EctomycorrhizaeViewState>(
+            EctomycorrhizaeViewState.Loading
+        )
     override val viewState = combine(
         _viewState,
         selectedOrder,
@@ -140,7 +140,7 @@ class EctomycorrhizaeViewModelImpl(
     }
 }
 
-internal fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<EctomycorrhizaItem> {
+internal fun List<br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaItem> {
     return when (order) {
         EctomycorrhizaeOrder.FUNGUS_ASC -> this.sortedBy { it.fungus }
         EctomycorrhizaeOrder.FUNGUS_DESC -> this.sortedByDescending { it.fungus }
@@ -153,10 +153,10 @@ internal fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<E
     }
 }
 
-internal fun List<Ectomycorrhiza>.filter(
+internal fun List<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza>.filter(
     query: String,
     filters: Map<EctomycorrhizaeFilterType, EctomycorrhizaeFilter>
-): List<Ectomycorrhiza> {
+): List<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza> {
     // Apply selected filters first for better performance
     val typeFilter =
         filters[EctomycorrhizaeFilterType.TYPE] as? EctomycorrhizaeFilter.MultipleSelection

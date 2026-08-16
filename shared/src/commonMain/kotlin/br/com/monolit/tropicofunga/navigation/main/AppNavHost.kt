@@ -84,7 +84,10 @@ fun AppNavHost(
             typeMap = mapOf(typeOf<Uuid>() to UuidNavType)
         ) { entry ->
             val route = entry.toRoute<AppRoutes.AtlasMycorrhizae.EctomycorrhizaDetails>()
-            EctomycorrhizaDetailsScreen(id = route.id, onBackPressed = navHostController::popBackStack)
+            EctomycorrhizaDetailsScreen(
+                id = route.id,
+                onBackPressed = navHostController::popBackStack
+            )
         }
         composable<AppRoutes.AtlasMycorrhizae.HowToCollect> {
             HowToCollectScreen(onBackPressed = navHostController::popBackStack)

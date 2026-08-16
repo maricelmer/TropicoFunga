@@ -1,7 +1,7 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizaDetails.viewModel.impl
 
 import androidx.lifecycle.viewModelScope
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate.EctomycorrhizaDetailsViewState
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaDetailsViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaDetailsViewModel
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.coroutines.Job
@@ -17,7 +17,9 @@ class EctomycorrhizaDetailsViewModelImpl(
 ) : EctomycorrhizaDetailsViewModel() {
 
     private val _viewState =
-        MutableStateFlow<EctomycorrhizaDetailsViewState>(EctomycorrhizaDetailsViewState.Loading)
+        MutableStateFlow<EctomycorrhizaDetailsViewState>(
+            EctomycorrhizaDetailsViewState.Loading
+        )
     override val viewState = _viewState.asStateFlow()
 
     init {

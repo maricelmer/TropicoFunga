@@ -29,7 +29,6 @@ import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.DataImage
 import br.com.monolit.tropicofunga.repository.impl.staticData.examplePhoto
 import com.example.compose.AppTheme
 import com.github.panpf.zoomimage.CoilZoomAsyncImage
@@ -40,7 +39,7 @@ import tropicofunga.shared.generated.resources.Res
 fun ImageCarouselView(
     modifier: Modifier,
     openInImageIndex: Int,
-    imagesPaths: List<DataImage>,
+    imagesPaths: List<br.com.monolit.tropicofunga.data.DataImage>,
     onCloseRequest: () -> Unit,
 ) {
     val pageState = rememberPagerState(initialPage = openInImageIndex) { imagesPaths.size }
@@ -94,7 +93,7 @@ fun ImageCarouselView(
 @Composable
 fun CarouselImageView(
     modifier: Modifier,
-    image: DataImage,
+    image: br.com.monolit.tropicofunga.data.DataImage,
 ) {
     var bytes by remember {
         mutableStateOf(ByteArray(0))

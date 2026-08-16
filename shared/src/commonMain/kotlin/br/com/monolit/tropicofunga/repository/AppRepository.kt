@@ -1,11 +1,12 @@
 package br.com.monolit.tropicofunga.repository
 
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.Ectomycorrhiza
 import kotlin.uuid.Uuid
 
 interface AppRepository {
-    suspend fun loadEctomycorrhizae(): Result<List<Ectomycorrhiza>>
+    suspend fun loadEctomycorrhizae(): Result<List<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza>>
+    suspend fun loadEctomycorrhiza(id: Uuid): Result<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza?>
 
-    suspend fun loadEctomycorrhiza(id: Uuid): Result<Ectomycorrhiza?>
+    suspend fun loadFungi(): Result<List<br.com.monolit.tropicofunga.data.fungus.Fungus>>
 
+    suspend fun loadHosts(): Result<List<br.com.monolit.tropicofunga.data.host.Host>>
 }

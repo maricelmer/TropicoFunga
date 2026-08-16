@@ -10,7 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate.EctomycorrhizaDetailsViewState
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaDetailsViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.view.EctomycorrhizaDetailsView
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaDetailsViewModel
 import br.com.monolit.tropicofunga.features.shared.ImageCarouselView
@@ -40,7 +40,7 @@ fun EctomycorrhizaDetailsScreen(
         )
         AnimatedContent(viewImageIndex) { index ->
             val imagesPaths =
-                (viewState as? EctomycorrhizaDetailsViewState.Loaded)?.ectomycorrhiza?.photos
+                (viewState as? EctomycorrhizaDetailsViewState.Loaded)?.ectomycorrhiza?.images
                     ?: emptyList()
             if (imagesPaths.isNotEmpty() && index != null) {
                 ImageCarouselView(

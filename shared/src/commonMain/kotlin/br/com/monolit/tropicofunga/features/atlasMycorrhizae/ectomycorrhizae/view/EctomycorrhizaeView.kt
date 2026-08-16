@@ -2,7 +2,6 @@ package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.vi
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,11 +20,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilter
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilterType
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeOrder
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.toItems
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate.EctomycorrhizaeViewState
+import br.com.monolit.tropicofunga.data.ectomycorrhiza.toItems
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilter
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilterType
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeOrder
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.shared.views.DefaultDropdownMenuView
 import br.com.monolit.tropicofunga.features.shared.views.DefaultSearchableView
 import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
@@ -146,20 +145,19 @@ fun EctomycorrhizaeView(
                             )
                         }
 
-                        Box(modifier = Modifier.fillMaxWidth().weight(1f)) {
-                            LazyColumn(
-                                modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
-                                verticalArrangement = Arrangement.spacedBy(8.dp),
-                            ) {
-                                items(
-                                    items = list,
-                                    key = { item -> item.id }
-                                ) { ectomycorrhiza ->
-                                    EctomycorrhizaItemView(
-                                        modifier = Modifier.fillMaxWidth().animateItem(),
-                                        item = ectomycorrhiza,
-                                        onClick = { openEctomycorrhizaDetails(ectomycorrhiza.id) })
-                                }
+                        LazyColumn(
+                            modifier = Modifier.fillMaxWidth().weight(1f)
+                                .padding(horizontal = 16.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp),
+                        ) {
+                            items(
+                                items = list,
+                                key = { item -> item.id }
+                            ) { ectomycorrhiza ->
+                                EctomycorrhizaItemView(
+                                    modifier = Modifier.fillMaxWidth().animateItem(),
+                                    item = ectomycorrhiza,
+                                    onClick = { openEctomycorrhizaDetails(ectomycorrhiza.id) })
                             }
                         }
                     }

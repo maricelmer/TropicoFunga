@@ -4,6 +4,10 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizaDetai
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaDetailsViewModel
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaeViewModel
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.impl.EctomycorrhizaeViewModelImpl
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.viewModel.FungiViewModel
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.viewModel.impl.FungiViewModelImpl
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.HostsViewModel
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.impl.HostsViewModelImpl
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 import kotlin.uuid.Uuid
@@ -14,5 +18,11 @@ val featuresModule = module {
     }
     viewModel<EctomycorrhizaDetailsViewModel> { (id: Uuid) ->
         EctomycorrhizaDetailsViewModelImpl(id = id, repository = get())
+    }
+    viewModel<FungiViewModel> {
+        FungiViewModelImpl(repository = get())
+    }
+    viewModel<HostsViewModel> {
+        HostsViewModelImpl(repository = get())
     }
 }

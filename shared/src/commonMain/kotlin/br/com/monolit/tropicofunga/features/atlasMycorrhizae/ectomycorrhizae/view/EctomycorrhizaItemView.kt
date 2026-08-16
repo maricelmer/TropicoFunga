@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaItem
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.toItem
+import br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaItem
+import br.com.monolit.tropicofunga.data.ectomycorrhiza.toItem
 import br.com.monolit.tropicofunga.repository.impl.staticData.ectomycorrhizaeData
 import coil3.compose.AsyncImage
 import com.example.compose.AppTheme
@@ -42,7 +42,7 @@ fun EctomycorrhizaItemView(
         mutableStateOf(ByteArray(0))
     }
     LaunchedEffect(Unit) {
-        item.photo?.path?.let {
+        item.image?.path?.let {
             bytes = Res.readBytes(it)
         }
     }
