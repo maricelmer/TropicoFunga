@@ -44,10 +44,12 @@ import com.example.compose.onSurfaceVariantLight
 import com.example.compose.primaryContainerDark
 import com.example.compose.surfaceVariantLight
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.atlas_mycorrhizae_background
 import tropicofunga.shared.generated.resources.ecm_icon
 import tropicofunga.shared.generated.resources.fungi_icon
+import tropicofunga.shared.generated.resources.glossary
 import tropicofunga.shared.generated.resources.glossary_icon
 import tropicofunga.shared.generated.resources.hosts_icon
 import tropicofunga.shared.generated.resources.shovel_icon
@@ -163,7 +165,7 @@ fun AtlasMycorrhizaeHomeView(
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "Glossary", // TODO internationalize
+                        title = stringResource(Res.string.glossary),
                         icon = painterResource(Res.drawable.glossary_icon),
                         colors = cardColors,
                         onClick = openGlossary,

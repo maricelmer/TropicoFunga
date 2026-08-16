@@ -16,12 +16,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckBox
 import androidx.compose.material.icons.filled.CheckBoxOutlineBlank
 import androidx.compose.material3.DrawerState
+import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,11 +34,12 @@ fun DefaultSearchableView(
     modifier: Modifier,
     searchQuery: String,
     placeholder: String,
-    drawerState: DrawerState,
-    filters: LazyListScope.() -> Unit,
+    drawerState: DrawerState = rememberDrawerState(DrawerValue.Closed),
+    showFiltersButton: Boolean = true,
     onQueryChanged: (String) -> Unit,
     onBackPressed: () -> Unit,
-    onFilterPressed: () -> Unit,
+    onFilterPressed: () -> Unit = {},
+    filters: LazyListScope.() -> Unit = {},
     content: @Composable () -> Unit,
 ) {
     DefaultScaffold(
@@ -47,6 +50,7 @@ fun DefaultSearchableView(
                 placeholder = placeholder,
                 onQueryChanged = onQueryChanged,
                 onBackPressed = onBackPressed,
+                showFiltersButton = showFiltersButton,
                 onFilterPressed = onFilterPressed,
             )
         },

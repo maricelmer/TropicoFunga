@@ -6,6 +6,8 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.vie
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.impl.EctomycorrhizaeViewModelImpl
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.viewModel.FungiViewModel
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.viewModel.impl.FungiViewModelImpl
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.viewModel.GlossaryViewModel
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.viewModel.impl.GlossaryViewModelImpl
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.HostsViewModel
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.impl.HostsViewModelImpl
 import org.koin.core.module.dsl.viewModel
@@ -24,5 +26,8 @@ val featuresModule = module {
     }
     viewModel<HostsViewModel> {
         HostsViewModelImpl(repository = get())
+    }
+    viewModel<GlossaryViewModel> {
+        GlossaryViewModelImpl(repository = get())
     }
 }

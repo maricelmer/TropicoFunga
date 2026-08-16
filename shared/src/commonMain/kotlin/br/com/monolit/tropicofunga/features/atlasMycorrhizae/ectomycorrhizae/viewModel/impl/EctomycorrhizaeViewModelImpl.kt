@@ -1,6 +1,8 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.impl
 
 import androidx.lifecycle.viewModelScope
+import br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza
+import br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaItem
 import br.com.monolit.tropicofunga.data.ectomycorrhiza.toItems
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilter
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeFilterType
@@ -140,7 +142,7 @@ class EctomycorrhizaeViewModelImpl(
     }
 }
 
-internal fun List<br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<br.com.monolit.tropicofunga.data.ectomycorrhiza.EctomycorrhizaItem> {
+internal fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<EctomycorrhizaItem> {
     return when (order) {
         EctomycorrhizaeOrder.FUNGUS_ASC -> this.sortedBy { it.fungus }
         EctomycorrhizaeOrder.FUNGUS_DESC -> this.sortedByDescending { it.fungus }
@@ -153,10 +155,10 @@ internal fun List<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza
     }
 }
 
-internal fun List<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza>.filter(
+internal fun List<Ectomycorrhiza>.filter(
     query: String,
     filters: Map<EctomycorrhizaeFilterType, EctomycorrhizaeFilter>
-): List<br.com.monolit.tropicofunga.data.ectomycorrhiza.Ectomycorrhiza> {
+): List<Ectomycorrhiza> {
     // Apply selected filters first for better performance
     val typeFilter =
         filters[EctomycorrhizaeFilterType.TYPE] as? EctomycorrhizaeFilter.MultipleSelection

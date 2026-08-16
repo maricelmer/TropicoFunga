@@ -4,4 +4,94 @@
     <string name="type">Tipo</string>
     <string name="specie">Especie</string>
     <string name="family">Familia</string>
+
+    <string name="glossary">Glosario</string>
+
+    <string name="agglutinated_term">Aglutinado</string>
+    <string name="clamp_or_clamp_connection_term">Peroné</string>
+    <string name="cystidia_term">Cistidios</string>
+    <string name="cortex_term">Corteza</string>
+    <string name="dichotomous_ectomycorrhizae_term">Ectomicorrizas dicotómicas</string>
+    <string name="emanating_hyphae_term">Hifas emanantes</string>
+    <string name="epidermis_term">Epidermis</string>
+    <string name="gelatinous_hyphae_term">Hifas gelatinosas</string>
+    <string name="hartig_net_term">Red de Hartig</string>
+    <string name="hyphal_strands_term">Cordones hifales</string>
+    <string name="transverse_section_term">Corte transversal</string>
+    <string name="mantle_mycorrhizal_mantle_term">Manto</string>
+    <string name="matrix_matrix_gelatinous_term">Matriz gelatinosa</string>
+    <string name="mycorrhizal_system_term">Sistema micorrícico</string>
+    <string name="mycorrhiza_mycorrhizal_tip_term">Micorriza (ápice micorrícico)</string>
+    <string name="parenchyma_term">Parénquima</string>
+    <string name="plan_view_term">Vista superficial</string>
+    <string name="plectenchymatous_term">Plecténquima</string>
+    <string name="pseudoparenchymatous_term">Tejido pseudoparenquimatoso</string>
+    <string name="root_hair_term">Pelo radicular</string>
+    <string name="outer_surface_of_mantle_term">Superficie externa del manto</string>
+    <string name="reference">Referencia</string>
+
+    <string name="agglutinated_definition">Hifas unidas entre sí como si estuvieran pegadas.</string>
+    <string name="clamp_or_clamp_connection_definition">Proyección hifal que establece una conexión entre dos células vecinas de una hifa, conteniendo dos septos.</string>
+    <string name="cystidia_definition">Estructuras hifales de crecimiento determinado, con formas muy distintivas y características, presentes en la superficie del manto o en cordones hifales.</string>
+    <string name="cortex_definition">Conjunto de tejidos ubicados entre el cilindro vascular y la epidermis.</string>
+    <string name="dichotomous_ectomycorrhizae_definition">Ramificación, a menudo sucesiva, en dos segmentos razonablemente iguales.</string>
+    <string name="emanating_hyphae_definition">Hifas que crecen desde el manto ectomicorrícico y lo conectan con el suelo circundante.</string>
+    <string name="epidermis_definition">Tejido adulto primario, generalmente de una sola capa de células, que recubre los órganos de la planta.</string>
+    <string name="gelatinous_hyphae_definition">Paredes celulares hifales hinchadas, capaces de absorber una cantidad considerable de agua o solución de hidróxido de potasio.</string>
+    <string name="hartig_net_definition">Estructura reticular entre células corticales formada por hifas que crecen intercelularmente.</string>
+    <string name="hyphal_strands_definition">Hifas producidas por diversos mecanismos, que crecen más o menos paralelas y permanecen unidas a lo largo de cierta distancia; pueden presentar diferentes grados de organización.</string>
+    <string name="transverse_section_definition">Corte perpendicular a la longitud de la raíz para mostrar la epidermis, la corteza y el cilindro central.</string>
+    <string name="mantle_mycorrhizal_mantle_definition">Hifas dispuestas de forma más o menos densa que envuelven la raíz.</string>
+    <string name="matrix_matrix_gelatinous_definition">Las hifas del manto están inmersas en una sustancia gelatinosa.</string>
+    <string name="mycorrhizal_system_definition">Varias ectomicorrizas conectadas por ejes que forman racimos ramificados, a veces con formas típicas.</string>
+    <string name="mycorrhiza_mycorrhizal_tip_definition">Micorriza desde el ápice propiamente dicho hasta el siguiente punto de ramificación.</string>
+    <string name="parenchyma_definition">Célula con una pared primaria delgada, una gran vacuola, pocos espacios intercelulares y una vacuola que ocupa más del 80 % de la célula.</string>
+    <string name="plan_view_definition">La observación de la superficie del manto a aumentos suficientemente altos se utiliza frecuentemente para reconocer y caracterizar los diferentes tipos de superficie del manto.</string>
+    <string name="plectenchymatous_definition">Estructura compuesta por hifas más o menos paralelas o dispuestas de forma irregular, generalmente aún reconocibles como hifas individuales.</string>
+    <string name="pseudoparenchymatous_definition">Las hifas del manto, en vista superficial o en sección, están dispuestas tan juntas que simulan tejido parenquimatoso.</string>
+    <string name="root_hair_definition">El tipo de tricoma en la epidermis de la raíz, una expansión de una célula epidérmica, está relacionado con la absorción de la solución del suelo.</string>
+    <string name="outer_surface_of_mantle_definition">Parte más externa del manto observada en una vista superficial.</string>
+    <string name="reference_definition">Agerer, 1987, Apezzato da Glória &amp; Carmello-Guerreiro, 2012.</string>
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

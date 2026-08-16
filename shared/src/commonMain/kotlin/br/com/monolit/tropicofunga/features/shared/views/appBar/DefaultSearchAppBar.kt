@@ -28,7 +28,8 @@ fun DefaultSearchAppBar(
     placeholder: String,
     onQueryChanged: (String) -> Unit,
     onBackPressed: () -> Unit,
-    onFilterPressed: () -> Unit,
+    showFiltersButton: Boolean = true,
+    onFilterPressed: () -> Unit = {},
     modifier: Modifier = Modifier.fillMaxWidth()
 ) {
     TopAppBar(
@@ -81,11 +82,13 @@ fun DefaultSearchAppBar(
             }
         },
         actions = {
-            IconButton(onClick = onFilterPressed) {
-                Icon(
-                    imageVector = Icons.Default.Tune,
-                    contentDescription = "Filter Button" // TODO internationalize
-                )
+            if (showFiltersButton) {
+                IconButton(onClick = onFilterPressed) {
+                    Icon(
+                        imageVector = Icons.Default.Tune,
+                        contentDescription = "Filter Button" // TODO internationalize
+                    )
+                }
             }
         }
     )
