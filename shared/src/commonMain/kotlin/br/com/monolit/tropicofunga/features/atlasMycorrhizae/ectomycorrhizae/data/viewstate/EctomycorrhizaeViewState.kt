@@ -1,4 +1,6 @@
-package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza
+package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate
+
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaItem
 
 sealed interface EctomycorrhizaeViewState {
     data object Loading: EctomycorrhizaeViewState

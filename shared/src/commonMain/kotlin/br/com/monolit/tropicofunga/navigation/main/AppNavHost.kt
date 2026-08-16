@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.about.screen.AboutScreen
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.screen.EctomycorrhizaDetailsScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.screen.EctomycorrhizaeScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.screen.FungiScreen
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.screen.GlossaryScreen
@@ -83,7 +84,7 @@ fun AppNavHost(
             typeMap = mapOf(typeOf<Uuid>() to UuidNavType)
         ) { entry ->
             val route = entry.toRoute<AppRoutes.AtlasMycorrhizae.EctomycorrhizaDetails>()
-            // TODO
+            EctomycorrhizaDetailsScreen(id = route.id, onBackPressed = navHostController::popBackStack)
         }
         composable<AppRoutes.AtlasMycorrhizae.HowToCollect> {
             HowToCollectScreen(onBackPressed = navHostController::popBackStack)

@@ -51,7 +51,7 @@ fun DefaultSearchAppBar(
                         leadingIcon = {
                             Icon(
                                 imageVector = Icons.Default.Search,
-                                contentDescription = "Search Icon"
+                                contentDescription = "Search Icon" // TODO internationalize
                             )
                         },
                         trailingIcon = {

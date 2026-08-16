@@ -24,8 +24,8 @@ import androidx.compose.ui.unit.dp
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilter
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeFilterType
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeOrder
-import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza.toItems
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.viewstate.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.shared.views.DefaultDropdownMenuView
 import br.com.monolit.tropicofunga.features.shared.views.DefaultSearchableView
 import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
@@ -111,6 +111,7 @@ fun EctomycorrhizaeView(
                         message = "Loading ectomycorrhizae..." // TODO internationalize
                     )
                 }
+
                 is EctomycorrhizaeViewState.Error -> {
                     ErrorMessageView(
                         modifier = contentModifier,
@@ -118,6 +119,7 @@ fun EctomycorrhizaeView(
                         onTryAgainRequest = onTryLoadAgainRequest,
                     )
                 }
+
                 is EctomycorrhizaeViewState.Loaded -> {
                     val list = state.ectomycorrhizae
                     Column(

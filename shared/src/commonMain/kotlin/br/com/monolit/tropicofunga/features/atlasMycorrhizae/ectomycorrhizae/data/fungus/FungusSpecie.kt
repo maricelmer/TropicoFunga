@@ -2,11 +2,14 @@ package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.da
 
 import kotlin.uuid.Uuid
 
-data class Fungus(
+data class FungusSpecie(
     val id: Uuid,
-    val specie: FungusSpecie,
-    val family: FungusFamily,
+    val genus: FungusSpecieGenus,
+    val epithet: FungusSpecieEpithet,
 ) {
     val name: String
-        get() = "${specie.name} (${family.name})"
+        get() = "${genus.name} ${epithet.name}"
 }
+
+
+

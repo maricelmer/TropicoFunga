@@ -76,6 +76,7 @@ kotlin {
 
             // Coil
             implementation(libs.coil)
+            implementation(libs.zoom.image.coil)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

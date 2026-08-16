@@ -1,5 +1,6 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.ectomycorrhiza
 
+import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.DataImage
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.fungus.Fungus
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.host.Host
 import kotlin.uuid.Uuid
@@ -20,7 +21,7 @@ data class Ectomycorrhiza(
     val references: List<String>,
     val morphologicalCharacters: String,
     val mantleAnatomicalCharacters: String,
-    val photosPaths: List<String>
+    val photos: List<DataImage>
 ) {
     val name: String
         get() = "${fungus.name} + ${host.name}"
@@ -32,7 +33,7 @@ data class EctomycorrhizaItem(
     val host: String,
     val type: EctomycorrhizaType,
     val ecosystem: String,
-    val photoPath: String?,
+    val photo: DataImage?,
 )
 
 fun List<Ectomycorrhiza>.toItems(): List<EctomycorrhizaItem> = map { it.toItem() }
@@ -44,5 +45,5 @@ fun Ectomycorrhiza.toItem(): EctomycorrhizaItem =
         host = host.name,
         type = type,
         ecosystem = ecosystem,
-        photoPath = photosPaths.firstOrNull(),
+        photo = photos.firstOrNull(),
     )

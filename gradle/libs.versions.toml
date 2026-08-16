@@ -22,6 +22,7 @@ composeMaterialIcons = "1.7.3"
 koin = "4.2.2"
 kotlinx-collections-immutable = "0.5.1"
 coil = "3.5.0"
+zoom-image = "1.6.0"
 
 [libraries]
 # Kotlin
@@ -67,7 +68,8 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 
 # Coil
-coil = { module= "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+zoom-image-coil = { module = "io.github.panpf.zoomimage:zoomimage-compose-coil3", version.ref = "zoom-image" }
 
 # Others
 junit = { module = "junit:junit", version.ref = "junit" }

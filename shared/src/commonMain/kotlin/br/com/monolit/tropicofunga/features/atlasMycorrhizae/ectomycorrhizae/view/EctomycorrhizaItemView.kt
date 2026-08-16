@@ -42,7 +42,7 @@ fun EctomycorrhizaItemView(
         mutableStateOf(ByteArray(0))
     }
     LaunchedEffect(Unit) {
-        item.photoPath?.let {
+        item.photo?.path?.let {
             bytes = Res.readBytes(it)
         }
     }
