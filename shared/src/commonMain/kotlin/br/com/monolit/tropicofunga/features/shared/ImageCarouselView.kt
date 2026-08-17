@@ -43,6 +43,12 @@ fun ImageCarouselView(
     onCloseRequest: () -> Unit,
 ) {
     val pageState = rememberPagerState(initialPage = openInImageIndex) { imagesPaths.size }
+
+    val textShadow = Shadow(
+        color = MaterialTheme.colorScheme.outlineVariant,
+        offset = Offset(x = 4f, y = 4f),
+        blurRadius = 2f,
+    )
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -71,10 +77,13 @@ fun ImageCarouselView(
                     modifier = Modifier.fillMaxSize(),
                     image = image,
                 )
-                val textShadow = Shadow(
-                    color = MaterialTheme.colorScheme.outlineVariant,
-                    offset = Offset(x = 4f, y = 4f),
-                    blurRadius = 2f,
+                Text(
+                    modifier = Modifier.align(Alignment.TopEnd)
+                        .padding(paddingValues)
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                    text = "${page+1}/${imagesPaths.size}",
+                    style = MaterialTheme.typography.labelSmall.copy(shadow = textShadow),
+                    color = MaterialTheme.colorScheme.outline,
                 )
                 Text(
                     modifier = Modifier.align(Alignment.BottomStart)

@@ -158,7 +158,7 @@ fun AtlasMycorrhizaeHomeView(
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "How to collect", // TODO internationalize
+                        title = "How to collect and identify", // TODO internationalize
                         icon = painterResource(Res.drawable.shovel_icon),
                         colors = cardColors,
                         onClick = openHowToCollect,
