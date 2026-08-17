@@ -365,19 +365,16 @@ fun HowToCollectStepView(
                 verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Box(
+                Text(
                     modifier = Modifier
                         .size(48.dp)
                         .clip(CircleShape)
                         .background(MaterialTheme.colorScheme.primaryContainer.copy(0.5f)),
-                    contentAlignment = Alignment.TopCenter
-                ) {
-                    Text(
-                        text = "$step",
-                        style = MaterialTheme.typography.headlineLarge,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
+                    text = "$step",
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    textAlign = TextAlign.Center
+                )
                 Text(
                     text = title,
                     style = MaterialTheme.typography.labelSmall,
