@@ -199,6 +199,14 @@
     <string name="home_subtitle_line_2">Hongos y Micorrizas</string>
     <string name="funga_feature_title">Funga</string>
     <string name="atlas_of_mycorrhizae_feature_title">Atlas de Micorrizas</string>
+    <string name="settings_button_content_description">Botón de configuración</string>
+
+    <!-- Settings -->
+    <string name="settings_screen_title">Configuración</string>
+    <string name="language_section_title">Idioma</string>
+    <string name="language_name_english">Inglés</string>
+    <string name="language_name_portuguese">Portugués</string>
+    <string name="language_name_spanish">Español</string>
 
     <!-- Errors -->
     <string name="failed_to_load_hosts_error">Error al cargar los huéspedes</string>

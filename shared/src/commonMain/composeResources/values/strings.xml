@@ -198,6 +198,14 @@
     <string name="home_subtitle_line_2">Fungy and Mycorrhizae</string>
     <string name="funga_feature_title">Funga</string>
     <string name="atlas_of_mycorrhizae_feature_title">Atlas of Mycorrhizae</string>
+    <string name="settings_button_content_description">Settings button</string>
+
+    <!-- Settings -->
+    <string name="settings_screen_title">Settings</string>
+    <string name="language_section_title">Language</string>
+    <string name="language_name_english">English</string>
+    <string name="language_name_portuguese">Portuguese</string>
+    <string name="language_name_spanish">Spanish</string>
 
     <!-- Errors -->
     <string name="failed_to_load_hosts_error">Failed to load hosts</string>

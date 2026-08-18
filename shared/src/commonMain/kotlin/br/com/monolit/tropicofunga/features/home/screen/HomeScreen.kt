@@ -9,10 +9,12 @@ import br.com.monolit.tropicofunga.features.home.view.HomeView
 fun HomeScreen(
     openFunga: () -> Unit,
     openAtlasMycorrhizae: () -> Unit,
+    openSettings: () -> Unit,
 ) {
     HomeView(
         modifier = Modifier.fillMaxSize(),
         openFunga = openFunga,
         openAtlasMycorrhizae = openAtlasMycorrhizae,
+        openSettings = openSettings,
     )
 }

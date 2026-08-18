@@ -10,6 +10,9 @@ sealed interface AppRoutes {
     data object Home : AppRoutes
 
     @Serializable
+    data object Settings : AppRoutes
+
+    @Serializable
 
     sealed interface Funga : AppRoutes {
         @Serializable

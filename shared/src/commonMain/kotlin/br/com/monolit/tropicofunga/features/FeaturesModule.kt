@@ -10,11 +10,16 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.viewModel.
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.viewModel.impl.GlossaryViewModelImpl
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.HostsViewModel
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.impl.HostsViewModelImpl
+import br.com.monolit.tropicofunga.features.settings.viewModel.SettingsViewModel
+import br.com.monolit.tropicofunga.features.settings.viewModel.impl.SettingsViewModelImpl
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 import kotlin.uuid.Uuid
 
 val featuresModule = module {
+    viewModel<SettingsViewModel> {
+        SettingsViewModelImpl(languageRepository = get())
+    }
     viewModel<EctomycorrhizaeViewModel> {
         EctomycorrhizaeViewModelImpl(repository = get())
     }

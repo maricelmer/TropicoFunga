@@ -46,9 +46,13 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
+            implementation(libs.androidx.appcompat)
         }
         commonMain.dependencies {
             implementation(libs.kotlinx.collections.immutable)
+
+            // Settings
+            implementation(libs.multiplatform.settings)
 
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)

@@ -16,6 +16,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.screen.HostsS
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.howToCollect.screen.HowToCollectScreen
 import br.com.monolit.tropicofunga.features.funga.home.screen.FungaHomeScreen
 import br.com.monolit.tropicofunga.features.home.screen.HomeScreen
+import br.com.monolit.tropicofunga.features.settings.screen.SettingsScreen
 import br.com.monolit.tropicofunga.navigation.routes.AppRoutes
 import br.com.monolit.tropicofunga.navigation.utils.UuidNavType
 import kotlin.reflect.typeOf
@@ -40,7 +41,15 @@ fun AppNavHost(
                 openAtlasMycorrhizae = {
                     navHostController.navigate(AppRoutes.AtlasMycorrhizae.Home)
                 },
+                openSettings = {
+                    navHostController.navigate(AppRoutes.Settings)
+                },
             )
+        }
+
+        // Settings
+        composable<AppRoutes.Settings> {
+            SettingsScreen(onBackPressed = navHostController::popBackStack)
         }
 
         // Funga

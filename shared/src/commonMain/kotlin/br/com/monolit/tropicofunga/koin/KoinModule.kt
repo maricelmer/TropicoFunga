@@ -1,6 +1,7 @@
 package br.com.monolit.tropicofunga.koin
 
 import br.com.monolit.tropicofunga.features.featuresModule
+import br.com.monolit.tropicofunga.language.languageModule
 import br.com.monolit.tropicofunga.repository.repositoryModule
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
@@ -15,6 +16,7 @@ fun initializeKoin(
         modules(
             repositoryModule,
             featuresModule,
+            languageModule,
             specializedModule,
         )
     }

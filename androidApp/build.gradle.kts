@@ -20,6 +20,8 @@ dependencies {
 
     // koin - Inject dependency
     implementation(libs.koin.android)
+
+    implementation(libs.multiplatform.settings)
 }
 
 android {

@@ -15,6 +15,7 @@ dependencies {
     implementation(libs.compose.uiToolingPreview)
 
     implementation(libs.koin.core)
+    implementation(libs.multiplatform.settings)
 }
 
 compose.desktop {

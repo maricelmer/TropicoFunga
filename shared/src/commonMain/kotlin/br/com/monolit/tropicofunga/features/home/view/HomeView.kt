@@ -12,13 +12,21 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
@@ -38,19 +46,40 @@ import tropicofunga.shared.generated.resources.funga_icon
 import tropicofunga.shared.generated.resources.home_subtitle_line_1
 import tropicofunga.shared.generated.resources.home_subtitle_line_2
 import tropicofunga.shared.generated.resources.micolab_logo_black
+import tropicofunga.shared.generated.resources.settings_button_content_description
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView(
     modifier: Modifier,
     openFunga: () -> Unit,
     openAtlasMycorrhizae: () -> Unit,
+    openSettings: () -> Unit,
 ) {
     val scrollState = rememberScrollState()
     val isDarkTheme = LocalIsDarkTheme.current
 
     val cardSize = 112.dp
     val cardModifier = Modifier.size(cardSize)
-    Scaffold(modifier = modifier) { paddingValues ->
+    Scaffold(
+        modifier = modifier,
+        topBar = {
+            TopAppBar(
+                title = {},
+                actions = {
+                    IconButton(onClick = openSettings) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = stringResource(Res.string.settings_button_content_description),
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors().copy(
+                    containerColor = Color.Transparent,
+                )
+            )
+        },
+    ) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             Image(
                 modifier = Modifier.fillMaxSize(),
@@ -139,6 +168,7 @@ private fun HomePreview() {
             modifier = Modifier.fillMaxSize(),
             openFunga = {},
             openAtlasMycorrhizae = {},
+            openSettings = {},
         )
     }
 }
