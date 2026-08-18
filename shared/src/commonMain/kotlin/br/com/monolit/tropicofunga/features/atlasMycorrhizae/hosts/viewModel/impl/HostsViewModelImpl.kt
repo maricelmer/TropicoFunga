@@ -18,6 +18,9 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.failed_to_load_hosts_error
 
 class HostsViewModelImpl(
     private val repository: AppRepository,
@@ -98,8 +101,7 @@ class HostsViewModelImpl(
                     }
                 }
                 .onFailure { exception ->
-                    // TODO internationalize error message
-                    _viewState.update { HostsViewState.Error("Failed to load hosts") }
+                    _viewState.update { HostsViewState.Error(getString(Res.string.failed_to_load_hosts_error)) }
                     println("Error occurred while loading hosts: ${exception.message}")
                 }
         }

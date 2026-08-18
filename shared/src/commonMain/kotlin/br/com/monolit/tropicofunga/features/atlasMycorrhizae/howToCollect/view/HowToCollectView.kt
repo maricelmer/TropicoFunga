@@ -47,16 +47,65 @@ import br.com.monolit.tropicofunga.features.shared.views.DefaultScaffold
 import br.com.monolit.tropicofunga.features.shared.views.appBar.DefaultAppBar
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.analyses_anatomical_studies_step_content
+import tropicofunga.shared.generated.resources.analyses_anatomical_studies_step_image_content_description
 import tropicofunga.shared.generated.resources.analyses_molecular_studies_step_content
+import tropicofunga.shared.generated.resources.analyses_molecular_studies_step_image_content_description
+import tropicofunga.shared.generated.resources.analyses_step_title
+import tropicofunga.shared.generated.resources.anatomical_studies_required_materials
+import tropicofunga.shared.generated.resources.anatomical_studies_step_1_text
+import tropicofunga.shared.generated.resources.anatomical_studies_step_2_text
+import tropicofunga.shared.generated.resources.anatomical_studies_step_3_text
+import tropicofunga.shared.generated.resources.anatomical_studies_subtitle
+import tropicofunga.shared.generated.resources.best_practice_collection_description
+import tropicofunga.shared.generated.resources.best_practice_collection_title
+import tropicofunga.shared.generated.resources.best_practice_handling_description
+import tropicofunga.shared.generated.resources.best_practice_handling_title
+import tropicofunga.shared.generated.resources.best_practice_icon_content_description_format
+import tropicofunga.shared.generated.resources.best_practice_notes_description
+import tropicofunga.shared.generated.resources.best_practice_notes_title
+import tropicofunga.shared.generated.resources.best_practice_sanitization_description
+import tropicofunga.shared.generated.resources.best_practice_sanitization_title
+import tropicofunga.shared.generated.resources.best_practice_storage_description
+import tropicofunga.shared.generated.resources.best_practice_storage_title
+import tropicofunga.shared.generated.resources.best_practice_temperature_description
+import tropicofunga.shared.generated.resources.best_practice_temperature_title
+import tropicofunga.shared.generated.resources.best_practices_title
 import tropicofunga.shared.generated.resources.ecm_icon
 import tropicofunga.shared.generated.resources.eppendorf_icon
+import tropicofunga.shared.generated.resources.field_collection_bag_days_note_text
+import tropicofunga.shared.generated.resources.field_collection_bag_note_text
+import tropicofunga.shared.generated.resources.field_collection_depth_label
+import tropicofunga.shared.generated.resources.field_collection_required_materials
 import tropicofunga.shared.generated.resources.field_collection_step_content
+import tropicofunga.shared.generated.resources.field_collection_step_image_content_description
+import tropicofunga.shared.generated.resources.field_collection_step_1_text
+import tropicofunga.shared.generated.resources.field_collection_step_2_text
+import tropicofunga.shared.generated.resources.field_collection_step_3_text
+import tropicofunga.shared.generated.resources.field_collection_step_title
+import tropicofunga.shared.generated.resources.how_to_collect_and_identify_title
+import tropicofunga.shared.generated.resources.important_note_text
+import tropicofunga.shared.generated.resources.laboratory_screening_required_materials
+import tropicofunga.shared.generated.resources.laboratory_screening_step_1_text
+import tropicofunga.shared.generated.resources.laboratory_screening_step_2_text
+import tropicofunga.shared.generated.resources.laboratory_screening_step_3_text
 import tropicofunga.shared.generated.resources.laboratory_screening_step_content
+import tropicofunga.shared.generated.resources.laboratory_screening_step_image_content_description
+import tropicofunga.shared.generated.resources.laboratory_screening_step_title
+import tropicofunga.shared.generated.resources.molecular_studies_required_materials
+import tropicofunga.shared.generated.resources.molecular_studies_step_1_text
+import tropicofunga.shared.generated.resources.molecular_studies_step_2_text
+import tropicofunga.shared.generated.resources.molecular_studies_subtitle
 import tropicofunga.shared.generated.resources.molecule_icon
+import tropicofunga.shared.generated.resources.required_materials_and_equipment_label
 import tropicofunga.shared.generated.resources.roots_icon
 import tropicofunga.shared.generated.resources.shovel_icon
+import tropicofunga.shared.generated.resources.step_bullet_icon_content_description
+import tropicofunga.shared.generated.resources.step_icon_content_description_format
+import tropicofunga.shared.generated.resources.warning_icon_content_description
+import tropicofunga.shared.generated.resources.workflow_title
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -69,7 +118,7 @@ fun HowToCollectView(
         modifier = modifier,
         topBar = {
             DefaultAppBar(
-                title = "How to collect and identify".toAnnotatedString(), // TODO internationalize
+                title = stringResource(Res.string.how_to_collect_and_identify_title).toAnnotatedString(),
                 onBackPressed = onBackPressed,
             )
         },
@@ -83,7 +132,7 @@ fun HowToCollectView(
         ) {
             Text(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-                text = "Workflow for collection, sorting and analysis", // TODO internationalize
+                text = stringResource(Res.string.workflow_title),
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary,
                 textAlign = TextAlign.Center
@@ -92,7 +141,7 @@ fun HowToCollectView(
             HowToCollectStepView(
                 modifier = Modifier.fillMaxWidth(),
                 step = 1,
-                title = "Field Collection", // TODO internationalize
+                title = stringResource(Res.string.field_collection_step_title),
                 icon = painterResource(Res.drawable.ecm_icon)
             ) {
                 Column(
@@ -110,19 +159,19 @@ fun HowToCollectView(
                             verticalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             HowToCollectStepSection(
-                                text = "Extract fine roots to a depth of 30 cm near the host plant or beneath basidiomata.", // TODO internationalize
+                                text = stringResource(Res.string.field_collection_step_1_text),
                             )
                             HowToCollectStepSection(
-                                text = "Collect as many lateral root tips (≤ 2 mm in diameter) as possible.", // TODO internationalize
+                                text = stringResource(Res.string.field_collection_step_2_text),
                             )
                             HowToCollectStepSection(
-                                text = "Carefully remove excess soil without damaging the roots.", // TODO internationalize
+                                text = stringResource(Res.string.field_collection_step_3_text),
                             )
                         }
                         FieldCollectionStepImageContent()
                     }
                     HowToCollectStepRequiredMaterialsAndEquipment(
-                        text = "shovel, zip-lock bags, refrigerator", // TODO internationalize,
+                        text = stringResource(Res.string.field_collection_required_materials),
                     )
                 }
             }
@@ -130,7 +179,7 @@ fun HowToCollectView(
             HowToCollectStepView(
                 modifier = Modifier.fillMaxWidth(),
                 step = 2,
-                title = "Laboratory Screening", // TODO internationalize
+                title = stringResource(Res.string.laboratory_screening_step_title),
                 icon = rememberVectorPainter(Icons.Default.Biotech)
             ) {
                 Column(
@@ -148,19 +197,19 @@ fun HowToCollectView(
                             verticalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             HowToCollectStepSection(
-                                text = "Wash the roots under running water, carefully separating the thin roots from the thick ones.", // TODO internationalize
+                                text = stringResource(Res.string.laboratory_screening_step_1_text),
                             )
                             HowToCollectStepSection(
-                                text = "Examine the segments under a stereomicroscope, observing differences in thickness, color, and the presence of mycelium.", // TODO internationalize
+                                text = stringResource(Res.string.laboratory_screening_step_2_text),
                             )
                             HowToCollectStepSection(
-                                text = "To confirm that it is an ectomycorrhiza, make a freehand section and observe under a microscope for the presence of a fungal mantle.", // TODO internationalize
+                                text = stringResource(Res.string.laboratory_screening_step_3_text),
                             )
                         }
                         LaboratoryScreeningStepImageContent()
                     }
                     HowToCollectStepRequiredMaterialsAndEquipment(
-                        text = "1. trays, 2. forceps, 3. Petri dishes, 4. microscope slides and coverslips, 5. stereomicroscope, 6. optical microscope.", // TODO internationalize
+                        text = stringResource(Res.string.laboratory_screening_required_materials),
                     )
                 }
             }
@@ -168,7 +217,7 @@ fun HowToCollectView(
             HowToCollectStepView(
                 modifier = Modifier.fillMaxWidth(),
                 step = 3,
-                title = "Analyses", // TODO internationalize
+                title = stringResource(Res.string.analyses_step_title),
                 icon = painterResource(Res.drawable.molecule_icon)
             ) {
                 Column(
@@ -176,7 +225,7 @@ fun HowToCollectView(
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     Text(
-                        text = "Anatomical studies", // TODO internationalize
+                        text = stringResource(Res.string.anatomical_studies_subtitle),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                     )
@@ -192,20 +241,20 @@ fun HowToCollectView(
                             verticalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             HowToCollectStepSection(
-                                text = "Segment the roots and fix in 2.5% glutaraldehyde for 24 hours.", // TODO internationalize
+                                text = stringResource(Res.string.anatomical_studies_step_1_text),
                             )
                             HowToCollectStepSection(
-                                text = "Wash the segments with sodium phosphate buffer and store in 70% ethanol.", // TODO internationalize
+                                text = stringResource(Res.string.anatomical_studies_step_2_text),
                             )
                             HowToCollectStepSection(
-                                text = "Embed in historesin and cut sections using a microtome (3–10 µm thick).", // TODO internationalize
+                                text = stringResource(Res.string.anatomical_studies_step_3_text),
                             )
                         }
 
                         Column {
                             AnalysesAnatomicalStudiesStepImageContent()
                             HowToCollectStepRequiredMaterialsAndEquipment(
-                                text = "1. Eppendorf tubes, 2. blocks, 3. microtome, 4. slides and coverslips, 5. optical microscope.", // TODO internationalize
+                                text = stringResource(Res.string.anatomical_studies_required_materials),
                             )
                         }
                     }
@@ -215,7 +264,7 @@ fun HowToCollectView(
                     )
 
                     Text(
-                        text = "Molecular studies", // TODO internationalize
+                        text = stringResource(Res.string.molecular_studies_subtitle),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                     )
@@ -231,17 +280,17 @@ fun HowToCollectView(
                             verticalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             HowToCollectStepSection(
-                                text = "Separate root tips with ectomycorrhiza and store in 70% ethanol.", // TODO internationalize
+                                text = stringResource(Res.string.molecular_studies_step_1_text),
                             )
                             HowToCollectStepSection(
-                                text = "Follow the recommended protocol for each species.", // TODO internationalize
+                                text = stringResource(Res.string.molecular_studies_step_2_text),
                             )
                         }
 
                         Column {
                             AnalysesMolecularStudiesStepImageContent()
                             HowToCollectStepRequiredMaterialsAndEquipment(
-                                text = "1. Eppendorf tube, 2. micropipette, 3. electrophoresis tank, 4. thermal cycler...", // TODO internationalize
+                                text = stringResource(Res.string.molecular_studies_required_materials),
                             )
                         }
                     }
@@ -250,7 +299,7 @@ fun HowToCollectView(
 
             Text(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-                text = "Best Practices", // TODO internationalize
+                text = stringResource(Res.string.best_practices_title),
                 style = MaterialTheme.typography.titleLarge,
                 color = MaterialTheme.colorScheme.primary,
                 textAlign = TextAlign.Center
@@ -259,8 +308,8 @@ fun HowToCollectView(
             BestPracticeItem(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 icon = painterResource(Res.drawable.shovel_icon),
-                title = "Proper collection", // TODO internationalize
-                description = "Collect roots near the host or beneath basidiomata, down to a depth of 30 cm." // TODO internationalize
+                title = stringResource(Res.string.best_practice_collection_title),
+                description = stringResource(Res.string.best_practice_collection_description)
             )
 
             HorizontalDivider()
@@ -268,8 +317,8 @@ fun HowToCollectView(
             BestPracticeItem(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 icon = rememberVectorPainter(Icons.Outlined.Thermostat),
-                title = "Temperature", // TODO internationalize
-                description = "Store between 4–10 °C and analyze within 7 days." // TODO internationalize
+                title = stringResource(Res.string.best_practice_temperature_title),
+                description = stringResource(Res.string.best_practice_temperature_description)
             )
 
             HorizontalDivider()
@@ -277,8 +326,8 @@ fun HowToCollectView(
             BestPracticeItem(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 icon = painterResource(Res.drawable.roots_icon),
-                title = "Careful handling", // TODO internationalize
-                description = "Avoid damage to the tips and the external mycelium." // TODO internationalize
+                title = stringResource(Res.string.best_practice_handling_title),
+                description = stringResource(Res.string.best_practice_handling_description)
             )
 
             HorizontalDivider()
@@ -286,8 +335,8 @@ fun HowToCollectView(
             BestPracticeItem(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 icon = rememberVectorPainter(Icons.Outlined.WaterDrop),
-                title = "Sanitization", // TODO internationalize
-                description = "Use running water to wash the roots; do not use detergent or brushes." // TODO internationalize
+                title = stringResource(Res.string.best_practice_sanitization_title),
+                description = stringResource(Res.string.best_practice_sanitization_description)
             )
 
             HorizontalDivider()
@@ -295,8 +344,8 @@ fun HowToCollectView(
             BestPracticeItem(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 icon = painterResource(Res.drawable.eppendorf_icon),
-                title = "Storage", // TODO internationalize
-                description = "For subsequent analyses, use 70% ethanol." // TODO internationalize
+                title = stringResource(Res.string.best_practice_storage_title),
+                description = stringResource(Res.string.best_practice_storage_description)
             )
 
             HorizontalDivider()
@@ -304,8 +353,8 @@ fun HowToCollectView(
             BestPracticeItem(
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 icon = rememberVectorPainter(Icons.AutoMirrored.Outlined.TextSnippet),
-                title = "Notes", // TODO internationalize
-                description = "Record information on the location, host, date, and environmental conditions" // TODO internationalize
+                title = stringResource(Res.string.best_practice_notes_title),
+                description = stringResource(Res.string.best_practice_notes_description)
             )
 
             Row(
@@ -320,10 +369,10 @@ fun HowToCollectView(
                 Icon(
                     imageVector = Icons.Outlined.Warning,
                     tint = MaterialTheme.colorScheme.primary,
-                    contentDescription = "Warning icon"
+                    contentDescription = stringResource(Res.string.warning_icon_content_description)
                 )
                 Text(
-                    text = "IMPORTANT: Each step directly influences the quality of the identification. A sound collection and processing protocol ensures reliable and reproducible results.", // TODO internationalize
+                    text = stringResource(Res.string.important_note_text),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.primary,
                     textAlign = TextAlign.Justify
@@ -386,7 +435,7 @@ fun HowToCollectStepView(
                     modifier = Modifier.size(48.dp),
                     painter = icon,
                     tint = MaterialTheme.colorScheme.primary,
-                    contentDescription = "Step $title icon", // TODO internationalize
+                    contentDescription = stringResource(Res.string.step_icon_content_description_format, title),
                 )
             }
             content()
@@ -414,7 +463,7 @@ fun HowToCollectStepIcon() {
     Icon(
         modifier = Modifier.size(18.dp),
         imageVector = Icons.AutoMirrored.Filled.Send,
-        contentDescription = "Step icon",
+        contentDescription = stringResource(Res.string.step_bullet_icon_content_description),
         tint = MaterialTheme.colorScheme.primary,
     )
 }
@@ -449,7 +498,7 @@ fun HowToCollectStepSection(
 private fun HowToCollectStepSectionPreview() {
     AppTheme(darkTheme = false) {
         HowToCollectStepSection(
-            text = "Extract fine roots to a depth of 30 cm near the host plant or beneath basidiomata.", // TODO internationalize
+            text = "Extract fine roots to a depth of 30 cm near the host plant or beneath basidiomata.",
         )
     }
 }
@@ -463,7 +512,7 @@ fun HowToCollectStepRequiredMaterialsAndEquipment(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            text = "Required materials and equipment:", // TODO internationalize
+            text = stringResource(Res.string.required_materials_and_equipment_label),
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.primary,
         )
@@ -503,7 +552,7 @@ fun BestPracticeItem(
                 .border(width = 1.dp, color = contentColor, shape = CircleShape)
                 .padding(8.dp),
             painter = icon,
-            contentDescription = "$title icon", // TODO internationalize
+            contentDescription = stringResource(Res.string.best_practice_icon_content_description_format, title),
             tint = contentColor,
         )
         Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -527,8 +576,8 @@ private fun BestPracticeItemPreview() {
         BestPracticeItem(
             modifier = Modifier,
             icon = painterResource(Res.drawable.shovel_icon),
-            title = "Proper collection", // TODO internationalize
-            description = "Collect roots near the host or beneath basidiomata, down to a depth of 30 cm." // TODO internationalize
+            title = "Proper collection",
+            description = "Collect roots near the host or beneath basidiomata, down to a depth of 30 cm."
         )
     }
 }
@@ -546,13 +595,13 @@ fun FieldCollectionStepImageContent() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Place in resealable plastic bags and store at a temperature between 4 and 10 °C until the time of analysis", // TODO internationalize
+                    text = stringResource(Res.string.field_collection_bag_note_text),
                     style = MaterialTheme.typography.labelSmall,
                     fontSize = 6.sp,
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    text = "Do not exceed 10 days", // TODO internationalize
+                    text = stringResource(Res.string.field_collection_bag_days_note_text),
                     style = MaterialTheme.typography.labelSmall,
                     fontSize = 6.sp,
                     textAlign = TextAlign.Center,
@@ -563,7 +612,7 @@ fun FieldCollectionStepImageContent() {
         Text(
             modifier = Modifier.align(Alignment.BottomCenter)
                 .padding(bottom = 35.dp, start = 35.dp),
-            text = "Up to 30cm", // TODO internationalize
+            text = stringResource(Res.string.field_collection_depth_label),
             style = MaterialTheme.typography.labelSmall,
             fontSize = 6.sp,
             textAlign = TextAlign.Center,
@@ -572,7 +621,7 @@ fun FieldCollectionStepImageContent() {
         Image(
             modifier = Modifier.fillMaxSize().padding(end = 50.dp),
             painter = painterResource(Res.drawable.field_collection_step_content),
-            contentDescription = "Field collection step content image" // TODO internationalize
+            contentDescription = stringResource(Res.string.field_collection_step_image_content_description)
         )
     }
 }
@@ -590,7 +639,7 @@ fun LaboratoryScreeningStepImageContent() {
     Image(
         modifier = Modifier.width(350.dp).height(300.dp),
         painter = painterResource(Res.drawable.laboratory_screening_step_content),
-        contentDescription = "Laboratory screening step content image" // TODO internationalize
+        contentDescription = stringResource(Res.string.laboratory_screening_step_image_content_description)
     )
 }
 
@@ -607,7 +656,7 @@ fun AnalysesAnatomicalStudiesStepImageContent() {
     Image(
         modifier = Modifier.width(350.dp).height(300.dp),
         painter = painterResource(Res.drawable.analyses_anatomical_studies_step_content),
-        contentDescription = "Analyses anatomical studies step content image" // TODO internationalize
+        contentDescription = stringResource(Res.string.analyses_anatomical_studies_step_image_content_description)
     )
 }
 
@@ -624,7 +673,7 @@ fun AnalysesMolecularStudiesStepImageContent() {
     Image(
         modifier = Modifier.width(350.dp).height(200.dp),
         painter = painterResource(Res.drawable.analyses_molecular_studies_step_content),
-        contentDescription = "Analyses molecular studies step content image" // TODO internationalize
+        contentDescription = stringResource(Res.string.analyses_molecular_studies_step_image_content_description)
     )
 }
 

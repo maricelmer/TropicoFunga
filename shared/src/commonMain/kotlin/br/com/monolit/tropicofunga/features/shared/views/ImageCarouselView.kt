@@ -32,7 +32,9 @@ import androidx.compose.ui.unit.dp
 import br.com.monolit.tropicofunga.repository.impl.staticData.examplePhoto
 import com.example.compose.AppTheme
 import com.github.panpf.zoomimage.CoilZoomAsyncImage
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.image_content_description
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -116,7 +118,7 @@ fun CarouselImageView(
         model = bytes,
         contentScale = ContentScale.Fit,
         alignment = Alignment.Center,
-        contentDescription = "Image" // TODO internationalize
+        contentDescription = stringResource(Res.string.image_content_description)
     )
 }
 

@@ -51,4 +51,159 @@
     <string name="root_hair_definition">Tipo de tricoma na epiderme da raiz, expansão de uma célula epidérmica, está relacionado com a absorção de solução do solo.</string>
     <string name="outer_surface_of_mantle_definition">Parte mais externa do manto observada em vista superficial.</string>
     <string name="reference_definition">Agerer, 1987, Apezzato da Glória &amp; Carmello-Guerreiro, 2012.</string>
+
+    <!-- Shared views -->
+    <string name="filters_label">Filtros</string>
+    <string name="selected_icon_content_description">Ícone selecionado</string>
+    <string name="unselected_icon_content_description">Ícone não selecionado</string>
+    <string name="collapse_icon_content_description">Ícone de recolher</string>
+    <string name="expand_icon_content_description">Ícone de expandir</string>
+    <string name="image_content_description">Imagem</string>
+    <string name="error_generic_title">Algo deu errado</string>
+    <string name="error_icon_content_description">Ícone de erro</string>
+    <string name="try_again_button">Tentar novamente</string>
+    <string name="search_icon_content_description">Ícone de busca</string>
+    <string name="clear_field_button_content_description">Botão para limpar campo</string>
+    <string name="back_button_content_description">Botão voltar</string>
+    <string name="filter_button_content_description">Botão de filtro</string>
+    <string name="still_being_built_message">Ainda em construção...</string>
+    <string name="results_found_format">%1$d resultados encontrados</string>
+    <string name="order_by_format">Ordenar por: %1$s</string>
+    <string name="required_materials_and_equipment_label">Materiais e equipamentos necessários:</string>
+
+    <!-- Order options -->
+    <string name="order_name_asc">Nome (A-Z)</string>
+    <string name="order_name_desc">Nome (Z-A)</string>
+    <string name="order_specie_asc">Espécie (A-Z)</string>
+    <string name="order_specie_desc">Espécie (Z-A)</string>
+    <string name="order_family_asc">Família (A-Z)</string>
+    <string name="order_family_desc">Família (Z-A)</string>
+    <string name="order_fungus_asc">Fungo (A-Z)</string>
+    <string name="order_fungus_desc">Fungo (Z-A)</string>
+    <string name="order_host_asc">Hospedeiro (A-Z)</string>
+    <string name="order_host_desc">Hospedeiro (Z-A)</string>
+    <string name="order_type_asc">Tipo (A-Z)</string>
+    <string name="order_type_desc">Tipo (Z-A)</string>
+    <string name="order_ecosystem_asc">Ecossistema (A-Z)</string>
+    <string name="order_ecosystem_desc">Ecossistema (Z-A)</string>
+    <string name="order_term_asc">Termo (A-Z)</string>
+    <string name="order_term_desc">Termo (Z-A)</string>
+    <string name="order_definition_asc">Definição (A-Z)</string>
+    <string name="order_definition_desc">Definição (Z-A)</string>
+
+    <!-- About -->
+    <string name="about">Sobre</string>
+    <string name="about_section_1_text">Embora a diversidade ectomicorrízica em regiões temperadas seja bem documentada, as informações sobre os morfotipos presentes no Neotrópico permanecem dispersas na literatura. Este atlas busca ajudar a preencher essa lacuna, consolidando os registros em uma única fonte de referência.</string>
+    <string name="about_section_2_text">Esta versão inicial reúne os morfotipos ectomicorrízicos registrados em ambientes de restinga brasileiros e foi desenvolvida como parte da tese de doutorado de Marivane Celmer Slodkowski, vinculada ao Programa de Pós-Graduação em Biologia de Fungos, Algas e Plantas da Universidade Federal de Santa Catarina (UFSC), Brasil.</string>
+    <string name="about_section_3_text">Este aplicativo foi concebido como uma plataforma de conhecimento em constante atualização. Seu objetivo é reunir, organizar e padronizar informações produzidas por diferentes grupos de pesquisa, criando um banco de dados integrado que facilita a consulta, a comparação entre morfotipos e a identificação de ectomicorrizas na região Neotropical.</string>
+    <string name="about_section_4_text">Espera-se que futuras atualizações incorporem novos registros, ampliando progressivamente o conhecimento sobre a diversidade ectomicorrízica Neotropical e contribuindo para avanços nas pesquisas sobre sistemática, ecologia e conservação desses simbiontes.</string>
+    <string name="about_contribute_prompt">Para contribuir com este projeto, acesse nosso formulário abaixo.</string>
+    <string name="about_open_contribute_form_button">Abrir formulário de contribuição</string>
+    <string name="about_questions_suggestions_label">Dúvidas e sugestões:</string>
+    <string name="about_thank_you">Obrigado!</string>
+    <string name="about_curatorship_label">Curadoria</string>
+    <string name="about_section_icon_content_description">Ícone da seção sobre</string>
+
+    <!-- Home -->
+    <string name="atlas_title_prefix">Atlas de </string>
+    <string name="atlas_title_highlight">Micorrizas</string>
+    <string name="atlas_title_suffix"> Neotropicais</string>
+    <string name="illustrated_guide_subtitle">Guia ilustrado para identificação de micorrizas</string>
+    <string name="ectomycorrhizae_feature_title">Ectomicorrizas</string>
+    <string name="how_to_collect_and_identify_title">Como coletar e identificar</string>
+    <string name="fungi_feature_title">Fungos</string>
+    <string name="hosts_feature_title">Hospedeiros</string>
+
+    <!-- Fungi / Hosts / Ectomycorrhizae / Glossary lists -->
+    <string name="search_for_fungus_placeholder">Buscar fungo</string>
+    <string name="loading_fungi_message">Carregando fungos...</string>
+    <string name="fungus_image_content_description">Imagem do fungo</string>
+    <string name="search_for_host_placeholder">Buscar hospedeiro</string>
+    <string name="loading_hosts_message">Carregando hospedeiros...</string>
+    <string name="host_image_content_description">Imagem do hospedeiro</string>
+    <string name="search_for_ectomycorrhiza_placeholder">Buscar ectomicorriza</string>
+    <string name="loading_ectomycorrhizae_message">Carregando ectomicorrizas...</string>
+    <string name="ectomycorrhiza_image_content_description">Imagem da ectomicorriza</string>
+    <string name="location_icon_content_description">Ícone de localização</string>
+    <string name="search_for_term_or_definition_placeholder">Buscar termo ou definição</string>
+    <string name="loading_glossary_message">Carregando glossário...</string>
+
+    <!-- Ectomycorrhiza details -->
+    <string name="loading_ectomycorrhiza_message">Carregando ectomicorriza...</string>
+    <string name="legend_format">Legenda: %1$s</string>
+    <string name="diagnostic_characters_title">Caracteres diagnósticos</string>
+    <string name="characteristic_type_label">Tipo:</string>
+    <string name="characteristic_colour_label">Cor:</string>
+    <string name="characteristic_hartig_net_label">Rede de Hartig:</string>
+    <string name="characteristic_mantle_thickness_label">Espessura do manto:</string>
+    <string name="characteristic_outer_mantle_layer_label">Camada externa do manto:</string>
+    <string name="characteristic_hyphal_strands_label">Cordões hifais:</string>
+    <string name="general_information_title">Informações Gerais</string>
+    <string name="characteristic_ecosystem_label">Ecossistema:</string>
+    <string name="characteristic_genbank_accession_label">Número de acesso GenBank:</string>
+    <string name="characteristic_references_label">Referências:</string>
+    <string name="morphological_characters_title">Caracteres morfológicos</string>
+    <string name="anatomical_characters_of_mantle_title">Caracteres anatômicos do manto</string>
+
+    <!-- How to collect -->
+    <string name="workflow_title">Fluxo de coleta, triagem e análise</string>
+    <string name="field_collection_step_title">Coleta em Campo</string>
+    <string name="field_collection_step_1_text">Extraia raízes finas até 30 cm de profundidade próximo à planta hospedeira ou sob basidiomas.</string>
+    <string name="field_collection_step_2_text">Colete o maior número possível de ápices radiculares laterais (≤ 2 mm de diâmetro).</string>
+    <string name="field_collection_step_3_text">Remova cuidadosamente o excesso de solo sem danificar as raízes.</string>
+    <string name="field_collection_required_materials">pá, sacos plásticos com fecho, refrigerador</string>
+    <string name="laboratory_screening_step_title">Triagem em Laboratório</string>
+    <string name="laboratory_screening_step_1_text">Lave as raízes em água corrente, separando cuidadosamente as raízes finas das grossas.</string>
+    <string name="laboratory_screening_step_2_text">Examine os segmentos sob estereomicroscópio, observando diferenças de espessura, cor e presença de micélio.</string>
+    <string name="laboratory_screening_step_3_text">Para confirmar que se trata de uma ectomicorriza, faça um corte à mão livre e observe ao microscópio a presença de manto fúngico.</string>
+    <string name="laboratory_screening_required_materials">1. bandejas, 2. pinças, 3. placas de Petri, 4. lâminas e lamínulas, 5. estereomicroscópio, 6. microscópio óptico.</string>
+    <string name="analyses_step_title">Análises</string>
+    <string name="anatomical_studies_subtitle">Estudos anatômicos</string>
+    <string name="anatomical_studies_step_1_text">Segmente as raízes e fixe em glutaraldeído a 2,5% por 24 horas.</string>
+    <string name="anatomical_studies_step_2_text">Lave os segmentos com tampão fosfato de sódio e armazene em etanol 70%.</string>
+    <string name="anatomical_studies_step_3_text">Inclua em historresina e corte seções em micrótomo (3–10 µm de espessura).</string>
+    <string name="anatomical_studies_required_materials">1. tubos Eppendorf, 2. blocos, 3. micrótomo, 4. lâminas e lamínulas, 5. microscópio óptico.</string>
+    <string name="molecular_studies_subtitle">Estudos moleculares</string>
+    <string name="molecular_studies_step_1_text">Separe ápices radiculares com ectomicorriza e armazene em etanol 70%.</string>
+    <string name="molecular_studies_step_2_text">Siga o protocolo recomendado para cada espécie.</string>
+    <string name="molecular_studies_required_materials">1. tubo Eppendorf, 2. micropipeta, 3. cuba de eletroforese, 4. termociclador...</string>
+    <string name="best_practices_title">Boas Práticas</string>
+    <string name="best_practice_collection_title">Coleta adequada</string>
+    <string name="best_practice_collection_description">Colete raízes próximas ao hospedeiro ou sob basidiomas, até 30 cm de profundidade.</string>
+    <string name="best_practice_temperature_title">Temperatura</string>
+    <string name="best_practice_temperature_description">Armazene entre 4–10 °C e analise em até 7 dias.</string>
+    <string name="best_practice_handling_title">Manuseio cuidadoso</string>
+    <string name="best_practice_handling_description">Evite danificar os ápices e o micélio externo.</string>
+    <string name="best_practice_sanitization_title">Higienização</string>
+    <string name="best_practice_sanitization_description">Use água corrente para lavar as raízes; não use detergente ou escovas.</string>
+    <string name="best_practice_storage_title">Armazenamento</string>
+    <string name="best_practice_storage_description">Para análises posteriores, use etanol 70%.</string>
+    <string name="best_practice_notes_title">Anotações</string>
+    <string name="best_practice_notes_description">Registre informações sobre local, hospedeiro, data e condições ambientais</string>
+    <string name="warning_icon_content_description">Ícone de aviso</string>
+    <string name="important_note_text">IMPORTANTE: Cada etapa influencia diretamente a qualidade da identificação. Um protocolo sólido de coleta e processamento garante resultados confiáveis e reprodutíveis.</string>
+    <string name="step_icon_content_description_format">Ícone da etapa %1$s</string>
+    <string name="step_bullet_icon_content_description">Ícone de etapa</string>
+    <string name="best_practice_icon_content_description_format">Ícone de %1$s</string>
+    <string name="field_collection_step_image_content_description">Imagem da etapa de coleta em campo</string>
+    <string name="laboratory_screening_step_image_content_description">Imagem da etapa de triagem em laboratório</string>
+    <string name="analyses_anatomical_studies_step_image_content_description">Imagem da etapa de estudos anatômicos</string>
+    <string name="analyses_molecular_studies_step_image_content_description">Imagem da etapa de estudos moleculares</string>
+    <string name="field_collection_bag_note_text">Coloque em sacos plásticos com fecho e armazene em temperatura entre 4 e 10 °C até o momento da análise</string>
+    <string name="field_collection_bag_days_note_text">Não exceda 10 dias</string>
+    <string name="field_collection_depth_label">Até 30cm</string>
+
+    <!-- Root home -->
+    <string name="home_subtitle_line_1">Diversidade Neotropical de</string>
+    <string name="home_subtitle_line_2">Fungos e Micorrizas</string>
+    <string name="funga_feature_title">Funga</string>
+    <string name="atlas_of_mycorrhizae_feature_title">Atlas de Micorrizas</string>
+
+    <!-- Errors -->
+    <string name="failed_to_load_hosts_error">Falha ao carregar hospedeiros</string>
+    <string name="failed_to_load_fungi_error">Falha ao carregar fungos</string>
+    <string name="failed_to_load_ectomycorrhizae_error">Falha ao carregar ectomicorrizas</string>
+    <string name="failed_to_load_glossary_error">Falha ao carregar glossário</string>
+    <string name="ectomycorrhiza_not_found_error">Ectomicorriza não encontrada</string>
+    <string name="failed_to_load_ectomycorrhiza_error">Falha ao carregar ectomicorriza</string>
 </resources>

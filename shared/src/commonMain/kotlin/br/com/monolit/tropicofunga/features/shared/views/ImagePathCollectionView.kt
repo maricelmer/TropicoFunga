@@ -30,7 +30,9 @@ import androidx.compose.ui.unit.dp
 import br.com.monolit.tropicofunga.repository.impl.staticData.examplePhoto
 import coil3.compose.AsyncImage
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.image_content_description
 
 @Composable
 fun ImagePathCollectionView(
@@ -133,7 +135,7 @@ fun ImagePathView(
             modifier = Modifier.fillMaxSize(),
             model = bytes,
             contentScale = ContentScale.Crop,
-            contentDescription = "Image" // TODO internationalize
+            contentDescription = stringResource(Res.string.image_content_description)
         )
     }
 }

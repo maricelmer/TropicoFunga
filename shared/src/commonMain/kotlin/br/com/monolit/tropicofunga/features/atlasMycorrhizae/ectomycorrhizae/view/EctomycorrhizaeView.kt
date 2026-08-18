@@ -34,6 +34,11 @@ import br.com.monolit.tropicofunga.features.shared.views.filterSelectableItem
 import br.com.monolit.tropicofunga.repository.impl.staticData.ectomycorrhizaeData
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.loading_ectomycorrhizae_message
+import tropicofunga.shared.generated.resources.order_by_format
+import tropicofunga.shared.generated.resources.results_found_format
+import tropicofunga.shared.generated.resources.search_for_ectomycorrhiza_placeholder
 import kotlin.uuid.Uuid
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -57,7 +62,7 @@ fun EctomycorrhizaeView(
     DefaultSearchableView(
         modifier = modifier,
         searchQuery = searchQuery,
-        placeholder = "Search for ectomycorrhiza", // TODO internationalize
+        placeholder = stringResource(Res.string.search_for_ectomycorrhiza_placeholder),
         drawerState = drawerState,
         filters = {
             filters.forEach { (filterType, filter) ->
@@ -107,7 +112,7 @@ fun EctomycorrhizaeView(
                 EctomycorrhizaeViewState.Loading -> {
                     LoadView(
                         modifier = contentModifier,
-                        message = "Loading ectomycorrhizae..." // TODO internationalize
+                        message = stringResource(Res.string.loading_ectomycorrhizae_message)
                     )
                 }
 
@@ -131,7 +136,7 @@ fun EctomycorrhizaeView(
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
                             Text(
-                                text = "${list.size} results found", // TODO internationalize
+                                text = stringResource(Res.string.results_found_format, list.size),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.outline,
                             )
@@ -140,8 +145,8 @@ fun EctomycorrhizaeView(
                                 items = ordersList,
                                 selectedItem = selectedOrder,
                                 onItemSelected = updateOrderRequested,
-                                labelMaker = { "Order by: ${it.title}" },
-                                itemLabelMaker = { it.title }
+                                labelMaker = { stringResource(Res.string.order_by_format, stringResource(it.title)) },
+                                itemLabelMaker = { stringResource(it.title) }
                             )
                         }
 

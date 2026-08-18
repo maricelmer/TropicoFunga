@@ -51,4 +51,159 @@
     <string name="root_hair_definition">Type of trichome on the root epidermis, an outgrowth of an epidermal cell, involved in the absorption of soil solution.</string>
     <string name="outer_surface_of_mantle_definition">The outermost part of the mantle as observed from the surface.</string>
     <string name="reference_definition">Agerer, 1987, Apezzato da Glória &amp; Carmello-Guerreiro, 2012.</string>
+
+    <!-- Shared views -->
+    <string name="filters_label">Filters</string>
+    <string name="selected_icon_content_description">Selected icon</string>
+    <string name="unselected_icon_content_description">Unselected icon</string>
+    <string name="collapse_icon_content_description">Collapse icon</string>
+    <string name="expand_icon_content_description">Expand icon</string>
+    <string name="image_content_description">Image</string>
+    <string name="error_generic_title">Something went wrong</string>
+    <string name="error_icon_content_description">Error icon</string>
+    <string name="try_again_button">Try again</string>
+    <string name="search_icon_content_description">Search icon</string>
+    <string name="clear_field_button_content_description">Clear field button</string>
+    <string name="back_button_content_description">Back button</string>
+    <string name="filter_button_content_description">Filter button</string>
+    <string name="still_being_built_message">Still being built...</string>
+    <string name="results_found_format">%1$d results found</string>
+    <string name="order_by_format">Order by: %1$s</string>
+    <string name="required_materials_and_equipment_label">Required materials and equipment:</string>
+
+    <!-- Order options -->
+    <string name="order_name_asc">Name (A-Z)</string>
+    <string name="order_name_desc">Name (Z-A)</string>
+    <string name="order_specie_asc">Specie (A-Z)</string>
+    <string name="order_specie_desc">Species (Z-A)</string>
+    <string name="order_family_asc">Family (A-Z)</string>
+    <string name="order_family_desc">Family (Z-A)</string>
+    <string name="order_fungus_asc">Fungus (A-Z)</string>
+    <string name="order_fungus_desc">Fungus (Z-A)</string>
+    <string name="order_host_asc">Host (A-Z)</string>
+    <string name="order_host_desc">Host (Z-A)</string>
+    <string name="order_type_asc">Type (A-Z)</string>
+    <string name="order_type_desc">Type (Z-A)</string>
+    <string name="order_ecosystem_asc">Ecosystem (A-Z)</string>
+    <string name="order_ecosystem_desc">Ecosystem (Z-A)</string>
+    <string name="order_term_asc">Term (A-Z)</string>
+    <string name="order_term_desc">Term (Z-A)</string>
+    <string name="order_definition_asc">Definition (A-Z)</string>
+    <string name="order_definition_desc">Definition (Z-A)</string>
+
+    <!-- About -->
+    <string name="about">About</string>
+    <string name="about_section_1_text">Although ectomycorrhizal diversity in temperate regions is well documented, information regarding the morphotypes present in the Neotropics remains scattered throughout the literature. This atlas aims to help bridge this gap by consolidating records into a single reference resource.</string>
+    <string name="about_section_2_text">This initial version compiles the ectomycorrhizal morphotypes recorded in Brazilian restinga environments and was developed as part of the doctoral thesis of Marivane Celmer Slodkowski, affiliated with the Graduate Program in Fungal, Algal, and Plant Biology at the Federal University of Santa Catarina (UFSC), Brazil.</string>
+    <string name="about_section_3_text">This app was conceived as a constantly updated knowledge platform. Its objective is to gather, organize, and standardize information produced by different research groups, creating an integrated database that facilitates consultation, comparison between morphotypes, and the identification of ectomycorrhizae in the Neotropical region.</string>
+    <string name="about_section_4_text">Future updates are expected to incorporate new records, progressively expanding knowledge about Neotropical ectomycorrhizal diversity and contributing to advances in research on systematics, ecology, and conservation of these symbionts.</string>
+    <string name="about_contribute_prompt">To contribute to this project, access our form below.</string>
+    <string name="about_open_contribute_form_button">Open contribute form</string>
+    <string name="about_questions_suggestions_label">Questions and suggestions:</string>
+    <string name="about_thank_you">Thank you!</string>
+    <string name="about_curatorship_label">Curatorship</string>
+    <string name="about_section_icon_content_description">About section icon</string>
+
+    <!-- Home -->
+    <string name="atlas_title_prefix">Atlas of Neotropical </string>
+    <string name="atlas_title_highlight">Mycorrhizae</string>
+    <string name="atlas_title_suffix"></string>
+    <string name="illustrated_guide_subtitle">Illustrated guide to mycorrhiza identification</string>
+    <string name="ectomycorrhizae_feature_title">Ectomycorrhizae</string>
+    <string name="how_to_collect_and_identify_title">How to collect and identify</string>
+    <string name="fungi_feature_title">Fungi</string>
+    <string name="hosts_feature_title">Hosts</string>
+
+    <!-- Fungi / Hosts / Ectomycorrhizae / Glossary lists -->
+    <string name="search_for_fungus_placeholder">Search for fungus</string>
+    <string name="loading_fungi_message">Loading fungi...</string>
+    <string name="fungus_image_content_description">Fungus image</string>
+    <string name="search_for_host_placeholder">Search for host</string>
+    <string name="loading_hosts_message">Loading hosts...</string>
+    <string name="host_image_content_description">Host image</string>
+    <string name="search_for_ectomycorrhiza_placeholder">Search for ectomycorrhiza</string>
+    <string name="loading_ectomycorrhizae_message">Loading ectomycorrhizae...</string>
+    <string name="ectomycorrhiza_image_content_description">Ectomycorrhiza image</string>
+    <string name="location_icon_content_description">Location icon</string>
+    <string name="search_for_term_or_definition_placeholder">Search for term or definition</string>
+    <string name="loading_glossary_message">Loading glossary...</string>
+
+    <!-- Ectomycorrhiza details -->
+    <string name="loading_ectomycorrhiza_message">Loading ectomycorrhiza...</string>
+    <string name="legend_format">Legend: %1$s</string>
+    <string name="diagnostic_characters_title">Diagnostic characters</string>
+    <string name="characteristic_type_label">Type:</string>
+    <string name="characteristic_colour_label">Colour:</string>
+    <string name="characteristic_hartig_net_label">Hartig net:</string>
+    <string name="characteristic_mantle_thickness_label">Mantle thickness:</string>
+    <string name="characteristic_outer_mantle_layer_label">Outer mantle layer:</string>
+    <string name="characteristic_hyphal_strands_label">Hyphal strands:</string>
+    <string name="general_information_title">General Information</string>
+    <string name="characteristic_ecosystem_label">Ecosystem:</string>
+    <string name="characteristic_genbank_accession_label">GenBank accession:</string>
+    <string name="characteristic_references_label">References:</string>
+    <string name="morphological_characters_title">Morphological characters</string>
+    <string name="anatomical_characters_of_mantle_title">Anatomical characters of mantle</string>
+
+    <!-- How to collect -->
+    <string name="workflow_title">Workflow for collection, sorting and analysis</string>
+    <string name="field_collection_step_title">Field Collection</string>
+    <string name="field_collection_step_1_text">Extract fine roots to a depth of 30 cm near the host plant or beneath basidiomata.</string>
+    <string name="field_collection_step_2_text">Collect as many lateral root tips (≤ 2 mm in diameter) as possible.</string>
+    <string name="field_collection_step_3_text">Carefully remove excess soil without damaging the roots.</string>
+    <string name="field_collection_required_materials">shovel, zip-lock bags, refrigerator</string>
+    <string name="laboratory_screening_step_title">Laboratory Screening</string>
+    <string name="laboratory_screening_step_1_text">Wash the roots under running water, carefully separating the thin roots from the thick ones.</string>
+    <string name="laboratory_screening_step_2_text">Examine the segments under a stereomicroscope, observing differences in thickness, color, and the presence of mycelium.</string>
+    <string name="laboratory_screening_step_3_text">To confirm that it is an ectomycorrhiza, make a freehand section and observe under a microscope for the presence of a fungal mantle.</string>
+    <string name="laboratory_screening_required_materials">1. trays, 2. forceps, 3. Petri dishes, 4. microscope slides and coverslips, 5. stereomicroscope, 6. optical microscope.</string>
+    <string name="analyses_step_title">Analyses</string>
+    <string name="anatomical_studies_subtitle">Anatomical studies</string>
+    <string name="anatomical_studies_step_1_text">Segment the roots and fix in 2.5% glutaraldehyde for 24 hours.</string>
+    <string name="anatomical_studies_step_2_text">Wash the segments with sodium phosphate buffer and store in 70% ethanol.</string>
+    <string name="anatomical_studies_step_3_text">Embed in historesin and cut sections using a microtome (3–10 µm thick).</string>
+    <string name="anatomical_studies_required_materials">1. Eppendorf tubes, 2. blocks, 3. microtome, 4. slides and coverslips, 5. optical microscope.</string>
+    <string name="molecular_studies_subtitle">Molecular studies</string>
+    <string name="molecular_studies_step_1_text">Separate root tips with ectomycorrhiza and store in 70% ethanol.</string>
+    <string name="molecular_studies_step_2_text">Follow the recommended protocol for each species.</string>
+    <string name="molecular_studies_required_materials">1. Eppendorf tube, 2. micropipette, 3. electrophoresis tank, 4. thermal cycler...</string>
+    <string name="best_practices_title">Best Practices</string>
+    <string name="best_practice_collection_title">Proper collection</string>
+    <string name="best_practice_collection_description">Collect roots near the host or beneath basidiomata, down to a depth of 30 cm.</string>
+    <string name="best_practice_temperature_title">Temperature</string>
+    <string name="best_practice_temperature_description">Store between 4–10 °C and analyze within 7 days.</string>
+    <string name="best_practice_handling_title">Careful handling</string>
+    <string name="best_practice_handling_description">Avoid damage to the tips and the external mycelium.</string>
+    <string name="best_practice_sanitization_title">Sanitization</string>
+    <string name="best_practice_sanitization_description">Use running water to wash the roots; do not use detergent or brushes.</string>
+    <string name="best_practice_storage_title">Storage</string>
+    <string name="best_practice_storage_description">For subsequent analyses, use 70% ethanol.</string>
+    <string name="best_practice_notes_title">Notes</string>
+    <string name="best_practice_notes_description">Record information on the location, host, date, and environmental conditions</string>
+    <string name="warning_icon_content_description">Warning icon</string>
+    <string name="important_note_text">IMPORTANT: Each step directly influences the quality of the identification. A sound collection and processing protocol ensures reliable and reproducible results.</string>
+    <string name="step_icon_content_description_format">Step %1$s icon</string>
+    <string name="step_bullet_icon_content_description">Step icon</string>
+    <string name="best_practice_icon_content_description_format">%1$s icon</string>
+    <string name="field_collection_step_image_content_description">Field collection step content image</string>
+    <string name="laboratory_screening_step_image_content_description">Laboratory screening step content image</string>
+    <string name="analyses_anatomical_studies_step_image_content_description">Analyses anatomical studies step content image</string>
+    <string name="analyses_molecular_studies_step_image_content_description">Analyses molecular studies step content image</string>
+    <string name="field_collection_bag_note_text">Place in resealable plastic bags and store at a temperature between 4 and 10 °C until the time of analysis</string>
+    <string name="field_collection_bag_days_note_text">Do not exceed 10 days</string>
+    <string name="field_collection_depth_label">Up to 30cm</string>
+
+    <!-- Root home -->
+    <string name="home_subtitle_line_1">Neotropical diversity of</string>
+    <string name="home_subtitle_line_2">Fungy and Mycorrhizae</string>
+    <string name="funga_feature_title">Funga</string>
+    <string name="atlas_of_mycorrhizae_feature_title">Atlas of Mycorrhizae</string>
+
+    <!-- Errors -->
+    <string name="failed_to_load_hosts_error">Failed to load hosts</string>
+    <string name="failed_to_load_fungi_error">Failed to load fungi</string>
+    <string name="failed_to_load_ectomycorrhizae_error">Failed to load ectomycorrhizae</string>
+    <string name="failed_to_load_glossary_error">Failed to load glossary</string>
+    <string name="ectomycorrhiza_not_found_error">Ectomycorrhiza not found</string>
+    <string name="failed_to_load_ectomycorrhiza_error">Failed to load ectomycorrhiza</string>
 </resources>

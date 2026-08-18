@@ -25,6 +25,12 @@ import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
 import br.com.monolit.tropicofunga.features.shared.views.LoadView
 import br.com.monolit.tropicofunga.repository.impl.staticData.glossaryData
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.loading_glossary_message
+import tropicofunga.shared.generated.resources.order_by_format
+import tropicofunga.shared.generated.resources.results_found_format
+import tropicofunga.shared.generated.resources.search_for_term_or_definition_placeholder
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,7 +48,7 @@ fun GlossaryView(
     DefaultSearchableView(
         modifier = modifier,
         searchQuery = searchQuery,
-        placeholder = "Search for term or definition", // TODO internationalize
+        placeholder = stringResource(Res.string.search_for_term_or_definition_placeholder),
         showFiltersButton = false,
         onQueryChanged = onQueryChanged,
         onBackPressed = onBackPressed,
@@ -53,7 +59,7 @@ fun GlossaryView(
                 GlossaryViewState.Loading -> {
                     LoadView(
                         modifier = contentModifier,
-                        message = "Loading glossary..." // TODO internationalize
+                        message = stringResource(Res.string.loading_glossary_message)
                     )
                 }
 
@@ -77,7 +83,7 @@ fun GlossaryView(
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
                             Text(
-                                text = "${list.size} results found", // TODO internationalize
+                                text = stringResource(Res.string.results_found_format, list.size),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.outline,
                             )
@@ -86,8 +92,8 @@ fun GlossaryView(
                                 items = ordersList,
                                 selectedItem = selectedOrder,
                                 onItemSelected = updateOrderRequested,
-                                labelMaker = { "Order by: ${it.title}" },
-                                itemLabelMaker = { it.title }
+                                labelMaker = { stringResource(Res.string.order_by_format, stringResource(it.title)) },
+                                itemLabelMaker = { stringResource(it.title) }
                             )
                         }
 

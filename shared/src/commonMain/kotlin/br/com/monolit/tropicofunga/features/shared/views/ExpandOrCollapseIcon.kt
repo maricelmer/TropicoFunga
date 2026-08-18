@@ -9,6 +9,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.collapse_icon_content_description
+import tropicofunga.shared.generated.resources.expand_icon_content_description
 
 @Composable
 fun ExpandOrCollapseIcon(
@@ -22,14 +26,14 @@ fun ExpandOrCollapseIcon(
                 modifier = modifier,
                 imageVector = Icons.Default.ExpandLess,
                 tint = tint,
-                contentDescription = "Collapse icon" //TODO internationalize
+                contentDescription = stringResource(Res.string.collapse_icon_content_description)
             )
         } else {
             Icon(
                 modifier = modifier,
                 imageVector = Icons.Default.ExpandMore,
                 tint = tint,
-                contentDescription = "Expand icon" //TODO internationalize
+                contentDescription = stringResource(Res.string.expand_icon_content_description)
             )
         }
     }

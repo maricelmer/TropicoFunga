@@ -16,6 +16,9 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.back_button_content_description
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,7 +42,7 @@ fun DefaultAppBar(
             IconButton(onClick = onBackPressed) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back Button" // TODO internationalize
+                    contentDescription = stringResource(Res.string.back_button_content_description)
                 )
             }
         }

@@ -14,8 +14,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.monolit.tropicofunga.data.fungus.Fungus
@@ -23,7 +25,9 @@ import br.com.monolit.tropicofunga.repository.impl.staticData.fungiData
 import coil3.compose.AsyncImage
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.InternalResourceApi
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.fungus_image_content_description
 
 @OptIn(InternalResourceApi::class)
 @Composable
@@ -48,16 +52,18 @@ fun FungusItemView(
                 modifier = Modifier.weight(1f),
                 model = bytes,
                 contentScale = ContentScale.Crop,
-                contentDescription = "Fungus Image" // TODO internationalize
+                alignment = Alignment.Center,
+                contentDescription = stringResource(Res.string.fungus_image_content_description)
             )
 
             Text(
                 text = item.name,
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.secondary,
-                minLines = 2,
-                maxLines = 2,
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                minLines = 3,
+                maxLines = 3,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
     }

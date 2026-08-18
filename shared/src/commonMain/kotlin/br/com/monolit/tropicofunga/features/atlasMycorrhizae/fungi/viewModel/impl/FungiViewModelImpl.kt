@@ -18,6 +18,9 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.failed_to_load_fungi_error
 
 class FungiViewModelImpl(
     private val repository: AppRepository,
@@ -102,8 +105,7 @@ class FungiViewModelImpl(
                     }
                 }
                 .onFailure { exception ->
-                    // TODO internationalize error message
-                    _viewState.update { FungiViewState.Error("Failed to load fungi") }
+                    _viewState.update { FungiViewState.Error(getString(Res.string.failed_to_load_fungi_error)) }
                     println("Error occurred while loading fungi: ${exception.message}")
                 }
         }

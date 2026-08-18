@@ -27,11 +27,16 @@ import androidx.compose.ui.unit.dp
 import com.example.compose.AppTheme
 import com.example.compose.LocalIsDarkTheme
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.atlas_mycorrhizae_icon
+import tropicofunga.shared.generated.resources.atlas_of_mycorrhizae_feature_title
 import tropicofunga.shared.generated.resources.background_home_dark
 import tropicofunga.shared.generated.resources.background_home_light
+import tropicofunga.shared.generated.resources.funga_feature_title
 import tropicofunga.shared.generated.resources.funga_icon
+import tropicofunga.shared.generated.resources.home_subtitle_line_1
+import tropicofunga.shared.generated.resources.home_subtitle_line_2
 import tropicofunga.shared.generated.resources.micolab_logo_black
 
 @Composable
@@ -75,12 +80,12 @@ fun HomeView(
                 ) {
                     Column {
                         Text(
-                            text = "Neotropical diversity of", // TODO internationalize
+                            text = stringResource(Res.string.home_subtitle_line_1),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                         )
                         Text(
-                            text = "Fungy and Mycorrhizae", // TODO internationalize
+                            text = stringResource(Res.string.home_subtitle_line_2),
                             color = MaterialTheme.colorScheme.primary,
                             style = MaterialTheme.typography.headlineMedium,
                             fontWeight = FontWeight.SemiBold,
@@ -101,13 +106,13 @@ fun HomeView(
                     ) {
                         FeatureCardView(
                             modifier = cardModifier,
-                            title = "Funga", // TODO internationalize
+                            title = stringResource(Res.string.funga_feature_title),
                             icon = painterResource(Res.drawable.funga_icon),
                             onClick = openFunga,
                         )
                         FeatureCardView(
                             modifier = cardModifier,
-                            title = "Atlas of Mycorrhizae", // TODO internationalize
+                            title = stringResource(Res.string.atlas_of_mycorrhizae_feature_title),
                             icon = painterResource(Res.drawable.atlas_mycorrhizae_icon),
                             onClick = openAtlasMycorrhizae,
                         )

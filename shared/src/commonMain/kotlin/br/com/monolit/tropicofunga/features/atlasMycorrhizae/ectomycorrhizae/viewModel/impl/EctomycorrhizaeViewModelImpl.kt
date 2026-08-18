@@ -20,6 +20,9 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.failed_to_load_ectomycorrhizae_error
 
 class EctomycorrhizaeViewModelImpl(
     private val repository: AppRepository,
@@ -120,8 +123,9 @@ class EctomycorrhizaeViewModelImpl(
                     }
                 }
                 .onFailure { exception ->
-                    // TODO internationalize error message
-                    _viewState.update { EctomycorrhizaeViewState.Error("Failed to load ectomycorrhizae") }
+                    _viewState.update {
+                        EctomycorrhizaeViewState.Error(getString(Res.string.failed_to_load_ectomycorrhizae_error))
+                    }
                     println("Error occurred while loading ectomycorrhizae: ${exception.message}")
                 }
         }

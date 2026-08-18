@@ -15,6 +15,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.jetbrains.compose.resources.getString
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.failed_to_load_glossary_error
 
 class GlossaryViewModelImpl(
     private val repository: AppRepository,
@@ -62,8 +64,7 @@ class GlossaryViewModelImpl(
                     }
                 }
                 .onFailure { exception ->
-                    // TODO internationalize error message
-                    _viewState.update { GlossaryViewState.Error("Failed to load glossary") }
+                    _viewState.update { GlossaryViewState.Error(getString(Res.string.failed_to_load_glossary_error)) }
                     println("Error occurred while loading glossary: ${exception.message}")
                 }
         }

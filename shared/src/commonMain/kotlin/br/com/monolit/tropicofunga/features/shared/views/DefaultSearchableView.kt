@@ -29,6 +29,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.filters_label
+import tropicofunga.shared.generated.resources.selected_icon_content_description
+import tropicofunga.shared.generated.resources.unselected_icon_content_description
 
 @Composable
 fun DefaultSearchableView(
@@ -70,7 +75,7 @@ fun DefaultSearchableView(
                         item {
                             Text(
                                 modifier = Modifier.padding(horizontal = 16.dp),
-                                text = "Filters", //TODO internationalize,
+                                text = stringResource(Res.string.filters_label),
                                 style = MaterialTheme.typography.headlineSmall,
                             )
                         }
@@ -143,14 +148,14 @@ fun LazyListScope.filterSelectableItem(
                         imageVector = Icons.Default.CheckBox,
                         modifier = Modifier.size(18.dp),
                         tint = MaterialTheme.colorScheme.primary,
-                        contentDescription = "Selected icon" //TODO internationalize
+                        contentDescription = stringResource(Res.string.selected_icon_content_description)
                     )
                 } else {
                     Icon(
                         imageVector = Icons.Default.CheckBoxOutlineBlank,
                         modifier = Modifier.size(18.dp),
                         tint = MaterialTheme.colorScheme.primary,
-                        contentDescription = "Unselected icon" //TODO internationalize
+                        contentDescription = stringResource(Res.string.unselected_icon_content_description)
                     )
                 }
             }

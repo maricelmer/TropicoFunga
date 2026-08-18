@@ -20,6 +20,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.back_button_content_description
+import tropicofunga.shared.generated.resources.clear_field_button_content_description
+import tropicofunga.shared.generated.resources.filter_button_content_description
+import tropicofunga.shared.generated.resources.search_icon_content_description
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,7 +58,7 @@ fun DefaultSearchAppBar(
                         leadingIcon = {
                             Icon(
                                 imageVector = Icons.Default.Search,
-                                contentDescription = "Search Icon" // TODO internationalize
+                                contentDescription = stringResource(Res.string.search_icon_content_description)
                             )
                         },
                         trailingIcon = {
@@ -64,7 +70,7 @@ fun DefaultSearchAppBar(
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Clear,
-                                        contentDescription = "Clear Field Button", // TODO internationalize
+                                        contentDescription = stringResource(Res.string.clear_field_button_content_description),
                                     )
                                 }
                             }
@@ -77,7 +83,7 @@ fun DefaultSearchAppBar(
             IconButton(onClick = onBackPressed) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back Button" // TODO internationalize
+                    contentDescription = stringResource(Res.string.back_button_content_description)
                 )
             }
         },
@@ -86,7 +92,7 @@ fun DefaultSearchAppBar(
                 IconButton(onClick = onFilterPressed) {
                     Icon(
                         imageVector = Icons.Default.Tune,
-                        contentDescription = "Filter Button" // TODO internationalize
+                        contentDescription = stringResource(Res.string.filter_button_content_description)
                     )
                 }
             }

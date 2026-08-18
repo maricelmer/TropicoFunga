@@ -37,7 +37,19 @@ import br.com.monolit.tropicofunga.features.shared.views.EmailLinkText
 import br.com.monolit.tropicofunga.features.shared.views.appBar.DefaultAppBar
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.about
+import tropicofunga.shared.generated.resources.about_contribute_prompt
+import tropicofunga.shared.generated.resources.about_curatorship_label
+import tropicofunga.shared.generated.resources.about_open_contribute_form_button
+import tropicofunga.shared.generated.resources.about_questions_suggestions_label
+import tropicofunga.shared.generated.resources.about_section_1_text
+import tropicofunga.shared.generated.resources.about_section_2_text
+import tropicofunga.shared.generated.resources.about_section_3_text
+import tropicofunga.shared.generated.resources.about_section_4_text
+import tropicofunga.shared.generated.resources.about_section_icon_content_description
+import tropicofunga.shared.generated.resources.about_thank_you
 import tropicofunga.shared.generated.resources.ecm_icon
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +64,7 @@ fun AboutView(
         modifier = modifier,
         topBar = {
             DefaultAppBar(
-                title = "About".toAnnotatedString(),
+                title = stringResource(Res.string.about).toAnnotatedString(),
                 onBackPressed = onBackPressed,
             )
         },
@@ -73,27 +85,27 @@ fun AboutView(
                 AboutSectionView(
                     modifier = Modifier.fillMaxWidth().padding(),
                     icon = painterResource(Res.drawable.ecm_icon),
-                    text = "Although ectomycorrhizal diversity in temperate regions is well documented, information regarding the morphotypes present in the Neotropics remains scattered throughout the literature. This atlas aims to help bridge this gap by consolidating records into a single reference resource." // TODO internationalize
+                    text = stringResource(Res.string.about_section_1_text)
                 )
                 AboutSectionView(
                     modifier = Modifier.fillMaxWidth().padding(),
                     icon = rememberVectorPainter(Icons.Outlined.School),
-                    text = "This initial version compiles the ectomycorrhizal morphotypes recorded in Brazilian restinga environments and was developed as part of the doctoral thesis of Marivane Celmer Slodkowski, affiliated with the Graduate Program in Fungal, Algal, and Plant Biology at the Federal University of Santa Catarina (UFSC), Brazil." // TODO internationalize
+                    text = stringResource(Res.string.about_section_2_text)
                 )
                 AboutSectionView(
                     modifier = Modifier.fillMaxWidth().padding(),
                     icon = rememberVectorPainter(Icons.AutoMirrored.Outlined.MenuBook),
-                    text = "This app was conceived as a constantly updated knowledge platform. Its objective is to gather, organize, and standardize information produced by different research groups, creating an integrated database that facilitates consultation, comparison between morphotypes, and the identification of ectomycorrhizae in the Neotropical region." // TODO internationalize
+                    text = stringResource(Res.string.about_section_3_text)
                 )
                 AboutSectionView(
                     modifier = Modifier.fillMaxWidth().padding(),
                     icon = rememberVectorPainter(Icons.Outlined.SouthAmerica),
-                    text = "Future updates are expected to incorporate new records, progressively expanding knowledge about Neotropical ectomycorrhizal diversity and contributing to advances in research on systematics, ecology, and conservation of these symbionts." // TODO internationalize
+                    text = stringResource(Res.string.about_section_4_text)
                 )
 
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "To contribute to this project, access our form below.", // TODO internationalize
+                    text = stringResource(Res.string.about_contribute_prompt),
                     style = MaterialTheme.typography.labelLarge,
                     textAlign = TextAlign.Center,
                 )
@@ -103,7 +115,7 @@ fun AboutView(
                     onClick = onOpenContributeFormRequested,
                 ) {
                     Text(
-                        text = "Open contribute form", // TODO internationalize
+                        text = stringResource(Res.string.about_open_contribute_form_button),
                         style = MaterialTheme.typography.labelSmall,
                         textAlign = TextAlign.Center,
                     )
@@ -114,7 +126,7 @@ fun AboutView(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     Text(
-                        text = "Questions and suggestions:", // TODO internationalize
+                        text = stringResource(Res.string.about_questions_suggestions_label),
                         style = MaterialTheme.typography.labelSmall,
                     )
                     EmailLinkText(email = "neotropicalecmatlas@gmail.com")
@@ -122,7 +134,7 @@ fun AboutView(
 
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "Thank you!", // TODO internationalize
+                    text = stringResource(Res.string.about_thank_you),
                     style = MaterialTheme.typography.titleLarge.copy(fontStyle = FontStyle.Italic),
                     textAlign = TextAlign.Center,
                 )
@@ -130,7 +142,7 @@ fun AboutView(
 
             Text(
                 modifier = Modifier.padding(horizontal = 16.dp),
-                text = "Curatorship", // TODO internationalize
+                text = stringResource(Res.string.about_curatorship_label),
                 style = MaterialTheme.typography.labelSmall,
             )
 
@@ -141,6 +153,11 @@ fun AboutView(
                 ) {
                     Text(
                         text = "Marivane Celmer Slodkowski",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.primary,
+                    )
+                    Text(
+                        text = "Fernanda Maria Cordeiro de Oliveira",
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                     )
@@ -185,7 +202,7 @@ fun AboutSectionView(
                 .border(width = 1.dp, color = contentColor, shape = CircleShape)
                 .padding(8.dp),
             painter = icon,
-            contentDescription = "About section icon", // TODO internationalize
+            contentDescription = stringResource(Res.string.about_section_icon_content_description),
             tint = contentColor,
         )
         Text(

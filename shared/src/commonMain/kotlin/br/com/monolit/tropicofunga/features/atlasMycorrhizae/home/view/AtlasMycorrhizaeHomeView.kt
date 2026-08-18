@@ -46,12 +46,21 @@ import com.example.compose.surfaceVariantLight
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.about
 import tropicofunga.shared.generated.resources.atlas_mycorrhizae_background
+import tropicofunga.shared.generated.resources.atlas_title_highlight
+import tropicofunga.shared.generated.resources.atlas_title_prefix
+import tropicofunga.shared.generated.resources.atlas_title_suffix
 import tropicofunga.shared.generated.resources.ecm_icon
+import tropicofunga.shared.generated.resources.ectomycorrhizae_feature_title
+import tropicofunga.shared.generated.resources.fungi_feature_title
 import tropicofunga.shared.generated.resources.fungi_icon
 import tropicofunga.shared.generated.resources.glossary
 import tropicofunga.shared.generated.resources.glossary_icon
+import tropicofunga.shared.generated.resources.hosts_feature_title
 import tropicofunga.shared.generated.resources.hosts_icon
+import tropicofunga.shared.generated.resources.how_to_collect_and_identify_title
+import tropicofunga.shared.generated.resources.illustrated_guide_subtitle
 import tropicofunga.shared.generated.resources.shovel_icon
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -119,17 +128,18 @@ fun AtlasMycorrhizaeHomeView(
                 ) {
                     Text(
                         text = buildAnnotatedString {
-                            append("Atlas of Neotropical ") // TODO internationalize
+                            append(stringResource(Res.string.atlas_title_prefix))
                             withStyle(SpanStyle(color = primaryContainerDark)) {
-                                append("Mycorrhizae") // TODO internationalize
+                                append(stringResource(Res.string.atlas_title_highlight))
                             }
+                            append(stringResource(Res.string.atlas_title_suffix))
                         },
                         style = MaterialTheme.typography.displayLarge.copy(shadow = textShadow),
                         color = Color.White,
                         fontWeight = FontWeight.SemiBold,
                     )
                     Text(
-                        text = "Illustrated guide to mycorrhiza identification",  // TODO internationalize
+                        text = stringResource(Res.string.illustrated_guide_subtitle),
                         color = Color.White,
                         style = MaterialTheme.typography.bodyMedium.copy(shadow = textShadow)
                     )
@@ -150,15 +160,15 @@ fun AtlasMycorrhizaeHomeView(
                     itemVerticalAlignment = Alignment.CenterVertically,
                 ) {
                     FeatureCardView(
-                        modifier = cardModifier, // TODO internationalize
-                        title = "Ectomycorrhizae",
+                        modifier = cardModifier,
+                        title = stringResource(Res.string.ectomycorrhizae_feature_title),
                         icon = painterResource(Res.drawable.ecm_icon),
                         colors = cardColors,
                         onClick = openEctomycorrhizae,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "How to collect and identify", // TODO internationalize
+                        title = stringResource(Res.string.how_to_collect_and_identify_title),
                         icon = painterResource(Res.drawable.shovel_icon),
                         colors = cardColors,
                         onClick = openHowToCollect,
@@ -172,21 +182,21 @@ fun AtlasMycorrhizaeHomeView(
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "Fungi", // TODO internationalize
+                        title = stringResource(Res.string.fungi_feature_title),
                         icon = painterResource(Res.drawable.fungi_icon),
                         colors = cardColors,
                         onClick = openFungi,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "Hosts", // TODO internationalize
+                        title = stringResource(Res.string.hosts_feature_title),
                         icon = painterResource(Res.drawable.hosts_icon),
                         colors = cardColors,
                         onClick = openHosts,
                     )
                     FeatureCardView(
                         modifier = cardModifier,
-                        title = "About", // TODO internationalize
+                        title = stringResource(Res.string.about),
                         icon = rememberVectorPainter(Icons.Outlined.Info),
                         colors = cardColors,
                         onClick = openAbout,

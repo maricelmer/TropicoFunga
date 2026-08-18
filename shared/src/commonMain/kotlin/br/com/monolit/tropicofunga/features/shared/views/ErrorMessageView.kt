@@ -16,6 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.error_generic_title
+import tropicofunga.shared.generated.resources.error_icon_content_description
+import tropicofunga.shared.generated.resources.try_again_button
 
 @Composable
 fun ErrorMessageView(
@@ -33,7 +38,7 @@ fun ErrorMessageView(
         verticalArrangement = verticalArrangement,
     ) {
         Text(
-            text = "Something went wrong", // TODO internationalize
+            text = stringResource(Res.string.error_generic_title),
             style = MaterialTheme.typography.bodyMedium,
             color = contentColor,
         )
@@ -41,7 +46,7 @@ fun ErrorMessageView(
             modifier = Modifier.size(48.dp),
             imageVector = Icons.Default.ErrorOutline,
             tint = contentColor,
-            contentDescription = "Error Icon", // TODO internationalize
+            contentDescription = stringResource(Res.string.error_icon_content_description),
         )
         Text(
             text = message,
@@ -51,7 +56,7 @@ fun ErrorMessageView(
         if (showTrainAgain) {
             TextButton(onClick = onTryAgainRequest) {
                 Text(
-                    text = "Try Again", // TODO internationalize
+                    text = stringResource(Res.string.try_again_button),
                     style = MaterialTheme.typography.labelSmall,
                     color = contentColor
                 )

@@ -32,6 +32,23 @@ import br.com.monolit.tropicofunga.features.shared.views.ImagePathCollectionView
 import br.com.monolit.tropicofunga.features.shared.views.LoadView
 import br.com.monolit.tropicofunga.repository.impl.staticData.ectomycorrhizaeData
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.anatomical_characters_of_mantle_title
+import tropicofunga.shared.generated.resources.characteristic_colour_label
+import tropicofunga.shared.generated.resources.characteristic_ecosystem_label
+import tropicofunga.shared.generated.resources.characteristic_genbank_accession_label
+import tropicofunga.shared.generated.resources.characteristic_hartig_net_label
+import tropicofunga.shared.generated.resources.characteristic_hyphal_strands_label
+import tropicofunga.shared.generated.resources.characteristic_mantle_thickness_label
+import tropicofunga.shared.generated.resources.characteristic_outer_mantle_layer_label
+import tropicofunga.shared.generated.resources.characteristic_references_label
+import tropicofunga.shared.generated.resources.characteristic_type_label
+import tropicofunga.shared.generated.resources.diagnostic_characters_title
+import tropicofunga.shared.generated.resources.general_information_title
+import tropicofunga.shared.generated.resources.legend_format
+import tropicofunga.shared.generated.resources.loading_ectomycorrhiza_message
+import tropicofunga.shared.generated.resources.morphological_characters_title
 
 @Composable
 fun EctomycorrhizaDetailsView(
@@ -69,7 +86,7 @@ fun EctomycorrhizaDetailsView(
                 EctomycorrhizaDetailsViewState.Loading -> {
                     LoadView(
                         modifier = contentModifier,
-                        message = "Loading ectomycorrhiza..." // TODO internationalize
+                        message = stringResource(Res.string.loading_ectomycorrhiza_message)
                     )
                 }
 
@@ -95,9 +112,10 @@ fun EctomycorrhizaDetailsView(
                         )
 
                         Text(
-                            text = "Legend: ${
-                                state.ectomycorrhiza.images.joinToString(", ") { it.legend }
-                            }", // TODO internationalize
+                            text = stringResource(
+                                Res.string.legend_format,
+                                state.ectomycorrhiza.images.joinToString(", ") { it.legend },
+                            ),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.outline,
                             modifier = Modifier.padding(horizontal = 16.dp)
@@ -105,62 +123,62 @@ fun EctomycorrhizaDetailsView(
 
                         CharacteristicsSectionView(
                             modifier = Modifier.fillMaxWidth(),
-                            title = "Diagnostic characters", // TODO internationalize
+                            title = stringResource(Res.string.diagnostic_characters_title),
                         ) {
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Type:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_type_label),
                                 value = state.ectomycorrhiza.type.name
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Colour:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_colour_label),
                                 value = state.ectomycorrhiza.colorDescription
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Hartig net:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_hartig_net_label),
                                 value = state.ectomycorrhiza.hartigNet.title
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Mantle thickness:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_mantle_thickness_label),
                                 value = state.ectomycorrhiza.mantleThickness
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Outer mantle layer:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_outer_mantle_layer_label),
                                 value = state.ectomycorrhiza.outerMantleLayer.title
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Hyphal strands:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_hyphal_strands_label),
                                 value = state.ectomycorrhiza.hyphalStrands.title
                             )
                         }
                         CharacteristicsSectionView(
                             modifier = Modifier.fillMaxWidth(),
-                            title = "General Information", // TODO internationalize
+                            title = stringResource(Res.string.general_information_title),
                         ) {
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "Ecosystem:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_ecosystem_label),
                                 value = state.ectomycorrhiza.ecosystem
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "GenBank accession:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_genbank_accession_label),
                                 value = state.ectomycorrhiza.genBankAccessionNumbers.joinToString(", ")
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
-                                title = "References:", // TODO internationalize
+                                title = stringResource(Res.string.characteristic_references_label),
                                 value = state.ectomycorrhiza.references.joinToString(", ")
                             )
                         }
                         CharacteristicsSectionView(
                             modifier = Modifier.fillMaxWidth(),
-                            title = "Morphological characters", // TODO internationalize
+                            title = stringResource(Res.string.morphological_characters_title),
                         ) {
                             Text(
                                 text = state.ectomycorrhiza.morphologicalCharacters,
@@ -170,7 +188,7 @@ fun EctomycorrhizaDetailsView(
                         }
                         CharacteristicsSectionView(
                             modifier = Modifier.fillMaxWidth(),
-                            title = "Anatomical characters of mantle", // TODO internationalize
+                            title = stringResource(Res.string.anatomical_characters_of_mantle_title),
                         ) {
                             Text(
                                 text = state.ectomycorrhiza.mantleAnatomicalCharacters,

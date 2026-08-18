@@ -27,8 +27,8 @@ fun <T> DefaultDropdownMenuView(
     items: List<T>,
     selectedItem: T,
     onItemSelected: (T) -> Unit,
-    labelMaker: (T) -> String = { it.toString() },
-    itemLabelMaker: (T) -> String = { it.toString() },
+    labelMaker: @Composable (T) -> String = { it.toString() },
+    itemLabelMaker: @Composable (T) -> String = { it.toString() },
     horizontalArrangement: Arrangement.Horizontal = Arrangement.spacedBy(8.dp, Alignment.Start),
     modifier: Modifier = Modifier,
 ) {

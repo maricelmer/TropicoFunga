@@ -9,6 +9,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.ectomycorrhiza_not_found_error
+import tropicofunga.shared.generated.resources.failed_to_load_ectomycorrhiza_error
 import kotlin.uuid.Uuid
 
 class EctomycorrhizaDetailsViewModelImpl(
@@ -36,14 +40,14 @@ class EctomycorrhizaDetailsViewModelImpl(
                         if (ectomycorrhiza != null) {
                             EctomycorrhizaDetailsViewState.Loaded(ectomycorrhiza = ectomycorrhiza)
                         } else {
-                            // TODO internationalize error message
-                            EctomycorrhizaDetailsViewState.Error("Ectomycorrhiza not found")
+                            EctomycorrhizaDetailsViewState.Error(getString(Res.string.ectomycorrhiza_not_found_error))
                         }
                     }
                 }
                 .onFailure { exception ->
-                    // TODO internationalize error message
-                    _viewState.update { EctomycorrhizaDetailsViewState.Error("Failed to load ectomycorrhiza") }
+                    _viewState.update {
+                        EctomycorrhizaDetailsViewState.Error(getString(Res.string.failed_to_load_ectomycorrhiza_error))
+                    }
                     println("Error occurred while loading ectomycorrhizae: ${exception.message}")
                 }
         }

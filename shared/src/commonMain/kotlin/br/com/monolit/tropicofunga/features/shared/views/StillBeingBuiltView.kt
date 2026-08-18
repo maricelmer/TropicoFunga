@@ -6,6 +6,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.still_being_built_message
 
 @Composable
 fun StillBeingBuiltView(
@@ -13,7 +16,7 @@ fun StillBeingBuiltView(
 ) {
     Text(
         modifier = modifier,
-        text = "Still being built...",
+        text = stringResource(Res.string.still_being_built_message),
         style = MaterialTheme.typography.bodyMedium
     )
 }

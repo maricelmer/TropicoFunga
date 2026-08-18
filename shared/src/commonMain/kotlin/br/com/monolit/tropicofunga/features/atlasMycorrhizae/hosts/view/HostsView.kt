@@ -35,6 +35,11 @@ import br.com.monolit.tropicofunga.features.shared.views.filterSelectableItem
 import br.com.monolit.tropicofunga.repository.impl.staticData.hostsData
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.loading_hosts_message
+import tropicofunga.shared.generated.resources.order_by_format
+import tropicofunga.shared.generated.resources.results_found_format
+import tropicofunga.shared.generated.resources.search_for_host_placeholder
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,7 +61,7 @@ fun HostsView(
     DefaultSearchableView(
         modifier = modifier,
         searchQuery = searchQuery,
-        placeholder = "Search for host", // TODO internationalize
+        placeholder = stringResource(Res.string.search_for_host_placeholder),
         drawerState = drawerState,
         filters = {
             filters.forEach { (filterType, filter) ->
@@ -106,7 +111,7 @@ fun HostsView(
                 is HostsViewState.Loading -> {
                     LoadView(
                         modifier = contentModifier,
-                        message = "Loading hosts..." // TODO internationalize
+                        message = stringResource(Res.string.loading_hosts_message)
                     )
                 }
 
@@ -130,7 +135,7 @@ fun HostsView(
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
                             Text(
-                                text = "${list.size} results found", // TODO internationalize
+                                text = stringResource(Res.string.results_found_format, list.size),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.outline,
                             )
@@ -139,8 +144,8 @@ fun HostsView(
                                 items = ordersList,
                                 selectedItem = selectedOrder,
                                 onItemSelected = updateOrderRequested,
-                                labelMaker = { "Order by: ${it.title}" },
-                                itemLabelMaker = { it.title }
+                                labelMaker = { stringResource(Res.string.order_by_format, stringResource(it.title)) },
+                                itemLabelMaker = { stringResource(it.title) }
                             )
                         }
 
@@ -156,7 +161,7 @@ fun HostsView(
                                 key = { item -> item.id }
                             ) { host ->
                                 HostItemView(
-                                    modifier = Modifier.height(200.dp).animateItem(),
+                                    modifier = Modifier.height(250.dp).animateItem(),
                                     item = host,
                                 )
                             }

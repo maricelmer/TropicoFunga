@@ -29,7 +29,10 @@ import br.com.monolit.tropicofunga.repository.impl.staticData.ectomycorrhizaeDat
 import coil3.compose.AsyncImage
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.InternalResourceApi
+import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.ectomycorrhiza_image_content_description
+import tropicofunga.shared.generated.resources.location_icon_content_description
 
 @OptIn(InternalResourceApi::class)
 @Composable
@@ -56,7 +59,8 @@ fun EctomycorrhizaItemView(
                 modifier = Modifier.size(128.dp),
                 model = bytes,
                 contentScale = ContentScale.Crop,
-                contentDescription = "Ectomycorrhiza Image" // TODO internationalize
+                alignment = Alignment.Center,
+                contentDescription = stringResource(Res.string.ectomycorrhiza_image_content_description)
             )
             Column(
                 modifier = Modifier
@@ -83,7 +87,7 @@ fun EctomycorrhizaItemView(
                     Icon(
                         modifier = Modifier.size(18.dp),
                         imageVector = Icons.Default.LocationOn,
-                        contentDescription = "Location icon",
+                        contentDescription = stringResource(Res.string.location_icon_content_description),
                         tint = MaterialTheme.colorScheme.outline,
                     )
                     Text(

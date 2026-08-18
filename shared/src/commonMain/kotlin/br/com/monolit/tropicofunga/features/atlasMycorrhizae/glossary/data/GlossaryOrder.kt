@@ -1,9 +1,15 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.data
 
-// TODO internationalize
-enum class GlossaryOrder(val title: String) {
-    TERM_ASC("Term (A-Z)"),
-    TERM_DESC("Term (Z-A)"),
-    DEFINITION_ASC("Definition (A-Z)"),
-    DEFINITION_DESC("Definition (Z-A)"),
+import org.jetbrains.compose.resources.StringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.order_definition_asc
+import tropicofunga.shared.generated.resources.order_definition_desc
+import tropicofunga.shared.generated.resources.order_term_asc
+import tropicofunga.shared.generated.resources.order_term_desc
+
+enum class GlossaryOrder(val title: StringResource) {
+    TERM_ASC(Res.string.order_term_asc),
+    TERM_DESC(Res.string.order_term_desc),
+    DEFINITION_ASC(Res.string.order_definition_asc),
+    DEFINITION_DESC(Res.string.order_definition_desc),
 }
