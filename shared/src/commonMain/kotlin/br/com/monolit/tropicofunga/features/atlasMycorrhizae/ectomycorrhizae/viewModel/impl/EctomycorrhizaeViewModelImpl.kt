@@ -9,6 +9,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.dat
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeOrder
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaeViewModel
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -72,7 +73,7 @@ class EctomycorrhizaeViewModelImpl(
                         types.add(
                             EctomycorrhizaeFilter.Option(
                                 id = ectomycorrhiza.type.id,
-                                name = ectomycorrhiza.type.name
+                                name = ectomycorrhiza.type.name.toAnnotatedString()
                             )
                         )
                         hosts.add(
@@ -144,10 +145,10 @@ class EctomycorrhizaeViewModelImpl(
 
 internal fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<EctomycorrhizaItem> {
     return when (order) {
-        EctomycorrhizaeOrder.FUNGUS_ASC -> this.sortedBy { it.fungus }
-        EctomycorrhizaeOrder.FUNGUS_DESC -> this.sortedByDescending { it.fungus }
-        EctomycorrhizaeOrder.HOST_ASC -> this.sortedBy { it.host }
-        EctomycorrhizaeOrder.HOST_DESC -> this.sortedByDescending { it.host }
+        EctomycorrhizaeOrder.FUNGUS_ASC -> this.sortedBy { it.fungus.text }
+        EctomycorrhizaeOrder.FUNGUS_DESC -> this.sortedByDescending { it.fungus.text }
+        EctomycorrhizaeOrder.HOST_ASC -> this.sortedBy { it.host.text }
+        EctomycorrhizaeOrder.HOST_DESC -> this.sortedByDescending { it.host.text }
         EctomycorrhizaeOrder.TYPE_ASC -> this.sortedBy { it.type.name }
         EctomycorrhizaeOrder.TYPE_DESC -> this.sortedByDescending { it.type.name }
         EctomycorrhizaeOrder.ECOSYSTEM_ASC -> this.sortedBy { it.ecosystem }

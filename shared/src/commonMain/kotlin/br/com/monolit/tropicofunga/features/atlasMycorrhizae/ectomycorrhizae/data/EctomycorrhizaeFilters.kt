@@ -1,5 +1,6 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data
 
+import androidx.compose.ui.text.AnnotatedString
 import org.jetbrains.compose.resources.StringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.fungus
@@ -16,7 +17,7 @@ sealed interface EctomycorrhizaeFilter {
         val options: Set<Option>,
     ) : EctomycorrhizaeFilter
 
-    data class Option(val id: Uuid, val name: String)
+    data class Option(val id: Uuid, val name: AnnotatedString)
 }
 
 enum class EctomycorrhizaeFilterType(val title: StringResource) {

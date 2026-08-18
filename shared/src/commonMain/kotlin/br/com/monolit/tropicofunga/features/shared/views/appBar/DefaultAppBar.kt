@@ -12,14 +12,16 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import com.example.compose.AppTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DefaultAppBar(
-    title: String,
+    title: AnnotatedString,
     onBackPressed: () -> Unit,
     modifier: Modifier = Modifier.fillMaxWidth(),
     scrollBehavior: TopAppBarScrollBehavior? = null,
@@ -50,7 +52,7 @@ fun DefaultAppBar(
 fun DefaultAppBarPreview() {
     AppTheme(darkTheme = false) {
         DefaultAppBar(
-            title = "Test App Bar",
+            title = "Test App Bar".toAnnotatedString(),
             onBackPressed = {}
         )
     }

@@ -64,186 +64,995 @@ import tropicofunga.shared.generated.resources.transverse_section_term
 import kotlin.uuid.Uuid
 
 val examplePhoto = DataImage(
-    "files/example/example.png",
-    "Example legend"
+    path = "files/example/example.png",
+    legend = "Example legend"
 )
 
-val ectomycorrhizaTypesData = listOf(
-    EctomycorrhizaType(
-        id = Uuid.random(),
-        name = "Guapirioid"
-    )
+val guapirioidType = EctomycorrhizaType(
+    id = Uuid.random(),
+    name = "Guapirioid"
+)
+
+val ectomycorrhizaTypesData = listOf(guapirioidType)
+
+val amanitaGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Amanita"
+)
+val austroboletusGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Austroboletus"
+)
+val brasilioporusGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Brasilioporus"
+)
+val cantharellusGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Cantharellus"
+)
+val thelephoraGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Thelephora"
+)
+val inocybeGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Inocybe"
+)
+val lactifluusGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Lactifluus"
+)
+val pisolithusGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Pisolithus"
+)
+val russulaGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Russula"
+)
+val clavulinaGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Clavulina"
+)
+val cortinariusGenus = FungusSpecieGenus(
+    id = Uuid.random(),
+    name = "Cortinarius"
 )
 
 val fungusSpecieGenusListData = listOf(
-    FungusSpecieGenus(
-        id = Uuid.random(),
-        name = "Fungus Genus 1"
-    ),
-    FungusSpecieGenus(
-        id = Uuid.random(),
-        name = "Fungus Genus 2"
-    )
+    amanitaGenus,
+    austroboletusGenus,
+    brasilioporusGenus,
+    cantharellusGenus,
+    thelephoraGenus,
+    inocybeGenus,
+    lactifluusGenus,
+    pisolithusGenus,
+    russulaGenus,
+    clavulinaGenus,
+    cortinariusGenus,
 )
 
+val spEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp."
+)
+val sp1Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.1"
+)
+val sp2Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.2"
+)
+val sp3Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.3"
+)
+val sp4Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.4"
+)
+val sp5Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.5"
+)
+val sp6Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.6"
+)
+val sp7Epithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "sp.7"
+)
+val viscidoluteaEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "viscidolutea"
+)
+val festivusEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "festivus"
+)
+val quyanensisEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "quyanensis"
+)
+val calochroaEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "calochroa"
+)
+val catarinensisEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "catarinensis"
+)
+val tinctoriusEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "tinctorius"
+)
+val puiggariiEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "puiggarii"
+)
+val rubropunctatissimaEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "rubropunctatissima"
+)
+val terrestrisEpithet = FungusSpecieEpithet(
+    id = Uuid.random(),
+    name = "terrestris"
+)
+
+
 val fungusSpecieEpithetListData = listOf(
-    FungusSpecieEpithet(
-        id = Uuid.random(),
-        name = "Fungus Epithet 1"
-    ),
-    FungusSpecieEpithet(
-        id = Uuid.random(),
-        name = "Fungus Epithet 2"
-    )
+    spEpithet,
+    sp1Epithet,
+    sp2Epithet,
+    sp3Epithet,
+    sp4Epithet,
+    sp5Epithet,
+    sp6Epithet,
+    sp7Epithet,
+    viscidoluteaEpithet,
+    festivusEpithet,
+    quyanensisEpithet,
+    calochroaEpithet,
+    catarinensisEpithet,
+    tinctoriusEpithet,
+    puiggariiEpithet,
+    rubropunctatissimaEpithet,
+    terrestrisEpithet
+)
+
+val amanitaCfCalochroaSpecie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = calochroaEpithet,
+)
+val amanitaSp1Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp1Epithet,
+)
+val amanitaSp2Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp2Epithet,
+)
+val amanitaSp3Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp3Epithet,
+)
+val amanitaSp4Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp4Epithet,
+)
+val amanitaSp5Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp5Epithet,
+)
+val amanitaSp6Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp6Epithet,
+)
+val amanitaSp7Specie = FungusSpecie(
+    Uuid.random(),
+    genus = amanitaGenus,
+    epithet = sp7Epithet,
+)
+val amanitaViscidoluteaSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = amanitaGenus,
+    epithet = viscidoluteaEpithet
+)
+val austroboletusFestivusSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = austroboletusGenus,
+    epithet = festivusEpithet
+)
+val brasilioporusSpSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = brasilioporusGenus,
+    epithet = spEpithet
+)
+val cantharellusQuyanensisSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = cantharellusGenus,
+    epithet = quyanensisEpithet,
+)
+val cantharellusSpSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = cantharellusGenus,
+    epithet = spEpithet,
+)
+val thelephoraTerrestrisSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = thelephoraGenus,
+    epithet = terrestrisEpithet,
+)
+val thelephoraSp1Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = thelephoraGenus,
+    epithet = sp1Epithet,
+)
+val thelephoraSp2Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = thelephoraGenus,
+    epithet = sp2Epithet,
+)
+val thelephoraSp3Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = thelephoraGenus,
+    epithet = sp3Epithet,
+)
+val inocybeSpSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = inocybeGenus,
+    epithet = spEpithet
+)
+val clavulinaSpSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = clavulinaGenus,
+    epithet = spEpithet
+)
+val cortinariusSpSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = cortinariusGenus,
+    epithet = spEpithet
+)
+val inocybeSp1Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = inocybeGenus,
+    epithet = sp1Epithet
+)
+val inocybeSp2Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = inocybeGenus,
+    epithet = sp2Epithet
+)
+val inocybeSp3Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = inocybeGenus,
+    epithet = sp3Epithet
+)
+val lactifluusCatarinensisSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = lactifluusGenus,
+    epithet = catarinensisEpithet
+)
+val pisolithusTinctoriusSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = pisolithusGenus,
+    epithet = tinctoriusEpithet
+)
+val russulaPuiggariiSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = russulaGenus,
+    epithet = puiggariiEpithet
+)
+val russulaRubropunctatissimaSpecie = FungusSpecie(
+    id = Uuid.random(),
+    genus = russulaGenus,
+    epithet = rubropunctatissimaEpithet
+)
+val russulaSp1Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = russulaGenus,
+    epithet = sp1Epithet
+)
+val russulaSp2Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = russulaGenus,
+    epithet = sp2Epithet
+)
+val russulaSp3Specie = FungusSpecie(
+    id = Uuid.random(),
+    genus = russulaGenus,
+    epithet = sp3Epithet
 )
 
 val fungusSpeciesData = listOf(
-    FungusSpecie(
-        id = Uuid.random(),
-        genus = fungusSpecieGenusListData.random(),
-        epithet = fungusSpecieEpithetListData.random()
-    ),
-    FungusSpecie(
-        id = Uuid.random(),
-        genus = fungusSpecieGenusListData.random(),
-        epithet = fungusSpecieEpithetListData.random()
-    )
+    amanitaCfCalochroaSpecie,
+    amanitaSp1Specie,
+    amanitaSp2Specie,
+    amanitaSp3Specie,
+    amanitaSp4Specie,
+    amanitaSp5Specie,
+    amanitaSp6Specie,
+    amanitaSp7Specie,
+    amanitaViscidoluteaSpecie,
+    austroboletusFestivusSpecie,
+    brasilioporusSpSpecie,
+    cantharellusQuyanensisSpecie,
+    cantharellusSpSpecie,
+    thelephoraTerrestrisSpecie,
+    thelephoraSp1Specie,
+    thelephoraSp2Specie,
+    thelephoraSp3Specie,
+    inocybeSpSpecie,
+    clavulinaSpSpecie,
+    cortinariusSpSpecie,
+    inocybeSp1Specie,
+    inocybeSp2Specie,
+    inocybeSp3Specie,
+    lactifluusCatarinensisSpecie,
+    pisolithusTinctoriusSpecie,
+    russulaPuiggariiSpecie,
+    russulaRubropunctatissimaSpecie,
+    russulaSp1Specie,
+    russulaSp2Specie,
+    russulaSp3Specie
+)
+
+val thelephoraceaeSpFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Thelephoraceae sp.",
+)
+val thelephoraceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Thelephoraceae"
+)
+val amanitaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Amanitaceae"
+)
+val boletaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Boletaceae"
+)
+val cantharellaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Cantharellaceae"
+)
+val hydnaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Hydnaceae"
+)
+val cortinariaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Cortinariaceae"
+)
+val inocybaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Inocybaceae"
+)
+val russulaceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Russulaceae"
+)
+val sclerodermataceaeFamily = FungusFamily(
+    id = Uuid.random(),
+    name = "Sclerodermataceae"
 )
 
 val fungusFamiliesData = listOf(
-    FungusFamily(
-        id = Uuid.random(),
-        name = "Fungus Family 1"
-    ),
-    FungusFamily(
-        id = Uuid.random(),
-        name = "Fungus Family 2"
-    ),
+    thelephoraceaeSpFamily,
+    thelephoraceaeFamily,
+    amanitaceaeFamily,
+    boletaceaeFamily,
+    cantharellaceaeFamily,
+    hydnaceaeFamily,
+    cortinariaceaeFamily,
+    inocybaceaeFamily,
+    russulaceaeFamily,
+    sclerodermataceaeFamily,
+)
+
+val amanitaCfCalochroaAmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaCfCalochroaSpecie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-cf- calochroa.png",
+        legend = "amanita-cf- calochroa",
+    )
+)
+val amanitaSp1AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp1Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-1.png",
+        legend = "amanita-sp-1",
+    )
+)
+val amanitaSp2AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp2Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-2.png",
+        legend = "amanita-sp-2",
+    )
+)
+val amanitaSp3AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp3Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-3.png",
+        legend = "amanita-sp-3",
+    )
+)
+val amanitaSp4AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp4Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-4.png",
+        legend = "amanita-sp-4",
+    )
+)
+val amanitaSp5AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp5Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-5.png",
+        legend = "amanita-sp-5",
+    )
+)
+val amanitaSp6AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp6Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-6.png",
+        legend = "amanita-sp-6",
+    )
+)
+val amanitaSp7AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp7Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-7.png",
+        legend = "amanita-sp-7",
+    )
+)
+val amanitaViscidoluteaAmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaViscidoluteaSpecie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-viscidolutea.png",
+        legend = "amanita-viscidolutea",
+    )
+)
+val austroboletusFestivusBoletaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = austroboletusFestivusSpecie,
+    family = boletaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/austroboletus-festivus.png",
+        legend = "austroboletus-festivus",
+    )
+)
+val brasilioporusSpBoletaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = brasilioporusSpSpecie,
+    family = boletaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/brasilioporus-sp.png",
+        legend = "brasilioporus-sp",
+    )
+)
+val cantharellusQuyanensisCantharellaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = cantharellusQuyanensisSpecie,
+    family = cantharellaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/cantharellus-guyanensis.png",
+        legend = "cantharellus-guyanensis",
+    )
+)
+val cantharellusSpCantharellaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = cantharellusSpSpecie,
+    family = cantharellaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/cantharellus-sp.png",
+        legend = "cantharellus-sp",
+    )
+)
+val clavulinaSpHydnaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = clavulinaSpSpecie,
+    family = hydnaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/clavulina-sp.png",
+        legend = "clavulina-sp",
+    )
+)
+val cortinariusSpCortinariaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = cortinariusSpSpecie,
+    family = cortinariaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/cortinarius-sp.png",
+        legend = "cortinarius-sp",
+    )
+)
+val inocybeSp1InocybaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = inocybeSp1Specie,
+    family = inocybaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/inocybe-sp-1.png",
+        legend = "inocybe-sp-1",
+    )
+)
+val inocybeSp2InocybaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = inocybeSp2Specie,
+    family = inocybaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/inocybe-sp-2.png",
+        legend = "inocybe-sp-2",
+    )
+)
+val inocybeSp3InocybaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = inocybeSp3Specie,
+    family = inocybaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/inocybe-sp-3.png",
+        legend = "inocybe-sp-3",
+    )
+)
+val lactifluusCatarinensisRussulaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = lactifluusCatarinensisSpecie,
+    family = russulaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/lactifluus-catarinensis.png",
+        legend = "lactifluus-catarinensis",
+    )
+)
+val pisolithusTinctoriusSclerodermataceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = pisolithusTinctoriusSpecie,
+    family = sclerodermataceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/pisolithus-tinctorius.png",
+        legend = "pisolithus-tinctorius",
+    )
+)
+val russulaPuiggariiRussulaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = russulaPuiggariiSpecie,
+    family = russulaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/russula-puiggarii.png",
+        legend = "russula-puiggarii",
+    )
+)
+val russulaRubropunctatissimaRussulaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = russulaRubropunctatissimaSpecie,
+    family = russulaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/russula-rubropunctatissima.png",
+        legend = "russula-rubropunctatissima",
+    )
+)
+val russulaSp1RussulaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = russulaSp1Specie,
+    family = russulaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/russula-sp-1.png",
+        legend = "russula-sp-1",
+    )
+)
+val russulaSp2RussulaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = russulaSp2Specie,
+    family = russulaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/russula-sp-2.png",
+        legend = "russula-sp-2",
+    )
+)
+val russulaSp3RussulaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = russulaSp3Specie,
+    family = russulaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/russula-sp-3.png",
+        legend = "russula-sp-3",
+    )
+)
+val thelephoraTerrestrisThelephoraceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = thelephoraTerrestrisSpecie,
+    family = thelephoraceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/thelephora-terrestris.png",
+        legend = "thelephora-terrestris",
+    )
+)
+val thelephoraSp1ThelephoraceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = thelephoraSp1Specie,
+    family = thelephoraceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/thelephora-sp-1.png",
+        legend = "thelephora-sp-1",
+    )
+)
+val thelephoraSp2ThelephoraceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = thelephoraSp2Specie,
+    family = thelephoraceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/thelephora-sp-2.png",
+        legend = "thelephora-sp-2",
+    )
+)
+val thelephoraSp3ThelephoraceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = thelephoraSp3Specie,
+    family = thelephoraceaeFamily,
+    image = null,
+)
+val thelephoraceaeSpFungus = Fungus(
+    id = Uuid.random(),
+    specie = null,
+    family = thelephoraceaeSpFamily,
+    image = null,
+)
+val inocybeSpInocybaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = inocybeSpSpecie,
+    family = inocybaceaeFamily,
+    image = null,
 )
 
 val fungiData = listOf(
-    Fungus(
-        id = Uuid.random(),
-        specie = fungusSpeciesData.random(),
-        family = fungusFamiliesData.random(),
-        image = examplePhoto,
-    ),
-    Fungus(
-        id = Uuid.random(),
-        specie = fungusSpeciesData.random(),
-        family = fungusFamiliesData.random(),
-        image = examplePhoto,
-    ),
+    amanitaCfCalochroaAmanitaceaeFungus,
+    amanitaViscidoluteaAmanitaceaeFungus,
+    amanitaSp1AmanitaceaeFungus,
+    amanitaSp2AmanitaceaeFungus,
+    amanitaSp3AmanitaceaeFungus,
+    amanitaSp4AmanitaceaeFungus,
+    amanitaSp5AmanitaceaeFungus,
+    amanitaSp6AmanitaceaeFungus,
+    amanitaSp7AmanitaceaeFungus,
+    austroboletusFestivusBoletaceaeFungus,
+    brasilioporusSpBoletaceaeFungus,
+    cantharellusQuyanensisCantharellaceaeFungus,
+    cantharellusSpCantharellaceaeFungus,
+    clavulinaSpHydnaceaeFungus,
+    cortinariusSpCortinariaceaeFungus,
+    inocybeSp1InocybaceaeFungus,
+    inocybeSp2InocybaceaeFungus,
+    inocybeSp3InocybaceaeFungus,
+    lactifluusCatarinensisRussulaceaeFungus,
+    pisolithusTinctoriusSclerodermataceaeFungus,
+    russulaPuiggariiRussulaceaeFungus,
+    russulaRubropunctatissimaRussulaceaeFungus,
+    russulaSp1RussulaceaeFungus,
+    russulaSp2RussulaceaeFungus,
+    russulaSp3RussulaceaeFungus,
+    thelephoraTerrestrisThelephoraceaeFungus,
+    thelephoraSp1ThelephoraceaeFungus,
+    thelephoraSp2ThelephoraceaeFungus,
+)
+
+val guapiraGenus = HostSpecieGenus(
+    id = Uuid.random(),
+    name = "Guapira"
 )
 
 val hostSpecieGenusListData = listOf(
-    HostSpecieGenus(
-        id = Uuid.random(),
-        name = "Host Genus 1"
-    ),
-    HostSpecieGenus(
-        id = Uuid.random(),
-        name = "Host Genus 2"
-    )
+    guapiraGenus
+)
+
+val oppositaEpithet = HostSpecieEpithet(
+    id = Uuid.random(),
+    name = "opposita"
 )
 
 val hostSpecieEpithetListData = listOf(
-    HostSpecieEpithet(
-        id = Uuid.random(),
-        name = "Host Epithet 1"
-    ),
-    HostSpecieEpithet(
-        id = Uuid.random(),
-        name = "Host Epithet 2"
-    )
+    oppositaEpithet
+)
+
+val guapiraOppositaSpecie = HostSpecie(
+    id = Uuid.random(),
+    genus = guapiraGenus,
+    epithet = oppositaEpithet
 )
 
 val hostSpeciesData = listOf(
-    HostSpecie(
-        id = Uuid.random(),
-        genus = hostSpecieGenusListData.random(),
-        epithet = hostSpecieEpithetListData.random()
-    ),
-    HostSpecie(
-        id = Uuid.random(),
-        genus = hostSpecieGenusListData.random(),
-        epithet = hostSpecieEpithetListData.random()
-    )
+    guapiraOppositaSpecie
+)
+
+val nyctaginaceaeFamily = HostFamily(
+    id = Uuid.random(),
+    name = "Nyctaginaceae"
 )
 
 val hostFamiliesData = listOf(
-    HostFamily(
-        id = Uuid.random(),
-        name = "Host Family 1"
-    ),
-    HostFamily(
-        id = Uuid.random(),
-        name = "Host Family 2"
-    )
+    nyctaginaceaeFamily
+)
+
+val guapiraOppositaNyctaginaceaeHost = Host(
+    id = Uuid.random(),
+    specie = guapiraOppositaSpecie,
+    family = nyctaginaceaeFamily,
+    image = null,
 )
 
 val hostsData = listOf(
-    Host(
-        id = Uuid.random(),
-        specie = hostSpeciesData.random(),
-        family = hostFamiliesData.random(),
-        image = examplePhoto
-    ),
-    Host(
-        id = Uuid.random(),
-        specie = hostSpeciesData.random(),
-        family = hostFamiliesData.random(),
-        image = examplePhoto
-    )
+    guapiraOppositaNyctaginaceaeHost,
 )
 
 val ectomycorrhizaeData = listOf(
     Ectomycorrhiza(
         id = Uuid.random(),
-        fungus = fungiData.random(),
-        host = hostsData.random(),
-        type = ectomycorrhizaTypesData.random(),
-        colorDescription = "",
-        hartigNet = HartigNet.entries.random(),
+        fungus = clavulinaSpHydnaceaeFungus,
+        host = guapiraOppositaNyctaginaceaeHost,
+        type = guapirioidType,
+        colorDescription = "light brown to yellowish-brown",
+        hartigNet = HartigNet.ABSENT,
         mantleThickness = "25 µm",
-        hyphaeMantle = HyphaeMantle.entries.random(),
-        outerMantleLayer = OuterMantleLayer.entries.random(),
-        hyphalStrands = HyphalStrands.entries.random(),
-        ecosystem = "Restinga, Brazil",
-        genBankAccessionNumbers = listOf("AB123456", "CD789012"),
-        references = listOf("Manuscript submitted for publication"),
-        morphologicalCharacters = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate, ex ornare accumsan imperdiet, turpis ex iaculis nibh, id tempus enim enim nec metus. Aliquam nec dui sed sem tristique elementum. Nam molestie tellus mi, et feugiat diam faucibus eu. Mauris imperdiet ac purus at iaculis. Aenean bibendum sapien nunc, ultrices porttitor tellus facilisis quis. Cras rhoncus viverra neque, in egestas massa tempus at. Mauris placerat purus a tempus congue. Nam tristique lacinia ex. Maecenas finibus convallis metus eget finibus. Ut gravida quam sed quam tempor venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam convallis vitae nisi condimentum sagittis. Etiam quis lectus placerat, tristique nunc sed, elementum sapien.",
-        mantleAnatomicalCharacters = "Proin rutrum, mauris non convallis efficitur, felis mauris ultricies velit, non malesuada quam risus in lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed tristique urna eget varius cursus. Nullam venenatis nunc ac quam ullamcorper facilisis. Nullam ultricies interdum lacus a congue. Praesent accumsan consectetur quam in blandit. Mauris imperdiet nibh auctor, hendrerit sapien at, porta mauris. Vivamus convallis nunc nec maximus porttitor. Mauris laoreet, orci ut consequat dignissim, arcu orci condimentum tortor, id condimentum metus nulla eu enim.",
+        hyphaeMantle = HyphaeMantle.CLAMPLESS,
+        outerMantleLayer = OuterMantleLayer.PLECTENCHYMATOUS,
+        hyphalStrands = HyphalStrands.PRESENT,
+        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        genBankAccessionNumbers = listOf("PX105292", "PX105293"),
+        references = listOf("Slodkowski et al., unpublished data"),
+        morphologicalCharacters = "Ectomycorrhizal system is simple, sometimes irregularly pinnate, with no branching at the root tips. Some roots are not completely covered by the mantle. Colonized roots measure 1.5–5.5 mm in length and 0.1–0.2 mm in thickness. The mantle is 25 μm thick, mantle surface smooth, light brown to yellowish-brown (2.5Y 8/10; 2.5Y 8/8) and parts brown (5YR 1/1), with tips that are straight or occasionally curved (Fig. 1. A-C).",
+        mantleAnatomicalCharacters = "Outer mantle layer plectenchymatous in plane view. Hyphae 3.0–5.0(–7.0) μm thick, hyaline, smooth, thin-walled, agglutinated; clampless (Fig. 1. C). Emanating hyphae hyaline, thin-walled, 3.0–5.0 µm in diameter, clamped. Hyphal strands undifferentiated with smooth margins (Fig. 1. D). Cystidia not observed.",
         images = listOf(
-            examplePhoto,
-            examplePhoto,
-            examplePhoto,
-            examplePhoto
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/clavulina/clavulina_A.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/clavulina/clavulina_B.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/clavulina/clavulina_C.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/clavulina/clavulina_D.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/clavulina/clavulina_E.png",
+                legend = "Example legend"
+            ),
         )
     ),
     Ectomycorrhiza(
         id = Uuid.random(),
-        fungus = fungiData.random(),
-        host = hostsData.random(),
-        type = ectomycorrhizaTypesData.random(),
-        colorDescription = "",
-        hartigNet = HartigNet.entries.random(),
-        mantleThickness = "25 µm",
-        hyphaeMantle = HyphaeMantle.entries.random(),
-        outerMantleLayer = OuterMantleLayer.entries.random(),
-        hyphalStrands = HyphalStrands.entries.random(),
-        ecosystem = "Restinga, Brazil",
-        genBankAccessionNumbers = listOf("AB123456", "CD789012"),
-        references = listOf("Manuscript submitted for publication"),
-        morphologicalCharacters = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate, ex ornare accumsan imperdiet, turpis ex iaculis nibh, id tempus enim enim nec metus. Aliquam nec dui sed sem tristique elementum. Nam molestie tellus mi, et feugiat diam faucibus eu. Mauris imperdiet ac purus at iaculis. Aenean bibendum sapien nunc, ultrices porttitor tellus facilisis quis. Cras rhoncus viverra neque, in egestas massa tempus at. Mauris placerat purus a tempus congue. Nam tristique lacinia ex. Maecenas finibus convallis metus eget finibus. Ut gravida quam sed quam tempor venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam convallis vitae nisi condimentum sagittis. Etiam quis lectus placerat, tristique nunc sed, elementum sapien.",
-        mantleAnatomicalCharacters = "Proin rutrum, mauris non convallis efficitur, felis mauris ultricies velit, non malesuada quam risus in lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed tristique urna eget varius cursus. Nullam venenatis nunc ac quam ullamcorper facilisis. Nullam ultricies interdum lacus a congue. Praesent accumsan consectetur quam in blandit. Mauris imperdiet nibh auctor, hendrerit sapien at, porta mauris. Vivamus convallis nunc nec maximus porttitor. Mauris laoreet, orci ut consequat dignissim, arcu orci condimentum tortor, id condimentum metus nulla eu enim.",
+        fungus = inocybeSpInocybaceaeFungus,
+        host = guapiraOppositaNyctaginaceaeHost,
+        type = guapirioidType,
+        colorDescription = "yellowish-white with tips greyish-purple",
+        hartigNet = HartigNet.ABSENT,
+        mantleThickness = "25–50 μm",
+        hyphaeMantle = HyphaeMantle.CLAMPLESS,
+        outerMantleLayer = OuterMantleLayer.PLECTENCHYMATOUS,
+        hyphalStrands = HyphalStrands.ABSENT,
+        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        genBankAccessionNumbers = listOf("PX097979", "PX097982"),
+        references = listOf("Slodkowski et al., unpublished data"),
+        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, sometimes dichotomous, measuring approximately 15 mm in length and 0.1–0.3 mm in thickness. The mantle is 25–50 μm thick, mantle surface smooth, yellowish-white (10YR 9/2) with tips greyish-purple (2.5P 9/4), tips are straight, curved, or occasionally tortuous (Fig.2 A-C). ",
+        mantleAnatomicalCharacters = "Outer mantle layer plectenchymatous, irregular hyphae growing over the mantle surface. Hyphae 3.0–5.0 μm thick, hyaline, smooth, thin-walled, clampless (Fig. 2. E). Emanating hyphae hyaline, 2.0–4.0 µm in diameter, ramified; clampless. Hyphal strands absent. Cystidia not observed.",
         images = listOf(
-            examplePhoto,
-            examplePhoto,
-            examplePhoto,
-            examplePhoto
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/inocybe/inocybe_A.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/inocybe/inocybe_B.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/inocybe/inocybe_C.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/inocybe/inocybe_D.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/inocybe/inocybe_E.png",
+                legend = "Example legend"
+            ),
         )
-    )
+    ),
+    Ectomycorrhiza(
+        id = Uuid.random(),
+        fungus = thelephoraceaeSpFungus,
+        host = guapiraOppositaNyctaginaceaeHost,
+        type = guapirioidType,
+        colorDescription = "light brown or yellowish-brown",
+        hartigNet = HartigNet.ABSENT,
+        mantleThickness = "25–50 μm",
+        hyphaeMantle = HyphaeMantle.CLAMPLESS,
+        outerMantleLayer = OuterMantleLayer.PLECTENCHYMATOUS,
+        hyphalStrands = HyphalStrands.ABSENT,
+        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        genBankAccessionNumbers = listOf(
+            "PX097976",
+            "PX097977",
+            "PX097978",
+            "PX097980",
+            "PX097981"
+        ),
+        references = listOf("Slodkowski et al., unpublished data"),
+        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, and colonization occurs in secondary and tertiary roots. Colonized roots measure 0.5–5.7 mm in length and 0.1–0.3 mm in thickness. The mantle is 25–50 μm thick, mantle surface smooth, light brown (7.5YR 3/6) or yellowish-brown (2.5Y 8/8), and tips straight or slightly curved (Fig. 3. A-D).",
+        mantleAnatomicalCharacters = "Outer mantle layer plectenchymatous in plane view. Hyphae 3.0–6.0 μm thick, orangish-brown (7.5Y 6/6), smooth, thin-walled, agglutinated; clampless (Fig. 3. E). Emanating hyphae hyaline, clamped, thin-walled, 3.0–5.0 µm in diameter, clamped. Hyphal strands absent. Cystidia not observed.",
+        images = listOf(
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_A.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_B.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_C.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_D.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_E.png",
+                legend = "Example legend"
+            ),
+        )
+    ),
+    Ectomycorrhiza(
+        id = Uuid.random(),
+        fungus = thelephoraSp1ThelephoraceaeFungus,
+        host = guapiraOppositaNyctaginaceaeHost,
+        type = guapirioidType,
+        colorDescription = "dark brown",
+        hartigNet = HartigNet.ABSENT,
+        mantleThickness = "10–25 μm",
+        hyphaeMantle = HyphaeMantle.CLAMPLESS,
+        outerMantleLayer = OuterMantleLayer.TRANSITIONAL,
+        hyphalStrands = HyphalStrands.PRESENT,
+        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        genBankAccessionNumbers = listOf("PX097971", "PX097972", "PX097973 "),
+        references = listOf("Slodkowski et al., unpublished data"),
+        morphologicalCharacters = "Ectomycorrhizal system is simple and monopodial-pinnate, occasionally dichotomous. Colonized tertiary roots measure 1–7.5 mm in length and 0.1–0.3 mm in thickness. Colonization of quaternary roots was also observed, with spacing of 1.8–2.5 mm and thickness of approximately 0.4 mm. The mantle surface is 10–25 μm thick, mantle surface smooth, dark brown (2.5YR 1/1) at the base and median region, becoming brown (2.5YR 1/2) toward the slightly curved, unbranched tips (Fig. 4. A-C).",
+        mantleAnatomicalCharacters = "Outer mantle layer transitional type between plectenchymatous and pseudoparenchymatous in plane view. Hyphae irregularly shaped, yellowish-brown (2.5Y 5/6), 5,0–7,0 μm in diameter, slightly thin-walled, smooth (Fig. 4. D). Emanating hyphae 3.0–5.0 μm thick, brown, thick-walled (1.0 μm thick), clamped. Hyphal strands can be present or be less evident, formed by irregular, wavy hyphae of the uniform diameter, clamped (Fig. 4. E). Cystidia not observed.",
+        images = listOf(
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_A.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_B.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_C.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_D.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_E.png",
+                legend = "Example legend"
+            ),
+        )
+    ),
+    Ectomycorrhiza(
+        id = Uuid.random(),
+        fungus = thelephoraSp2ThelephoraceaeFungus,
+        host = guapiraOppositaNyctaginaceaeHost,
+        type = guapirioidType,
+        colorDescription = "brown to light brown at the tips",
+        hartigNet = HartigNet.ABSENT,
+        mantleThickness = "20–25 μm",
+        hyphaeMantle = HyphaeMantle.CLAMPLESS,
+        outerMantleLayer = OuterMantleLayer.TRANSITIONAL,
+        hyphalStrands = HyphalStrands.PRESENT,
+        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        genBankAccessionNumbers = listOf("PX097974", "PX097975"),
+        references = listOf("Slodkowski et al., unpublished data"),
+        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, measuring 0.7–11.8 mm in length and 0.1–0.3 mm in thickness. The mantle is 20–25 μm thick, mantle surface smooth, brown (5YR 1/1) to light brown at the tips (7.5YR 3/6), and dark brown (7.5YR 1/1) above the tip, the tips are straight, tortuous, or curved (Fig. 5. A-C).",
+        mantleAnatomicalCharacters = "Outer mantle layer transitional type between plectenchymatous and pseudoparenchymatous in plane view. Hyphae 5.0–8.0 μm thick, brownish (10YR 5/6), smooth, thin-walled, agglutinated; clampless. Emanating hyphae brownish, thick-walled (1.0 μm thick), (2.0–)3.0–4.0 µm in diameter, ramified; sometimes filled with homogeneous brown content; clamped (Fig. 5. D). Hyphal strands densely interwoven and aggregated, formed by brown hyphae: one central hyphae, 7.0–10.0 μm in diameter, thick-walled (1 μm thick), clamped; peripheral brown hyphae, 3.0–4.0 μm in diameter, slightly thickened walls, tortuous, densely woven, branched, clamped (Fig. 5. E). Cystidia not observed.",
+        images = listOf(
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_A.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_B.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_C.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_D.png",
+                legend = "Example legend"
+            ),
+            DataImage(
+                path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_E.png",
+                legend = "Example legend"
+            ),
+        )
+    ),
+//    Ectomycorrhiza(
+//        id = Uuid.random(),
+//        fungus = thelephoraSp3Thelephoraceae,
+//        host = guapiraOppositaNyctaginaceae,
+//        type = guapirioid,
+//        colorDescription = "reddish-brown",
+//        hartigNet = HartigNet.ABSENT,
+//        mantleThickness = "20–25 μm",
+//        hyphaeMantle = HyphaeMantle.CLAMPLESS,
+//        outerMantleLayer = OuterMantleLayer.TRANSITIONAL,
+//        hyphalStrands = HyphalStrands.PRESENT,
+//        ecosystem = "Restinga, Mata Atlântica, Brazil",
+//        genBankAccessionNumbers = listOf(),
+//        references = listOf("Slodkowski et al., unpublished data"),
+//        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, measuring 0.7–11.8 mm in length and 0.1–0.3 mm in thickness. The mantle is 20–25 μm thick, mantle surface smooth, brown (5YR 1Secondary root branching with evident ECMg and root hairs, reddish-brown (2.5YR 1/2) or light brown in color. Colonization of secondary, tertiary, and quaternary roots, irregular pinnate ectomycorrhizal system, without branching at the root tips. Mantle with irregular surface, straight, tortuous, or curved tips, dark brown in color (Fig. 6. A-D). ",
+//        mantleAnatomicalCharacters = "",
+//        images = listOf(
+//            DataImage(
+//                path = "files/atlas/ectomycorrhiza/thelephora-sp-3/thelephora-sp-3_A.png",
+//                legend = "Example legend"
+//            ),
+//            DataImage(
+//                path = "files/atlas/ectomycorrhiza/thelephora-sp-3/thelephora-sp-3_B.png",
+//                legend = "Example legend"
+//            ),
+//            DataImage(
+//                path = "files/atlas/ectomycorrhiza/thelephora-sp-3/thelephora-sp-3_C.png",
+//                legend = "Example legend"
+//            ),
+//            DataImage(
+//                path = "files/atlas/ectomycorrhiza/thelephora-sp-3/thelephora-sp-3_D.png",
+//                legend = "Example legend"
+//            ),
+//            DataImage(
+//                path = "files/atlas/ectomycorrhiza/thelephora-sp-3/thelephora-sp-3_E.png",
+//                legend = "Example legend"
+//            ),
+//        )
+//    ),
 )
 
 val glossaryData = listOf(
@@ -353,4 +1162,3 @@ val glossaryData = listOf(
         definition = Res.string.outer_surface_of_mantle_definition
     ),
 )
-

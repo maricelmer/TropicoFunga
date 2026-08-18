@@ -42,6 +42,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.features.shared.views.DefaultScaffold
 import br.com.monolit.tropicofunga.features.shared.views.appBar.DefaultAppBar
 import com.example.compose.AppTheme
@@ -68,7 +69,7 @@ fun HowToCollectView(
         modifier = modifier,
         topBar = {
             DefaultAppBar(
-                title = "How to collect and identify", // TODO internationalize
+                title = "How to collect and identify".toAnnotatedString(), // TODO internationalize
                 onBackPressed = onBackPressed,
             )
         },

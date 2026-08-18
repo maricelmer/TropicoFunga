@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaDetailsViewState
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.features.shared.views.DefaultDetailsView
 import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
 import br.com.monolit.tropicofunga.features.shared.views.ImagePathCollectionView
@@ -51,7 +52,7 @@ fun EctomycorrhizaDetailsView(
 
                 is EctomycorrhizaDetailsViewState.Error,
                 EctomycorrhizaDetailsViewState.Loading -> {
-                    ""
+                    "".toAnnotatedString()
                 }
             }
         }

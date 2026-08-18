@@ -35,7 +35,9 @@ fun HostItemView(
         mutableStateOf(ByteArray(0))
     }
     LaunchedEffect(Unit) {
-        bytes = Res.readBytes(item.image.path)
+        item.image?.let {
+            bytes = Res.readBytes(it.path)
+        }
     }
 
     ElevatedCard(modifier = modifier) {

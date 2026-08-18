@@ -1,5 +1,10 @@
 package br.com.monolit.tropicofunga.data.fungus
 
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.withStyle
 import kotlin.uuid.Uuid
 
 data class FungusSpecie(
@@ -7,8 +12,12 @@ data class FungusSpecie(
     val genus: FungusSpecieGenus,
     val epithet: FungusSpecieEpithet,
 ) {
-    val name: String
-        get() = "${genus.name} ${epithet.name}"
+    val name: AnnotatedString
+        get() = buildAnnotatedString {
+            withStyle(style = SpanStyle(fontStyle = FontStyle.Italic)) {
+                append("${genus.name} ${epithet.name}")
+            }
+        }
 }
 
 

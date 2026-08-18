@@ -7,6 +7,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiFil
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiOrder
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.viewModel.FungiViewModel
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -62,16 +63,18 @@ class FungiViewModelImpl(
                     val families = mutableSetOf<FungiFilter.Option>()
 
                     fungi.forEach { fungus ->
-                        specie.add(
-                            FungiFilter.Option(
-                                id = fungus.specie.id,
-                                name = fungus.specie.name
+                        fungus.specie?.let {
+                            specie.add(
+                                FungiFilter.Option(
+                                    id = it.id,
+                                    name = it.name
+                                )
                             )
-                        )
+                        }
                         families.add(
                             FungiFilter.Option(
                                 id = fungus.family.id,
-                                name = fungus.family.name
+                                name = fungus.family.name.toAnnotatedString()
                             )
                         )
                     }
@@ -124,10 +127,10 @@ class FungiViewModelImpl(
 
 internal fun List<Fungus>.order(order: FungiOrder): List<Fungus> {
     return when (order) {
-        FungiOrder.NAME_ASC -> this.sortedBy { it.name }
-        FungiOrder.NAME_DESC -> this.sortedByDescending { it.name }
-        FungiOrder.SPECIE_ASC -> this.sortedBy { it.specie.name }
-        FungiOrder.SPECIE_DESC -> this.sortedByDescending { it.specie.name }
+        FungiOrder.NAME_ASC -> this.sortedBy { it.name.text }
+        FungiOrder.NAME_DESC -> this.sortedByDescending { it.name.text }
+        FungiOrder.SPECIE_ASC -> this.sortedBy { it.specie?.name?.text }
+        FungiOrder.SPECIE_DESC -> this.sortedByDescending { it.specie?.name?.text }
         FungiOrder.FAMILY_ASC -> this.sortedBy { it.family.name }
         FungiOrder.FAMILY_DESC -> this.sortedByDescending { it.family.name }
     }
@@ -142,7 +145,7 @@ internal fun List<Fungus>.filter(
     val familyFilter = filters[FungiFilterType.FAMILY] as? FungiFilter.MultipleSelection
 
     val filteredByFilters = this.filter { item ->
-        val specieOk = specieFilter?.selected?.let { it.isEmpty() || item.specie.id in it } ?: true
+        val specieOk = specieFilter?.selected?.let { it.isEmpty() || item.specie?.id in it } ?: true
         val familyOk = familyFilter?.selected?.let { it.isEmpty() || item.family.id in it } ?: true
         specieOk && familyOk
     }
@@ -151,7 +154,7 @@ internal fun List<Fungus>.filter(
 
     val q = query.lowercase()
     return filteredByFilters.filter { item ->
-        item.name.lowercase().contains(q)
+        item.name.text.lowercase().contains(q)
     }
 }
 

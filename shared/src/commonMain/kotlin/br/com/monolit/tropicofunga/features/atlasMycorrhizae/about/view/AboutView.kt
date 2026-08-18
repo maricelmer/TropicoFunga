@@ -31,6 +31,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.features.shared.views.DefaultScaffold
 import br.com.monolit.tropicofunga.features.shared.views.EmailLinkText
 import br.com.monolit.tropicofunga.features.shared.views.appBar.DefaultAppBar
@@ -51,7 +52,7 @@ fun AboutView(
         modifier = modifier,
         topBar = {
             DefaultAppBar(
-                title = "About",
+                title = "About".toAnnotatedString(),
                 onBackPressed = onBackPressed,
             )
         },

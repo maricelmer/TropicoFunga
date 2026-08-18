@@ -1,5 +1,6 @@
 package br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data
 
+import androidx.compose.ui.text.AnnotatedString
 import org.jetbrains.compose.resources.StringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.family
@@ -15,7 +16,7 @@ sealed interface HostsFilter {
         val options: Set<Option>,
     ) : HostsFilter
 
-    data class Option(val id: Uuid, val name: String)
+    data class Option(val id: Uuid, val name: AnnotatedString)
 }
 
 enum class HostsFilterType(val title: StringResource) {

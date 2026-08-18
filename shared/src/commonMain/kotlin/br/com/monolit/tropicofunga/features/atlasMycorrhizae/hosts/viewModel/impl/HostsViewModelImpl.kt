@@ -7,6 +7,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsFil
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsOrder
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.HostsViewModel
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -69,7 +70,7 @@ class HostsViewModelImpl(
                         families.add(
                             HostsFilter.Option(
                                 id = host.family.id,
-                                name = host.family.name
+                                name = host.family.name.toAnnotatedString()
                             )
                         )
                     }
@@ -122,10 +123,10 @@ class HostsViewModelImpl(
 
 internal fun List<Host>.order(order: HostsOrder): List<Host> {
     return when (order) {
-        HostsOrder.NAME_ASC -> this.sortedBy { it.name }
-        HostsOrder.NAME_DESC -> this.sortedByDescending { it.name }
-        HostsOrder.SPECIE_ASC -> this.sortedBy { it.specie.name }
-        HostsOrder.SPECIE_DESC -> this.sortedByDescending { it.specie.name }
+        HostsOrder.NAME_ASC -> this.sortedBy { it.name.text }
+        HostsOrder.NAME_DESC -> this.sortedByDescending { it.name.text }
+        HostsOrder.SPECIE_ASC -> this.sortedBy { it.specie.name.text }
+        HostsOrder.SPECIE_DESC -> this.sortedByDescending { it.specie.name.text }
         HostsOrder.FAMILY_ASC -> this.sortedBy { it.family.name }
         HostsOrder.FAMILY_DESC -> this.sortedByDescending { it.family.name }
     }
@@ -149,7 +150,7 @@ internal fun List<Host>.filter(
 
     val q = query.lowercase()
     return filteredByFilters.filter { item ->
-        item.name.lowercase().contains(q)
+        item.name.text.lowercase().contains(q)
     }
 }
 

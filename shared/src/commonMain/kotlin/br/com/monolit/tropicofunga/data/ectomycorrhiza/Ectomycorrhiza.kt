@@ -1,5 +1,7 @@
 package br.com.monolit.tropicofunga.data.ectomycorrhiza
 
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.buildAnnotatedString
 import br.com.monolit.tropicofunga.data.DataImage
 import br.com.monolit.tropicofunga.data.fungus.Fungus
 import br.com.monolit.tropicofunga.data.host.Host
@@ -23,14 +25,18 @@ data class Ectomycorrhiza(
     val mantleAnatomicalCharacters: String,
     val images: List<DataImage>
 ) {
-    val name: String
-        get() = "${fungus.name} + ${host.name}"
+    val name: AnnotatedString
+        get() = buildAnnotatedString{
+            append(fungus.name)
+            append(" + ")
+            append(host.name)
+        }
 }
 
 data class EctomycorrhizaItem(
     val id: Uuid,
-    val fungus: String,
-    val host: String,
+    val fungus: AnnotatedString,
+    val host: AnnotatedString,
     val type: EctomycorrhizaType,
     val ecosystem: String,
     val image: DataImage?,
