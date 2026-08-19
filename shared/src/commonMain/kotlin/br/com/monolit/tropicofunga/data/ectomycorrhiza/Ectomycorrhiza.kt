@@ -21,7 +21,7 @@ data class Ectomycorrhiza(
     val ecosystem: String,
     val genBankAccessionNumbers: List<String>,
     val references: List<String>,
-    val morphologicalCharacters: String,
+    val morphologicalCharacters: String, // TODO StringResource
     val mantleAnatomicalCharacters: String,
     val images: List<DataImage>
 ) {

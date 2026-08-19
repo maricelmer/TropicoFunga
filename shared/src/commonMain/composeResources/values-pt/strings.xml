@@ -218,4 +218,67 @@
     <string name="failed_to_load_glossary_error">Falha ao carregar glossário</string>
     <string name="ectomycorrhiza_not_found_error">Ectomicorriza não encontrada</string>
     <string name="failed_to_load_ectomycorrhiza_error">Falha ao carregar ectomicorriza</string>
+
+    <!-- Image legends -->
+    <string name="example_legend">Legenda de exemplo</string>
+    <string name="photo_by_format">Foto: %1$s</string>
+
+    <string name="fungus_legend_amanita_cf_calochroa">&lt;i&gt;Amanita cf. calochroa&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_viscidolutea">&lt;i&gt;Amanita viscidolutea&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp1">&lt;i&gt;Amanita sp.1&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp2">&lt;i&gt;Amanita sp.2&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp3">&lt;i&gt;Amanita sp.3&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp4">&lt;i&gt;Amanita sp.4&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp5">&lt;i&gt;Amanita sp.5&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp6">&lt;i&gt;Amanita sp.6&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_amanita_sp7">&lt;i&gt;Amanita sp.7&lt;/i&gt; Amanitaceae</string>
+    <string name="fungus_legend_austroboletus_festivus">&lt;i&gt;Austroboletus festivus&lt;/i&gt; Boletaceae</string>
+    <string name="fungus_legend_brasilioporus_sp">&lt;i&gt;Brasilioporus sp.&lt;/i&gt; Boletaceae</string>
+    <string name="fungus_legend_cantharellus_guyanensis">&lt;i&gt;Cantharellus guyanensis&lt;/i&gt; Cantharellaceae</string>
+    <string name="fungus_legend_cantharellus_sp">&lt;i&gt;Cantharellus sp.&lt;/i&gt; Cantharellaceae</string>
+    <string name="fungus_legend_clavulina_sp">&lt;i&gt;Clavulina sp.&lt;/i&gt; Hydnaceae</string>
+    <string name="fungus_legend_cortinarius_sp">&lt;i&gt;Cortinarius sp.&lt;/i&gt; Cortinariaceae</string>
+    <string name="fungus_legend_inocybe_sp1">&lt;i&gt;Inocybe sp.1&lt;/i&gt; Inocybaceae</string>
+    <string name="fungus_legend_inocybe_sp2">&lt;i&gt;Inocybe sp.2&lt;/i&gt; Inocybaceae</string>
+    <string name="fungus_legend_inocybe_sp3">&lt;i&gt;Inocybe sp.3&lt;/i&gt; Inocybaceae</string>
+    <string name="fungus_legend_lactifluus_catarinensis">&lt;i&gt;Lactifluus catarinensis&lt;/i&gt; Russulaceae</string>
+    <string name="fungus_legend_pisolithus_tinctorius">&lt;i&gt;Pisolithus tinctorius&lt;/i&gt; Sclerodermataceae</string>
+    <string name="fungus_legend_russula_puiggarii">&lt;i&gt;Russula puiggarii&lt;/i&gt; Russulaceae</string>
+    <string name="fungus_legend_russula_rubropunctatissima">&lt;i&gt;Russula rubropunctatissima&lt;/i&gt; Russulaceae</string>
+    <string name="fungus_legend_russula_sp1">&lt;i&gt;Russula sp.1&lt;/i&gt; Russulaceae</string>
+    <string name="fungus_legend_russula_sp2">&lt;i&gt;Russula sp.2&lt;/i&gt; Russulaceae</string>
+    <string name="fungus_legend_russula_sp3">&lt;i&gt;Russula sp.3&lt;/i&gt; Russulaceae</string>
+    <string name="fungus_legend_thelephora_terrestris">&lt;i&gt;Thelephora terrestris&lt;/i&gt; Thelephoraceae</string>
+    <string name="fungus_legend_thelephora_sp1">&lt;i&gt;Thelephora sp.1&lt;/i&gt; Thelephoraceae</string>
+    <string name="fungus_legend_thelephora_sp2">&lt;i&gt;Thelephora sp.2&lt;/i&gt; Thelephoraceae</string>
+
+    <string name="ecm_legend_clavulina_a">A. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_clavulina_b">B. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_clavulina_c">C. Corte transversal mostrando o manto e seu contato direto com as células corticais, MAN = manto; COR = córtex; x = xilema.</string>
+    <string name="ecm_legend_clavulina_d">D. Camada externa do manto em vista superficial.</string>
+    <string name="ecm_legend_clavulina_e">E. Cordões hifais.</string>
+
+    <string name="ecm_legend_inocybe_a">A. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_inocybe_b">B. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_inocybe_c">C. Detalhe da ECM mostrando os ápices cinza-arroxeados.</string>
+    <string name="ecm_legend_inocybe_d">D. Corte transversal mostrando o manto e seu contato direto com as células corticais, MAN = manto; COR = córtex; x = xilema.</string>
+    <string name="ecm_legend_inocybe_e">E. Camada externa do manto em vista superficial.</string>
+
+    <string name="ecm_legend_thelephoraceae_sp_a">A. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_thelephoraceae_sp_b">B. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_thelephoraceae_sp_c">C. Morfologia.</string>
+    <string name="ecm_legend_thelephoraceae_sp_d">D. Corte transversal mostrando o manto e seu contato direto com as células corticais, MAN = manto; COR = córtex; x = xilema; * = grânulos cristalinos.</string>
+    <string name="ecm_legend_thelephoraceae_sp_e">E. Camada externa do manto em vista superficial.</string>
+
+    <string name="ecm_legend_thelephora_sp1_a">A. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_thelephora_sp1_b">B. Morfologia, seta branca = ápice da ECM; seta preta = cordões hifais.</string>
+    <string name="ecm_legend_thelephora_sp1_c">C. Corte transversal mostrando o manto e seu contato direto com as células corticais, MAN = manto; COR = córtex; x = xilema; * = grânulos cristalinos.</string>
+    <string name="ecm_legend_thelephora_sp1_d">D. Corte transversal mostrando o manto e seu contato direto com as células corticais.</string>
+    <string name="ecm_legend_thelephora_sp1_e">E. Camada externa do manto em vista superficial.</string>
+
+    <string name="ecm_legend_thelephora_sp2_a">A. Morfologia, seta branca = ápice da ECM; seta preta = cordões hifais.</string>
+    <string name="ecm_legend_thelephora_sp2_b">B. Morfologia, seta branca = ápice da ECM.</string>
+    <string name="ecm_legend_thelephora_sp2_c">C. Corte transversal mostrando o manto e seu contato direto com as células corticais, MAN = manto; COR = córtex; x = xilema.</string>
+    <string name="ecm_legend_thelephora_sp2_d">D. Camada externa do manto em vista superficial.</string>
+    <string name="ecm_legend_thelephora_sp2_e">E. Cordões hifais.</string>
 </resources>

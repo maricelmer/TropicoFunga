@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.monolit.tropicofunga.data.DataImage
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsFilter
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsFilterType
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsOrder
@@ -57,6 +58,7 @@ fun HostsView(
     updateFilterRequested: (HostsFilterType, HostsFilter) -> Unit,
     updateOrderRequested: (HostsOrder) -> Unit,
     onTryLoadAgainRequest: () -> Unit,
+    openImageRequest: (DataImage) -> Unit,
 ) {
     DefaultSearchableView(
         modifier = modifier,
@@ -163,6 +165,9 @@ fun HostsView(
                                 HostItemView(
                                     modifier = Modifier.height(250.dp).animateItem(),
                                     item = host,
+                                    onClick = {
+                                        host.image?.let { openImageRequest(it) }
+                                    }
                                 )
                             }
                         }
@@ -192,6 +197,7 @@ private fun HostsPreview() {
             updateOrderRequested = {},
             updateFilterRequested = { _, _ -> },
             onTryLoadAgainRequest = {},
+            openImageRequest = {}
         )
     }
 }

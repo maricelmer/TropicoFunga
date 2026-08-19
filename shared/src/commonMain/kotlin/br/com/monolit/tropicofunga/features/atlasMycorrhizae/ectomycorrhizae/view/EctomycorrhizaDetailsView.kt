@@ -114,7 +114,9 @@ fun EctomycorrhizaDetailsView(
                         Text(
                             text = stringResource(
                                 Res.string.legend_format,
-                                state.ectomycorrhiza.images.joinToString(", ") { it.legend },
+                                state.ectomycorrhiza.images
+                                    .map { stringResource(it.legend) }
+                                    .joinToString(", "),
                             ),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.outline,

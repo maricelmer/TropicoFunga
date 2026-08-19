@@ -1,6 +1,7 @@
-package br.com.monolit.tropicofunga.features.shared
+package br.com.monolit.tropicofunga.features.shared.views
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
@@ -29,19 +30,22 @@ import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.monolit.tropicofunga.data.DataImage
+import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedStringWithItalics
 import br.com.monolit.tropicofunga.repository.impl.staticData.examplePhoto
 import com.example.compose.AppTheme
 import com.github.panpf.zoomimage.CoilZoomAsyncImage
 import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.image_content_description
+import tropicofunga.shared.generated.resources.photo_by_format
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ImageCarouselView(
     modifier: Modifier,
     openInImageIndex: Int,
-    imagesPaths: List<br.com.monolit.tropicofunga.data.DataImage>,
+    imagesPaths: List<DataImage>,
     onCloseRequest: () -> Unit,
 ) {
     val pageState = rememberPagerState(initialPage = openInImageIndex) { imagesPaths.size }
@@ -79,22 +83,34 @@ fun ImageCarouselView(
                     modifier = Modifier.fillMaxSize(),
                     image = image,
                 )
-                Text(
-                    modifier = Modifier.align(Alignment.TopEnd)
+                if (imagesPaths.size > 1) {
+                    Text(
+                        modifier = Modifier.align(Alignment.TopEnd)
+                            .padding(paddingValues)
+                            .padding(horizontal = 16.dp, vertical = 8.dp),
+                        text = "${page + 1}/${imagesPaths.size}",
+                        style = MaterialTheme.typography.labelSmall.copy(shadow = textShadow),
+                        color = MaterialTheme.colorScheme.outline,
+                    )
+                }
+                Column(
+                    Modifier.align(Alignment.BottomStart)
                         .padding(paddingValues)
                         .padding(horizontal = 16.dp, vertical = 8.dp),
-                    text = "${page+1}/${imagesPaths.size}",
-                    style = MaterialTheme.typography.labelSmall.copy(shadow = textShadow),
-                    color = MaterialTheme.colorScheme.outline,
-                )
-                Text(
-                    modifier = Modifier.align(Alignment.BottomStart)
-                        .padding(paddingValues)
-                        .padding(horizontal = 16.dp, vertical = 8.dp),
-                    text = image.legend,
-                    style = MaterialTheme.typography.labelSmall.copy(shadow = textShadow),
-                    color = MaterialTheme.colorScheme.outline,
-                )
+                ) {
+                    Text(
+                        text = stringResource(image.legend).toAnnotatedStringWithItalics(),
+                        style = MaterialTheme.typography.labelSmall.copy(shadow = textShadow),
+                        color = MaterialTheme.colorScheme.outline,
+                    )
+                    image.author?.let { author ->
+                        Text(
+                            text = stringResource(Res.string.photo_by_format, author),
+                            style = MaterialTheme.typography.labelSmall.copy(shadow = textShadow),
+                            color = MaterialTheme.colorScheme.outline,
+                        )
+                    }
+                }
             }
         }
     }
@@ -104,7 +120,7 @@ fun ImageCarouselView(
 @Composable
 fun CarouselImageView(
     modifier: Modifier,
-    image: br.com.monolit.tropicofunga.data.DataImage,
+    image: DataImage,
 ) {
     var bytes by remember {
         mutableStateOf(ByteArray(0))

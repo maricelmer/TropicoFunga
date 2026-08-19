@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.monolit.tropicofunga.data.DataImage
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiFilter
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiFilterType
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiOrder
@@ -57,6 +58,7 @@ fun FungiView(
     updateFilterRequested: (FungiFilterType, FungiFilter) -> Unit,
     updateOrderRequested: (FungiOrder) -> Unit,
     onTryLoadAgainRequest: () -> Unit,
+    openImageRequest: (DataImage) -> Unit,
 ) {
     DefaultSearchableView(
         modifier = modifier,
@@ -163,6 +165,9 @@ fun FungiView(
                                 FungusItemView(
                                     modifier = Modifier.height(250.dp).animateItem(),
                                     item = fungus,
+                                    onClick = {
+                                        fungus.image?.let { openImageRequest(it) }
+                                    }
                                 )
                             }
                         }
@@ -192,6 +197,7 @@ private fun FungiPreview() {
             updateOrderRequested = {},
             updateFilterRequested = { _, _ -> },
             onTryLoadAgainRequest = {},
+            openImageRequest = {}
         )
     }
 }

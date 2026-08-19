@@ -29,10 +29,64 @@ import tropicofunga.shared.generated.resources.cystidia_definition
 import tropicofunga.shared.generated.resources.cystidia_term
 import tropicofunga.shared.generated.resources.dichotomous_ectomycorrhizae_definition
 import tropicofunga.shared.generated.resources.dichotomous_ectomycorrhizae_term
+import tropicofunga.shared.generated.resources.ecm_legend_clavulina_a
+import tropicofunga.shared.generated.resources.ecm_legend_clavulina_b
+import tropicofunga.shared.generated.resources.ecm_legend_clavulina_c
+import tropicofunga.shared.generated.resources.ecm_legend_clavulina_d
+import tropicofunga.shared.generated.resources.ecm_legend_clavulina_e
+import tropicofunga.shared.generated.resources.ecm_legend_inocybe_a
+import tropicofunga.shared.generated.resources.ecm_legend_inocybe_b
+import tropicofunga.shared.generated.resources.ecm_legend_inocybe_c
+import tropicofunga.shared.generated.resources.ecm_legend_inocybe_d
+import tropicofunga.shared.generated.resources.ecm_legend_inocybe_e
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp1_a
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp1_b
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp1_c
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp1_d
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp1_e
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp2_a
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp2_b
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp2_c
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp2_d
+import tropicofunga.shared.generated.resources.ecm_legend_thelephora_sp2_e
+import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_a
+import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_b
+import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_c
+import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_d
+import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_e
 import tropicofunga.shared.generated.resources.emanating_hyphae_definition
 import tropicofunga.shared.generated.resources.emanating_hyphae_term
 import tropicofunga.shared.generated.resources.epidermis_definition
 import tropicofunga.shared.generated.resources.epidermis_term
+import tropicofunga.shared.generated.resources.example_legend
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_cf_calochroa
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp1
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp2
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp3
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp4
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp5
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp6
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_sp7
+import tropicofunga.shared.generated.resources.fungus_legend_amanita_viscidolutea
+import tropicofunga.shared.generated.resources.fungus_legend_austroboletus_festivus
+import tropicofunga.shared.generated.resources.fungus_legend_brasilioporus_sp
+import tropicofunga.shared.generated.resources.fungus_legend_cantharellus_guyanensis
+import tropicofunga.shared.generated.resources.fungus_legend_cantharellus_sp
+import tropicofunga.shared.generated.resources.fungus_legend_clavulina_sp
+import tropicofunga.shared.generated.resources.fungus_legend_cortinarius_sp
+import tropicofunga.shared.generated.resources.fungus_legend_inocybe_sp1
+import tropicofunga.shared.generated.resources.fungus_legend_inocybe_sp2
+import tropicofunga.shared.generated.resources.fungus_legend_inocybe_sp3
+import tropicofunga.shared.generated.resources.fungus_legend_lactifluus_catarinensis
+import tropicofunga.shared.generated.resources.fungus_legend_pisolithus_tinctorius
+import tropicofunga.shared.generated.resources.fungus_legend_russula_puiggarii
+import tropicofunga.shared.generated.resources.fungus_legend_russula_rubropunctatissima
+import tropicofunga.shared.generated.resources.fungus_legend_russula_sp1
+import tropicofunga.shared.generated.resources.fungus_legend_russula_sp2
+import tropicofunga.shared.generated.resources.fungus_legend_russula_sp3
+import tropicofunga.shared.generated.resources.fungus_legend_thelephora_sp1
+import tropicofunga.shared.generated.resources.fungus_legend_thelephora_sp2
+import tropicofunga.shared.generated.resources.fungus_legend_thelephora_terrestris
 import tropicofunga.shared.generated.resources.gelatinous_hyphae_definition
 import tropicofunga.shared.generated.resources.gelatinous_hyphae_term
 import tropicofunga.shared.generated.resources.hartig_net_definition
@@ -65,7 +119,8 @@ import kotlin.uuid.Uuid
 
 val examplePhoto = DataImage(
     path = "files/example/example.png",
-    legend = "Example legend"
+    legend = Res.string.example_legend,
+    author = "Author Example",
 )
 
 val guapirioidType = EctomycorrhizaType(
@@ -468,70 +523,8 @@ val amanitaCfCalochroaAmanitaceaeFungus = Fungus(
     family = amanitaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/amanita-cf- calochroa.png",
-        legend = "amanita-cf- calochroa",
-    )
-)
-val amanitaSp1AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp1Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-1.png",
-        legend = "amanita-sp-1",
-    )
-)
-val amanitaSp2AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp2Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-2.png",
-        legend = "amanita-sp-2",
-    )
-)
-val amanitaSp3AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp3Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-3.png",
-        legend = "amanita-sp-3",
-    )
-)
-val amanitaSp4AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp4Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-4.png",
-        legend = "amanita-sp-4",
-    )
-)
-val amanitaSp5AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp5Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-5.png",
-        legend = "amanita-sp-5",
-    )
-)
-val amanitaSp6AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp6Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-6.png",
-        legend = "amanita-sp-6",
-    )
-)
-val amanitaSp7AmanitaceaeFungus = Fungus(
-    id = Uuid.random(),
-    specie = amanitaSp7Specie,
-    family = amanitaceaeFamily,
-    image = DataImage(
-        path = "files/atlas/fungi/amanita-sp-7.png",
-        legend = "amanita-sp-7",
+        legend = Res.string.fungus_legend_amanita_cf_calochroa,
+        author = "Juli Simon Cardoso"
     )
 )
 val amanitaViscidoluteaAmanitaceaeFungus = Fungus(
@@ -540,7 +533,78 @@ val amanitaViscidoluteaAmanitaceaeFungus = Fungus(
     family = amanitaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/amanita-viscidolutea.png",
-        legend = "amanita-viscidolutea",
+        legend = Res.string.fungus_legend_amanita_viscidolutea,
+        author = "M. A. Neves"
+    )
+)
+val amanitaSp1AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp1Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-1.png",
+        legend = Res.string.fungus_legend_amanita_sp1,
+        author = "M. C. Slodkowski"
+    )
+)
+val amanitaSp2AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp2Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-2.png",
+        legend = Res.string.fungus_legend_amanita_sp2,
+        author = "M. C. Slodkowski"
+    )
+)
+val amanitaSp3AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp3Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-3.png",
+        legend = Res.string.fungus_legend_amanita_sp3,
+        author = "Juli Simon Cardoso"
+    )
+)
+val amanitaSp4AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp4Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-4.png",
+        legend = Res.string.fungus_legend_amanita_sp4,
+        author = "Juli Simon Cardoso"
+    )
+)
+val amanitaSp5AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp5Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-5.png",
+        legend = Res.string.fungus_legend_amanita_sp5,
+        author = "Juli Simon Cardoso"
+    )
+)
+val amanitaSp6AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp6Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-6.png",
+        legend = Res.string.fungus_legend_amanita_sp6,
+        author = "Juli Simon Cardoso"
+    )
+)
+val amanitaSp7AmanitaceaeFungus = Fungus(
+    id = Uuid.random(),
+    specie = amanitaSp7Specie,
+    family = amanitaceaeFamily,
+    image = DataImage(
+        path = "files/atlas/fungi/amanita-sp-7.png",
+        legend = Res.string.fungus_legend_amanita_sp7,
+        author = "Juli Simon Cardoso"
     )
 )
 val austroboletusFestivusBoletaceaeFungus = Fungus(
@@ -549,7 +613,8 @@ val austroboletusFestivusBoletaceaeFungus = Fungus(
     family = boletaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/austroboletus-festivus.png",
-        legend = "austroboletus-festivus",
+        legend = Res.string.fungus_legend_austroboletus_festivus,
+        author = "M. C. Slodkowski"
     )
 )
 val brasilioporusSpBoletaceaeFungus = Fungus(
@@ -558,7 +623,8 @@ val brasilioporusSpBoletaceaeFungus = Fungus(
     family = boletaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/brasilioporus-sp.png",
-        legend = "brasilioporus-sp",
+        legend = Res.string.fungus_legend_brasilioporus_sp,
+        author = "Francisco Farroñay"
     )
 )
 val cantharellusQuyanensisCantharellaceaeFungus = Fungus(
@@ -567,7 +633,8 @@ val cantharellusQuyanensisCantharellaceaeFungus = Fungus(
     family = cantharellaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/cantharellus-guyanensis.png",
-        legend = "cantharellus-guyanensis",
+        legend = Res.string.fungus_legend_cantharellus_guyanensis,
+        author = "Juli Simon Cardoso"
     )
 )
 val cantharellusSpCantharellaceaeFungus = Fungus(
@@ -576,7 +643,8 @@ val cantharellusSpCantharellaceaeFungus = Fungus(
     family = cantharellaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/cantharellus-sp.png",
-        legend = "cantharellus-sp",
+        legend = Res.string.fungus_legend_cantharellus_sp,
+        author = "M. A. Neves"
     )
 )
 val clavulinaSpHydnaceaeFungus = Fungus(
@@ -585,7 +653,8 @@ val clavulinaSpHydnaceaeFungus = Fungus(
     family = hydnaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/clavulina-sp.png",
-        legend = "clavulina-sp",
+        legend = Res.string.fungus_legend_clavulina_sp,
+        author = "M. C. Slodkowski"
     )
 )
 val cortinariusSpCortinariaceaeFungus = Fungus(
@@ -594,7 +663,8 @@ val cortinariusSpCortinariaceaeFungus = Fungus(
     family = cortinariaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/cortinarius-sp.png",
-        legend = "cortinarius-sp",
+        legend = Res.string.fungus_legend_cortinarius_sp,
+        author = "Juli Simon Cardoso"
     )
 )
 val inocybeSp1InocybaceaeFungus = Fungus(
@@ -603,7 +673,8 @@ val inocybeSp1InocybaceaeFungus = Fungus(
     family = inocybaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/inocybe-sp-1.png",
-        legend = "inocybe-sp-1",
+        legend = Res.string.fungus_legend_inocybe_sp1,
+        author = "M. C. Slodkowski"
     )
 )
 val inocybeSp2InocybaceaeFungus = Fungus(
@@ -612,7 +683,8 @@ val inocybeSp2InocybaceaeFungus = Fungus(
     family = inocybaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/inocybe-sp-2.png",
-        legend = "inocybe-sp-2",
+        legend = Res.string.fungus_legend_inocybe_sp2,
+        author = "Juli Simon Cardoso"
     )
 )
 val inocybeSp3InocybaceaeFungus = Fungus(
@@ -621,7 +693,8 @@ val inocybeSp3InocybaceaeFungus = Fungus(
     family = inocybaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/inocybe-sp-3.png",
-        legend = "inocybe-sp-3",
+        legend = Res.string.fungus_legend_inocybe_sp3,
+        author = "Juli Simon Cardoso"
     )
 )
 val lactifluusCatarinensisRussulaceaeFungus = Fungus(
@@ -630,7 +703,8 @@ val lactifluusCatarinensisRussulaceaeFungus = Fungus(
     family = russulaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/lactifluus-catarinensis.png",
-        legend = "lactifluus-catarinensis",
+        legend = Res.string.fungus_legend_lactifluus_catarinensis,
+        author = "M. A. Neves"
     )
 )
 val pisolithusTinctoriusSclerodermataceaeFungus = Fungus(
@@ -639,7 +713,8 @@ val pisolithusTinctoriusSclerodermataceaeFungus = Fungus(
     family = sclerodermataceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/pisolithus-tinctorius.png",
-        legend = "pisolithus-tinctorius",
+        legend = Res.string.fungus_legend_pisolithus_tinctorius,
+        author = "M. A. Neves"
     )
 )
 val russulaPuiggariiRussulaceaeFungus = Fungus(
@@ -648,7 +723,8 @@ val russulaPuiggariiRussulaceaeFungus = Fungus(
     family = russulaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/russula-puiggarii.png",
-        legend = "russula-puiggarii",
+        legend = Res.string.fungus_legend_russula_puiggarii,
+        author = "M. C. Slodkowski"
     )
 )
 val russulaRubropunctatissimaRussulaceaeFungus = Fungus(
@@ -657,7 +733,8 @@ val russulaRubropunctatissimaRussulaceaeFungus = Fungus(
     family = russulaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/russula-rubropunctatissima.png",
-        legend = "russula-rubropunctatissima",
+        legend = Res.string.fungus_legend_russula_rubropunctatissima,
+        author = "M. A. Neves"
     )
 )
 val russulaSp1RussulaceaeFungus = Fungus(
@@ -666,7 +743,8 @@ val russulaSp1RussulaceaeFungus = Fungus(
     family = russulaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/russula-sp-1.png",
-        legend = "russula-sp-1",
+        legend = Res.string.fungus_legend_russula_sp1,
+        author = "Juli Simon Cardoso"
     )
 )
 val russulaSp2RussulaceaeFungus = Fungus(
@@ -675,7 +753,8 @@ val russulaSp2RussulaceaeFungus = Fungus(
     family = russulaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/russula-sp-2.png",
-        legend = "russula-sp-2",
+        legend = Res.string.fungus_legend_russula_sp2,
+        author = "Juli Simon Cardoso"
     )
 )
 val russulaSp3RussulaceaeFungus = Fungus(
@@ -684,7 +763,8 @@ val russulaSp3RussulaceaeFungus = Fungus(
     family = russulaceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/russula-sp-3.png",
-        legend = "russula-sp-3",
+        legend = Res.string.fungus_legend_russula_sp3,
+        author = "Juli Simon Cardoso"
     )
 )
 val thelephoraTerrestrisThelephoraceaeFungus = Fungus(
@@ -693,7 +773,8 @@ val thelephoraTerrestrisThelephoraceaeFungus = Fungus(
     family = thelephoraceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/thelephora-terrestris.png",
-        legend = "thelephora-terrestris",
+        legend = Res.string.fungus_legend_thelephora_terrestris,
+        author = "J. P. Ernzen"
     )
 )
 val thelephoraSp1ThelephoraceaeFungus = Fungus(
@@ -702,7 +783,8 @@ val thelephoraSp1ThelephoraceaeFungus = Fungus(
     family = thelephoraceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/thelephora-sp-1.png",
-        legend = "thelephora-sp-1",
+        legend = Res.string.fungus_legend_thelephora_sp1,
+        author = "J. P. Ernzen"
     )
 )
 val thelephoraSp2ThelephoraceaeFungus = Fungus(
@@ -711,7 +793,8 @@ val thelephoraSp2ThelephoraceaeFungus = Fungus(
     family = thelephoraceaeFamily,
     image = DataImage(
         path = "files/atlas/fungi/thelephora-sp-2.png",
-        legend = "thelephora-sp-2",
+        legend = Res.string.fungus_legend_thelephora_sp2,
+        author = "J. P. Ernzen"
     )
 )
 val thelephoraSp3ThelephoraceaeFungus = Fungus(
@@ -832,23 +915,28 @@ val ectomycorrhizaeData = listOf(
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/clavulina/clavulina_A.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_clavulina_a,
+                author = "M. C. Slodkowski",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/clavulina/clavulina_B.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_clavulina_b,
+                author = "M. C. Slodkowski",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/clavulina/clavulina_C.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_clavulina_c,
+                author = "L. Herberts-Sousa",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/clavulina/clavulina_D.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_clavulina_d,
+                author = "M. C. Slodkowski",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/clavulina/clavulina_E.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_clavulina_e,
+                author = "M. C. Slodkowski",
             ),
         )
     ),
@@ -871,23 +959,28 @@ val ectomycorrhizaeData = listOf(
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/inocybe/inocybe_A.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_inocybe_a,
+                author = "M. C. Slodkowski",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/inocybe/inocybe_B.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_inocybe_b,
+                author = "M. C. Slodkowski",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/inocybe/inocybe_C.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_inocybe_c,
+                author = "M. C. Slodkowski",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/inocybe/inocybe_D.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_inocybe_d,
+                author = "L. Herberts-Sousa",
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/inocybe/inocybe_E.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_inocybe_e,
+                author = "M. C. Slodkowski",
             ),
         )
     ),
@@ -916,23 +1009,28 @@ val ectomycorrhizaeData = listOf(
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_A.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephoraceae_sp_a,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_B.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephoraceae_sp_b,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_C.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephoraceae_sp_c,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_D.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephoraceae_sp_d,
+                author = "L. Herberts-Sousa"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_E.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephoraceae_sp_e,
+                author = "M. C. Slodkowski"
             ),
         )
     ),
@@ -955,23 +1053,28 @@ val ectomycorrhizaeData = listOf(
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_A.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp1_a,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_B.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp1_b,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_C.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp1_c,
+                author = "L. Herberts-Sousa"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_D.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp1_d,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_E.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp1_e,
+                author = "M. C. Slodkowski"
             ),
         )
     ),
@@ -994,23 +1097,28 @@ val ectomycorrhizaeData = listOf(
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_A.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp2_a,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_B.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp2_b,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_C.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp2_c,
+                author = "L. Herberts-Sousa"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_D.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp2_d,
+                author = "M. C. Slodkowski"
             ),
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_E.png",
-                legend = "Example legend"
+                legend = Res.string.ecm_legend_thelephora_sp2_e,
+                author = "M. C. Slodkowski"
             ),
         )
     ),

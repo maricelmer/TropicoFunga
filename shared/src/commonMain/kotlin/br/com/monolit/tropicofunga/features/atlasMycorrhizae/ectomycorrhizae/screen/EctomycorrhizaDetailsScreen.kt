@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaDetailsViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.view.EctomycorrhizaDetailsView
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaDetailsViewModel
-import br.com.monolit.tropicofunga.features.shared.ImageCarouselView
+import br.com.monolit.tropicofunga.features.shared.views.ImageCarouselView
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
 import kotlin.uuid.Uuid
@@ -28,9 +28,7 @@ fun EctomycorrhizaDetailsScreen(
 
     var viewImageIndex by rememberSaveable { mutableStateOf<Int?>(null) }
 
-    Box(
-        modifier = Modifier.fillMaxSize(),
-    ) {
+    Box(modifier = Modifier.fillMaxSize()) {
         EctomycorrhizaDetailsView(
             modifier = Modifier.fillMaxSize(),
             viewState = viewState,

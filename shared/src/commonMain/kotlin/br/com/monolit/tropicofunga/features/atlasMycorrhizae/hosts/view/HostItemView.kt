@@ -34,6 +34,7 @@ import tropicofunga.shared.generated.resources.host_image_content_description
 fun HostItemView(
     modifier: Modifier,
     item: Host,
+    onClick: () -> Unit,
 ) {
     var bytes by remember {
         mutableStateOf(ByteArray(0))
@@ -44,7 +45,10 @@ fun HostItemView(
         }
     }
 
-    ElevatedCard(modifier = modifier) {
+    ElevatedCard(
+        modifier = modifier,
+        onClick = onClick
+    ) {
         Column(
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -76,6 +80,7 @@ private fun FungusItemPreview() {
         HostItemView(
             modifier = Modifier.width(200.dp).height(300.dp),
             item = hostsData.random(),
+            onClick = {}
         )
     }
 }
