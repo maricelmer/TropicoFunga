@@ -16,6 +16,7 @@ import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
 import br.com.monolit.tropicofunga.features.shared.views.DefaultScaffold
 import br.com.monolit.tropicofunga.features.shared.views.appBar.DefaultAppBar
 import br.com.monolit.tropicofunga.language.Language
+import br.com.monolit.tropicofunga.theme.ThemeOption
 import com.example.compose.AppTheme
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
@@ -25,6 +26,10 @@ import tropicofunga.shared.generated.resources.language_name_portuguese
 import tropicofunga.shared.generated.resources.language_name_spanish
 import tropicofunga.shared.generated.resources.language_section_title
 import tropicofunga.shared.generated.resources.settings_screen_title
+import tropicofunga.shared.generated.resources.theme_option_dark
+import tropicofunga.shared.generated.resources.theme_option_light
+import tropicofunga.shared.generated.resources.theme_option_system
+import tropicofunga.shared.generated.resources.theme_section_title
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,6 +38,9 @@ fun SettingsView(
     currentLanguage: Language,
     availableLanguages: List<Language>,
     onLanguageSelected: (Language) -> Unit,
+    currentTheme: ThemeOption,
+    availableThemes: List<ThemeOption>,
+    onThemeSelected: (ThemeOption) -> Unit,
     onBackPressed: () -> Unit,
 ) {
     DefaultScaffold(
@@ -67,6 +75,30 @@ fun SettingsView(
                 )
             }
         }
+
+        Text(
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+            text = stringResource(Res.string.theme_section_title),
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        SingleChoiceSegmentedButtonRow(
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        ) {
+            availableThemes.forEachIndexed { index, theme ->
+                SegmentedButton(
+                    shape = SegmentedButtonDefaults.itemShape(
+                        index = index,
+                        count = availableThemes.size,
+                    ),
+                    selected = theme == currentTheme,
+                    onClick = { onThemeSelected(theme) },
+                    label = {
+                        Text(text = stringResource(theme.displayNameRes()))
+                    },
+                )
+            }
+        }
     }
 }
 
@@ -74,6 +106,12 @@ private fun Language.displayNameRes(): StringResource = when (this) {
     Language.EN -> Res.string.language_name_english
     Language.PT -> Res.string.language_name_portuguese
     Language.ES -> Res.string.language_name_spanish
+}
+
+private fun ThemeOption.displayNameRes(): StringResource = when (this) {
+    ThemeOption.LIGHT -> Res.string.theme_option_light
+    ThemeOption.DARK -> Res.string.theme_option_dark
+    ThemeOption.SYSTEM -> Res.string.theme_option_system
 }
 
 @Preview(showBackground = true)
@@ -85,6 +123,9 @@ private fun SettingsPreview() {
             currentLanguage = Language.EN,
             availableLanguages = Language.entries,
             onLanguageSelected = {},
+            currentTheme = ThemeOption.SYSTEM,
+            availableThemes = ThemeOption.entries,
+            onThemeSelected = {},
             onBackPressed = {},
         )
     }

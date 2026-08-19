@@ -15,12 +15,16 @@ fun SettingsScreen(
     viewModel: SettingsViewModel = koinViewModel(),
 ) {
     val currentLanguage by viewModel.currentLanguage.collectAsState()
+    val currentTheme by viewModel.currentTheme.collectAsState()
 
     SettingsView(
         modifier = Modifier.fillMaxSize(),
         currentLanguage = currentLanguage,
         availableLanguages = viewModel.availableLanguages,
         onLanguageSelected = viewModel::selectLanguage,
+        currentTheme = currentTheme,
+        availableThemes = viewModel.availableThemes,
+        onThemeSelected = viewModel::selectTheme,
         onBackPressed = onBackPressed,
     )
 }

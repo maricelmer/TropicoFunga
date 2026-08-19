@@ -18,7 +18,7 @@ import kotlin.uuid.Uuid
 
 val featuresModule = module {
     viewModel<SettingsViewModel> {
-        SettingsViewModelImpl(languageRepository = get())
+        SettingsViewModelImpl(languageRepository = get(), themeRepository = get())
     }
     viewModel<EctomycorrhizaeViewModel> {
         EctomycorrhizaeViewModelImpl(repository = get())

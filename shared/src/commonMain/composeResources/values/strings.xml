@@ -206,6 +206,10 @@
     <string name="language_name_english">English</string>
     <string name="language_name_portuguese">Portuguese</string>
     <string name="language_name_spanish">Spanish</string>
+    <string name="theme_section_title">Theme</string>
+    <string name="theme_option_light">Light</string>
+    <string name="theme_option_dark">Dark</string>
+    <string name="theme_option_system">System</string>
 
     <!-- Errors -->
     <string name="failed_to_load_hosts_error">Failed to load hosts</string>
