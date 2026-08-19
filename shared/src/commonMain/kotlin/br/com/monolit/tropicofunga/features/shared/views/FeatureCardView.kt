@@ -55,6 +55,8 @@ fun FeatureCardView(
                 text = title,
                 style = MaterialTheme.typography.labelSmall,
                 textAlign = TextAlign.Center,
+                minLines = 2,
+                maxLines = 2,
             )
         }
     }

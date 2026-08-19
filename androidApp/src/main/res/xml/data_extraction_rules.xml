@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  O app e um catalogo offline: nao ha tokens, credenciais ou cache de rede.
+  Os unicos dados locais sao preferencias (tema/idioma) via multiplatform-settings,
+  entao mantemos o backup padrao (tudo incluso) - so tornamos a regra explicita
+  para o Android Backup Service (API 31+) e para o Play Console parar de
+  sinalizar "backup rules not configured" no pre-launch report.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="sharedpref" path="." />
+        <include domain="database" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="sharedpref" path="." />
+        <include domain="database" path="." />
+    </device-transfer>
+</data-extraction-rules>
