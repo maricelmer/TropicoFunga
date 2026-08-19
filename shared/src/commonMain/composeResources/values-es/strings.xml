@@ -253,6 +253,8 @@
     <string name="fungus_legend_thelephora_sp1">&lt;i&gt;Thelephora sp.1&lt;/i&gt; Thelephoraceae</string>
     <string name="fungus_legend_thelephora_sp2">&lt;i&gt;Thelephora sp.2&lt;/i&gt; Thelephoraceae</string>
 
+    <string name="host_legend_guapira_opposita_nyctaginaceae">&lt;i&gt;Guapira opposita&lt;/i&gt; Nyctaginaceae</string>
+
     <string name="ecm_legend_clavulina_a">A. Morfología, punta de flecha blanca = ápice de la ECM.</string>
     <string name="ecm_legend_clavulina_b">B. Morfología, punta de flecha blanca = ápice de la ECM.</string>
     <string name="ecm_legend_clavulina_c">C. Corte transversal que muestra el manto y su contacto directo con las células corticales, MAN = manto; COR = corteza; x = xilema.</string>

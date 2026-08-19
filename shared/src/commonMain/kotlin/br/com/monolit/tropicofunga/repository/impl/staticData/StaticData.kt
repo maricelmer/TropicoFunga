@@ -91,6 +91,7 @@ import tropicofunga.shared.generated.resources.gelatinous_hyphae_definition
 import tropicofunga.shared.generated.resources.gelatinous_hyphae_term
 import tropicofunga.shared.generated.resources.hartig_net_definition
 import tropicofunga.shared.generated.resources.hartig_net_term
+import tropicofunga.shared.generated.resources.host_legend_guapira_opposita_nyctaginaceae
 import tropicofunga.shared.generated.resources.hyphal_strands_definition
 import tropicofunga.shared.generated.resources.hyphal_strands_term
 import tropicofunga.shared.generated.resources.mantle_mycorrhizal_mantle_definition
@@ -888,7 +889,11 @@ val guapiraOppositaNyctaginaceaeHost = Host(
     id = Uuid.random(),
     specie = guapiraOppositaSpecie,
     family = nyctaginaceaeFamily,
-    image = null,
+    image = DataImage(
+        path = "files/atlas/hosts/guapiraOppositaNyctaginaceae.jpg",
+        legend = Res.string.host_legend_guapira_opposita_nyctaginaceae,
+        author = "M. C. Slodkowski",
+    ),
 )
 
 val hostsData = listOf(

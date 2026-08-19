@@ -252,6 +252,8 @@
     <string name="fungus_legend_thelephora_sp1">&lt;i&gt;Thelephora sp.1&lt;/i&gt; Thelephoraceae</string>
     <string name="fungus_legend_thelephora_sp2">&lt;i&gt;Thelephora sp.2&lt;/i&gt; Thelephoraceae</string>
 
+    <string name="host_legend_guapira_opposita_nyctaginaceae">&lt;i&gt;Guapira opposita&lt;/i&gt; Nyctaginaceae</string>
+
     <string name="ecm_legend_clavulina_a">A. Morfologia, seta branca = ápice da ECM.</string>
     <string name="ecm_legend_clavulina_b">B. Morfologia, seta branca = ápice da ECM.</string>
     <string name="ecm_legend_clavulina_c">C. Corte transversal mostrando o manto e seu contato direto com as células corticais, MAN = manto; COR = córtex; x = xilema.</string>
