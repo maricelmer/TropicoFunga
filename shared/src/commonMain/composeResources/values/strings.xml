@@ -7,7 +7,7 @@
 
     <string name="glossary">Glossary</string>
     <string name="agglutinated_term">Agglutinated</string>
-    <string name="clamp_or_clamp_connection_term">Clamp or clamp-connection</string>
+    <string name="clamp_or_clamp_connection_term">Clamp-connection</string>
     <string name="cystidia_term">Cystidia</string>
     <string name="cortex_term">Cortex</string>
     <string name="dichotomous_ectomycorrhizae_term">Dichotomous ectomycorrhizae</string>
@@ -18,7 +18,7 @@
     <string name="hyphal_strands_term">Hyphal strands</string>
     <string name="transverse_section_term">Transverse section</string>
     <string name="mantle_mycorrhizal_mantle_term">Mantle / mycorrhizal mantle</string>
-    <string name="matrix_matrix_gelatinous_term">Matrix (matrix gelatinous)</string>
+    <string name="matrix_matrix_gelatinous_term">Matrix gelatinous</string>
     <string name="mycorrhizal_system_term">Mycorrhizal system</string>
     <string name="mycorrhiza_mycorrhizal_tip_term">Mycorrhiza / mycorrhizal tip</string>
     <string name="parenchyma_term">Parenchyma</string>
@@ -32,10 +32,10 @@
     <string name="agglutinated_definition">Hyphae fixed together as if with glue</string>
     <string name="clamp_or_clamp_connection_definition">Hyphal outgrowth which makes a connection between two neighbouring cells of a hypha, and contains two septa.</string>
     <string name="cystidia_definition">Hyphae of finite length having very distinct and characteristic shapes, occurring on the mantle surface or on hyphal cords.</string>
-    <string name="cortex_definition">A group of tissues situated between the vascular system and the epidermis.</string>
+    <string name="cortex_definition">A group of tissues situated between the epidermis and the vascular system.</string>
     <string name="dichotomous_ectomycorrhizae_definition">Branching, often successive, into two reasonably equal segments.</string>
     <string name="emanating_hyphae_definition">Hyphae that grow outward from the ectomycorrhizal mantle and connect it to the surrounding soil.</string>
-    <string name="epidermis_definition">Primary mature tissue, generally consisting of a single layer of cells, that covers plant organs.</string>
+    <string name="epidermis_definition">Primary tissue, originated from protodermis, that covers plant organs in primary growth.</string>
     <string name="gelatinous_hyphae_definition">Cell walls of the swollen hyphae, capable of absorbing considerable amounts of water or potassium hydroxide solution.</string>
     <string name="hartig_net_definition">Net-like structure between cortical cells formed by hyphae growing intercellularly.</string>
     <string name="hyphal_strands_definition">Hyphae produced by various mechanisms, growing more or less parallel to one another and remaining united over a certain distance; may exhibit varying degrees of organization.</string>
@@ -44,11 +44,11 @@
     <string name="matrix_matrix_gelatinous_definition">The hyphae of the mantle are embedded in a gelatinous substance.</string>
     <string name="mycorrhizal_system_definition">Multiple ectomycorrhizae connected by axes to form branched clusters, sometimes with characteristic shapes.</string>
     <string name="mycorrhiza_mycorrhizal_tip_definition">Mycorrhiza from the apex proper to the next branching point.</string>
-    <string name="parenchyma_definition">Cell with a thin primary wall, large vacuole, few intercellular spaces, and a vacuole occupying more than 80% of the cell.</string>
+    <string name="parenchyma_definition">Plant cell with a thin primary wall, large vacuole, occupying more than 80% of the cell.</string>
     <string name="plan_view_definition">Observation of the mantle surface at sufficiently high magnifications, frequently used to recognize and characterize different types of mantle surfaces.</string>
     <string name="plectenchymatous_definition">Structure composed of hyphae that are more or less parallel or irregularly arranged, generally still recognizable as individual hyphae.</string>
     <string name="pseudoparenchymatous_definition">Mantle hyphae, in surface view or in section, arranged so closely that they resemble parenchymatous tissue.</string>
-    <string name="root_hair_definition">Type of trichome on the root epidermis, an outgrowth of an epidermal cell, involved in the absorption of soil solution.</string>
+    <string name="root_hair_definition">Elongated root epidermis cell that increases absorption area in the substrate.</string>
     <string name="outer_surface_of_mantle_definition">The outermost part of the mantle as observed from the surface.</string>
     <string name="reference_definition">Agerer, 1987, Apezzato da Glória &amp; Carmello-Guerreiro, 2012.</string>
 
