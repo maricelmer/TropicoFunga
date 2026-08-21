@@ -53,7 +53,7 @@ fun GlossaryView(
         onQueryChanged = onQueryChanged,
         onBackPressed = onBackPressed,
     ) {
-        val contentModifier = Modifier.fillMaxSize().padding(vertical = 8.dp)
+        val contentModifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp)
         AnimatedContent(viewState) { state ->
             when (state) {
                 GlossaryViewState.Loading -> {
@@ -78,7 +78,7 @@ fun GlossaryView(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                            modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {

@@ -72,14 +72,12 @@ fun AboutView(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 8.dp)
+                .padding(horizontal = 16.dp, vertical = 8.dp)
                 .verticalScroll(scrollState),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 AboutSectionView(
@@ -141,7 +139,6 @@ fun AboutView(
             }
 
             Text(
-                modifier = Modifier.padding(horizontal = 16.dp),
                 text = stringResource(Res.string.about_curatorship_label),
                 style = MaterialTheme.typography.labelSmall,
             )

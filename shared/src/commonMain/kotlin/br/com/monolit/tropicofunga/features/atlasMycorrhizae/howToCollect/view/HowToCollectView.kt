@@ -126,12 +126,12 @@ fun HowToCollectView(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 8.dp)
+                .padding(vertical = 8.dp, horizontal = 16.dp)
                 .verticalScroll(scrollState),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 text = stringResource(Res.string.workflow_title),
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary,
@@ -298,7 +298,7 @@ fun HowToCollectView(
             }
 
             Text(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 text = stringResource(Res.string.best_practices_title),
                 style = MaterialTheme.typography.titleLarge,
                 color = MaterialTheme.colorScheme.primary,
@@ -306,7 +306,7 @@ fun HowToCollectView(
             )
 
             BestPracticeItem(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 icon = painterResource(Res.drawable.shovel_icon),
                 title = stringResource(Res.string.best_practice_collection_title),
                 description = stringResource(Res.string.best_practice_collection_description)
@@ -315,7 +315,7 @@ fun HowToCollectView(
             HorizontalDivider()
 
             BestPracticeItem(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 icon = rememberVectorPainter(Icons.Outlined.Thermostat),
                 title = stringResource(Res.string.best_practice_temperature_title),
                 description = stringResource(Res.string.best_practice_temperature_description)
@@ -324,7 +324,7 @@ fun HowToCollectView(
             HorizontalDivider()
 
             BestPracticeItem(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 icon = painterResource(Res.drawable.roots_icon),
                 title = stringResource(Res.string.best_practice_handling_title),
                 description = stringResource(Res.string.best_practice_handling_description)
@@ -333,7 +333,7 @@ fun HowToCollectView(
             HorizontalDivider()
 
             BestPracticeItem(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 icon = rememberVectorPainter(Icons.Outlined.WaterDrop),
                 title = stringResource(Res.string.best_practice_sanitization_title),
                 description = stringResource(Res.string.best_practice_sanitization_description)
@@ -342,7 +342,7 @@ fun HowToCollectView(
             HorizontalDivider()
 
             BestPracticeItem(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 icon = painterResource(Res.drawable.eppendorf_icon),
                 title = stringResource(Res.string.best_practice_storage_title),
                 description = stringResource(Res.string.best_practice_storage_description)
@@ -351,7 +351,7 @@ fun HowToCollectView(
             HorizontalDivider()
 
             BestPracticeItem(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
                 icon = rememberVectorPainter(Icons.AutoMirrored.Outlined.TextSnippet),
                 title = stringResource(Res.string.best_practice_notes_title),
                 description = stringResource(Res.string.best_practice_notes_description)
@@ -360,7 +360,7 @@ fun HowToCollectView(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 8.dp)
+                    .padding(vertical = 8.dp)
                     .border(1.dp, color = MaterialTheme.colorScheme.primary)
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
