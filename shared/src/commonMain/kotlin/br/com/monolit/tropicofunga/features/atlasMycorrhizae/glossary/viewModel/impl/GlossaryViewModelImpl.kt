@@ -5,6 +5,7 @@ import br.com.monolit.tropicofunga.data.glossary.GlossaryEntry
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.data.GlossaryOrder
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.data.GlossaryViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.viewModel.GlossaryViewModel
+import br.com.monolit.tropicofunga.log.AppLogger
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,7 +14,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import org.jetbrains.compose.resources.getString
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.failed_to_load_glossary_error
@@ -65,7 +65,7 @@ class GlossaryViewModelImpl(
                 }
                 .onFailure { exception ->
                     _viewState.update { GlossaryViewState.Error(getString(Res.string.failed_to_load_glossary_error)) }
-                    println("Error occurred while loading glossary: ${exception.message}")
+                    AppLogger.e("GlossaryViewModel", "Error occurred while loading glossary", exception)
                 }
         }
     }
@@ -79,12 +79,12 @@ class GlossaryViewModelImpl(
     }
 }
 
-internal fun List<GlossaryEntry>.order(order: GlossaryOrder): List<GlossaryEntry> {
+internal suspend fun List<GlossaryEntry>.order(order: GlossaryOrder): List<GlossaryEntry> {
     return when (order) {
-        GlossaryOrder.TERM_ASC -> this.sortedBy { runBlocking { getString(it.term) } }
-        GlossaryOrder.TERM_DESC -> this.sortedByDescending { runBlocking { getString(it.term) } }
-        GlossaryOrder.DEFINITION_ASC -> this.sortedBy { runBlocking { getString(it.definition) } }
-        GlossaryOrder.DEFINITION_DESC -> this.sortedByDescending { runBlocking { getString(it.definition) } }
+        GlossaryOrder.TERM_ASC -> this.map { it to getString(it.term) }.sortedBy { it.second }.map { it.first }
+        GlossaryOrder.TERM_DESC -> this.map { it to getString(it.term) }.sortedByDescending { it.second }.map { it.first }
+        GlossaryOrder.DEFINITION_ASC -> this.map { it to getString(it.definition) }.sortedBy { it.second }.map { it.first }
+        GlossaryOrder.DEFINITION_DESC -> this.map { it to getString(it.definition) }.sortedByDescending { it.second }.map { it.first }
     }
 }
 

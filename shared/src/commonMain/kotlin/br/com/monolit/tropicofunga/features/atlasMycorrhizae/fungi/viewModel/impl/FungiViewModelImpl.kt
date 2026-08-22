@@ -8,6 +8,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiOrd
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.data.FungiViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.fungi.viewModel.FungiViewModel
 import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
+import br.com.monolit.tropicofunga.log.AppLogger
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -106,7 +107,7 @@ class FungiViewModelImpl(
                 }
                 .onFailure { exception ->
                     _viewState.update { FungiViewState.Error(getString(Res.string.failed_to_load_fungi_error)) }
-                    println("Error occurred while loading fungi: ${exception.message}")
+                    AppLogger.e("FungiViewModel", "Error occurred while loading fungi", exception)
                 }
         }
     }

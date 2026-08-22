@@ -23,6 +23,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.monolit.tropicofunga.features.shared.views.StillBeingBuiltView
 import com.example.compose.AppTheme
+import org.jetbrains.compose.resources.stringResource
+import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.back_button_content_description
+import tropicofunga.shared.generated.resources.funga_feature_title
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -41,7 +45,7 @@ fun FungaHomeView(
                     IconButton(onClick = onBackPressed) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = null,
+                            contentDescription = stringResource(Res.string.back_button_content_description),
                         )
                     }
                 },
@@ -60,7 +64,7 @@ fun FungaHomeView(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Text(
-                    text = "Funga",
+                    text = stringResource(Res.string.funga_feature_title),
                     style = MaterialTheme.typography.displayLarge,
                     fontWeight = FontWeight.SemiBold,
                 )

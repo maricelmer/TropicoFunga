@@ -79,7 +79,7 @@ fun EctomycorrhizaDetailsView(
         title = tile,
         onBackPressed = onBackPressed,
     ) {
-        val contentModifier = Modifier.fillMaxSize().padding(vertical = 8.dp)
+        val contentModifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp)
         AnimatedContent(viewState) { state ->
             when (state) {
 
@@ -104,9 +104,7 @@ fun EctomycorrhizaDetailsView(
                         verticalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
                         ImagePathCollectionView(
-                            modifier = Modifier.fillMaxWidth()
-                                .height(300.dp)
-                                .padding(horizontal = 16.dp),
+                            modifier = Modifier.fillMaxWidth().height(300.dp),
                             imagesPaths = state.ectomycorrhiza.images,
                             onViewImageRequest = onViewImagesRequest,
                         )
@@ -120,7 +118,6 @@ fun EctomycorrhizaDetailsView(
                             ),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.outline,
-                            modifier = Modifier.padding(horizontal = 16.dp)
                         )
 
                         CharacteristicsSectionView(
@@ -135,7 +132,7 @@ fun EctomycorrhizaDetailsView(
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
                                 title = stringResource(Res.string.characteristic_colour_label),
-                                value = state.ectomycorrhiza.colorDescription
+                                value = stringResource(state.ectomycorrhiza.colorDescription)
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
@@ -165,7 +162,7 @@ fun EctomycorrhizaDetailsView(
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
                                 title = stringResource(Res.string.characteristic_ecosystem_label),
-                                value = state.ectomycorrhiza.ecosystem
+                                value = stringResource(state.ectomycorrhiza.ecosystem)
                             )
                             CharacteristicsItemView(
                                 modifier = Modifier.fillMaxWidth(),
@@ -183,7 +180,7 @@ fun EctomycorrhizaDetailsView(
                             title = stringResource(Res.string.morphological_characters_title),
                         ) {
                             Text(
-                                text = state.ectomycorrhiza.morphologicalCharacters,
+                                text = stringResource(state.ectomycorrhiza.morphologicalCharacters),
                                 style = MaterialTheme.typography.labelSmall,
                                 textAlign = TextAlign.Justify,
                             )
@@ -193,7 +190,7 @@ fun EctomycorrhizaDetailsView(
                             title = stringResource(Res.string.anatomical_characters_of_mantle_title),
                         ) {
                             Text(
-                                text = state.ectomycorrhiza.mantleAnatomicalCharacters,
+                                text = stringResource(state.ectomycorrhiza.mantleAnatomicalCharacters),
                                 style = MaterialTheme.typography.labelSmall,
                                 textAlign = TextAlign.Justify,
                             )

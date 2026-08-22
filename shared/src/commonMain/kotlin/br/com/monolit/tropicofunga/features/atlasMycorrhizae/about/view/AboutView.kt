@@ -41,6 +41,9 @@ import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
 import tropicofunga.shared.generated.resources.about
 import tropicofunga.shared.generated.resources.about_contribute_prompt
+import tropicofunga.shared.generated.resources.about_curator_1_name
+import tropicofunga.shared.generated.resources.about_curator_2_name
+import tropicofunga.shared.generated.resources.about_curator_3_name
 import tropicofunga.shared.generated.resources.about_curatorship_label
 import tropicofunga.shared.generated.resources.about_open_contribute_form_button
 import tropicofunga.shared.generated.resources.about_questions_suggestions_label
@@ -149,17 +152,17 @@ fun AboutView(
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     Text(
-                        text = "Marivane Celmer Slodkowski",
+                        text = stringResource(Res.string.about_curator_1_name),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                     )
                     Text(
-                        text = "Fernanda Maria Cordeiro de Oliveira",
+                        text = stringResource(Res.string.about_curator_2_name),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                     )
                     Text(
-                        text = "Maria Alice Neves",
+                        text = stringResource(Res.string.about_curator_3_name),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.primary,
                     )

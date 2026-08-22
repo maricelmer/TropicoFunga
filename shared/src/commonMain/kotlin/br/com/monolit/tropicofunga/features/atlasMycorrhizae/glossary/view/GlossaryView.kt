@@ -2,6 +2,7 @@ package br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.view
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,6 +22,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.data.Gloss
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.glossary.data.GlossaryViewState
 import br.com.monolit.tropicofunga.features.shared.views.DefaultDropdownMenuView
 import br.com.monolit.tropicofunga.features.shared.views.DefaultSearchableView
+import br.com.monolit.tropicofunga.features.shared.views.EmptyStateView
 import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
 import br.com.monolit.tropicofunga.features.shared.views.LoadView
 import br.com.monolit.tropicofunga.repository.impl.staticData.glossaryData
@@ -97,18 +99,27 @@ fun GlossaryView(
                             )
                         }
 
-                        LazyColumn(
-                            modifier = Modifier.fillMaxWidth().weight(1f),
-                            verticalArrangement = Arrangement.spacedBy(8.dp),
-                        ) {
-                            items(
-                                items = list,
-                                key = { item -> item.id }
-                            ) { entry ->
-                                GlossaryItemView(
-                                    modifier = Modifier.fillMaxWidth().animateItem(),
-                                    item = entry,
-                                )
+                        if (list.isEmpty()) {
+                            Box(
+                                modifier = Modifier.fillMaxWidth().weight(1f),
+                                contentAlignment = Alignment.Center,
+                            ) {
+                                EmptyStateView(modifier = Modifier.fillMaxWidth())
+                            }
+                        } else {
+                            LazyColumn(
+                                modifier = Modifier.fillMaxWidth().weight(1f),
+                                verticalArrangement = Arrangement.spacedBy(8.dp),
+                            ) {
+                                items(
+                                    items = list,
+                                    key = { item -> item.id }
+                                ) { entry ->
+                                    GlossaryItemView(
+                                        modifier = Modifier.fillMaxWidth().animateItem(),
+                                        item = entry,
+                                    )
+                                }
                             }
                         }
                     }

@@ -3,6 +3,7 @@ package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizaDeta
 import androidx.lifecycle.viewModelScope
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaDetailsViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaDetailsViewModel
+import br.com.monolit.tropicofunga.log.AppLogger
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -48,7 +49,7 @@ class EctomycorrhizaDetailsViewModelImpl(
                     _viewState.update {
                         EctomycorrhizaDetailsViewState.Error(getString(Res.string.failed_to_load_ectomycorrhiza_error))
                     }
-                    println("Error occurred while loading ectomycorrhizae: ${exception.message}")
+                    AppLogger.e("EctomycorrhizaDetailsViewModel", "Error occurred while loading ectomycorrhiza", exception)
                 }
         }
     }

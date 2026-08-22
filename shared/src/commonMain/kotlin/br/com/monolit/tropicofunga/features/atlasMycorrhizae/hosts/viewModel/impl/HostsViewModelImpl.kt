@@ -8,6 +8,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsOrd
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.viewModel.HostsViewModel
 import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
+import br.com.monolit.tropicofunga.log.AppLogger
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -102,7 +103,7 @@ class HostsViewModelImpl(
                 }
                 .onFailure { exception ->
                     _viewState.update { HostsViewState.Error(getString(Res.string.failed_to_load_hosts_error)) }
-                    println("Error occurred while loading hosts: ${exception.message}")
+                    AppLogger.e("HostsViewModel", "Error occurred while loading hosts", exception)
                 }
         }
     }

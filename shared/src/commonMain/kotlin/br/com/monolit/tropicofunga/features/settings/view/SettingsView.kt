@@ -8,6 +8,7 @@ import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,6 +26,8 @@ import tropicofunga.shared.generated.resources.language_name_english
 import tropicofunga.shared.generated.resources.language_name_portuguese
 import tropicofunga.shared.generated.resources.language_name_spanish
 import tropicofunga.shared.generated.resources.language_section_title
+import tropicofunga.shared.generated.resources.legal_section_title
+import tropicofunga.shared.generated.resources.privacy_policy_button
 import tropicofunga.shared.generated.resources.settings_screen_title
 import tropicofunga.shared.generated.resources.theme_option_dark
 import tropicofunga.shared.generated.resources.theme_option_light
@@ -42,6 +45,7 @@ fun SettingsView(
     availableThemes: List<ThemeOption>,
     onThemeSelected: (ThemeOption) -> Unit,
     onBackPressed: () -> Unit,
+    onOpenPrivacyPolicyRequest: () -> Unit,
 ) {
     DefaultScaffold(
         modifier = modifier,
@@ -99,6 +103,19 @@ fun SettingsView(
                 )
             }
         }
+
+        Text(
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+            text = stringResource(Res.string.legal_section_title),
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        TextButton(
+            modifier = Modifier.padding(horizontal = 8.dp),
+            onClick = onOpenPrivacyPolicyRequest,
+        ) {
+            Text(text = stringResource(Res.string.privacy_policy_button))
+        }
     }
 }
 
@@ -127,6 +144,7 @@ private fun SettingsPreview() {
             availableThemes = ThemeOption.entries,
             onThemeSelected = {},
             onBackPressed = {},
+            onOpenPrivacyPolicyRequest = {},
         )
     }
 }

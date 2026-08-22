@@ -5,6 +5,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import br.com.monolit.tropicofunga.data.DataImage
 import br.com.monolit.tropicofunga.data.fungus.Fungus
 import br.com.monolit.tropicofunga.data.host.Host
+import org.jetbrains.compose.resources.StringResource
 import kotlin.uuid.Uuid
 
 data class Ectomycorrhiza(
@@ -12,17 +13,17 @@ data class Ectomycorrhiza(
     val fungus: Fungus,
     val host: Host,
     val type: EctomycorrhizaType,
-    val colorDescription: String,
+    val colorDescription: StringResource,
     val hartigNet: HartigNet,
     val mantleThickness: String,
     val hyphaeMantle: HyphaeMantle,
     val outerMantleLayer: OuterMantleLayer,
     val hyphalStrands: HyphalStrands,
-    val ecosystem: String,
+    val ecosystem: StringResource,
     val genBankAccessionNumbers: List<String>,
     val references: List<String>,
-    val morphologicalCharacters: String, // TODO StringResource
-    val mantleAnatomicalCharacters: String,
+    val morphologicalCharacters: StringResource,
+    val mantleAnatomicalCharacters: StringResource,
     val images: List<DataImage>
 ) {
     val name: AnnotatedString
@@ -38,7 +39,7 @@ data class EctomycorrhizaItem(
     val fungus: AnnotatedString,
     val host: AnnotatedString,
     val type: EctomycorrhizaType,
-    val ecosystem: String,
+    val ecosystem: StringResource,
     val image: DataImage?,
 )
 

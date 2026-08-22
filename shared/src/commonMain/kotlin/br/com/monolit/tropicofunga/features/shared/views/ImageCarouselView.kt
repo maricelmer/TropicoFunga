@@ -37,6 +37,7 @@ import com.example.compose.AppTheme
 import com.github.panpf.zoomimage.CoilZoomAsyncImage
 import org.jetbrains.compose.resources.stringResource
 import tropicofunga.shared.generated.resources.Res
+import tropicofunga.shared.generated.resources.close_button_content_description
 import tropicofunga.shared.generated.resources.image_content_description
 import tropicofunga.shared.generated.resources.photo_by_format
 
@@ -64,7 +65,7 @@ fun ImageCarouselView(
                     IconButton(onClick = onCloseRequest) {
                         Icon(
                             imageVector = Icons.Default.Close,
-                            contentDescription = null,
+                            contentDescription = stringResource(Res.string.close_button_content_description),
                         )
                     }
                 },

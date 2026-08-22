@@ -16,7 +16,7 @@ fun AboutScreen(
         modifier = Modifier.fillMaxSize(),
         onBackPressed = onBackPressed,
         onOpenContributeFormRequested = {
-            uriHandler.openUri("https://docs.google.com/forms/d/e/1FAIpQLSdEt4DnqK5WK3PSVwfE_uhWmCyBVvhzDYXPIpGap3HkCFFyDw/viewform?usp=header\n")
+            uriHandler.openUri("https://docs.google.com/forms/d/e/1FAIpQLSdEt4DnqK5WK3PSVwfE_uhWmCyBVvhzDYXPIpGap3HkCFFyDw/viewform?usp=header")
         }
     )
 }

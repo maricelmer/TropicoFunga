@@ -28,7 +28,6 @@
     <string name="pseudoparenchymatous_term">Tejido pseudoparenquimatoso</string>
     <string name="root_hair_term">Pelo radicular</string>
     <string name="outer_surface_of_mantle_term">Superficie externa del manto</string>
-    <string name="reference">Referencia</string>
 
     <string name="agglutinated_definition">Hifas unidas entre sí como si estuvieran pegadas.</string>
     <string name="clamp_or_clamp_connection_definition">Proyección hifal que establece una conexión entre dos células vecinas de una hifa, conteniendo dos septos.</string>
@@ -51,7 +50,6 @@
     <string name="pseudoparenchymatous_definition">Las hifas del manto, en vista superficial o en sección, están dispuestas tan juntas que simulan tejido parenquimatoso.</string>
     <string name="root_hair_definition">Célula epidérmica de la raíz alargada que aumenta el área de absorción en el sustrato.</string>
     <string name="outer_surface_of_mantle_definition">Parte más externa del manto observada en una vista superficial.</string>
-    <string name="reference_definition">Agerer, 1987, Apezzato da Glória &amp; Carmello-Guerreiro, 2012.</string>
 
     <!-- Shared views -->
     <string name="filters_label">Filtros</string>
@@ -66,11 +64,15 @@
     <string name="search_icon_content_description">Icono de búsqueda</string>
     <string name="clear_field_button_content_description">Botón para borrar campo</string>
     <string name="back_button_content_description">Botón para volver</string>
+    <string name="close_button_content_description">Botón para cerrar</string>
     <string name="filter_button_content_description">Botón de filtro</string>
     <string name="still_being_built_message">Aún en construcción...</string>
     <string name="results_found_format">%1$d resultados encontrados</string>
     <string name="order_by_format">Ordenar por: %1$s</string>
     <string name="required_materials_and_equipment_label">Materiales y equipos necesarios:</string>
+    <string name="empty_state_icon_content_description">Icono de estado vacío</string>
+    <string name="no_results_found_title">No se encontraron resultados</string>
+    <string name="no_results_found_message">Intente con otro término de búsqueda o filtro.</string>
 
     <!-- Order options -->
     <string name="order_name_asc">Nombre (A-Z)</string>
@@ -104,10 +106,14 @@
     <string name="about_thank_you">¡Gracias!</string>
     <string name="about_curatorship_label">Curaduría</string>
     <string name="about_section_icon_content_description">Icono de la sección acerca de</string>
+    <string name="about_curator_1_name">Marivane Celmer Slodkowski</string>
+    <string name="about_curator_2_name">Fernanda Maria Cordeiro de Oliveira</string>
+    <string name="about_curator_3_name">Maria Alice Neves</string>
 
     <!-- Home -->
     <string name="atlas_title_prefix">Atlas de </string>
     <string name="atlas_title_highlight">Micorrizas</string>
+    <!-- Here the "Neotropical" adjective sits in this suffix (unlike English, where it sits in atlas_title_prefix). -->
     <string name="atlas_title_suffix"> Neotropicales</string>
     <string name="illustrated_guide_subtitle">Guía ilustrada para la identificación de micorrizas</string>
     <string name="ectomycorrhizae_feature_title">Ectomicorrizas</string>
@@ -211,6 +217,8 @@
     <string name="theme_option_light">Claro</string>
     <string name="theme_option_dark">Oscuro</string>
     <string name="theme_option_system">Sistema</string>
+    <string name="legal_section_title">Legal</string>
+    <string name="privacy_policy_button">Política de Privacidad</string>
 
     <!-- Errors -->
     <string name="failed_to_load_hosts_error">Error al cargar los huéspedes</string>
@@ -284,6 +292,29 @@
     <string name="ecm_legend_thelephora_sp2_c">C. Corte transversal que muestra el manto y su contacto directo con las células corticales, MAN = manto; COR = corteza; x = xilema.</string>
     <string name="ecm_legend_thelephora_sp2_d">D. Capa externa del manto en vista superficial.</string>
     <string name="ecm_legend_thelephora_sp2_e">E. Cordones hifales.</string>
+
+    <!-- Ectomycorrhiza scientific descriptions -->
+    <string name="ecosystem_restinga_mata_atlantica_brazil">Restinga, Mata Atlántica, Brasil</string>
+
+    <string name="ecm_color_description_clavulina">marrón claro a marrón amarillento</string>
+    <string name="ecm_morphological_characters_clavulina">Sistema ectomicorrícico simple, a veces irregularmente pinnado, sin ramificación en los ápices radiculares. Algunas raíces no están completamente recubiertas por el manto. Las raíces colonizadas miden 1,5–5,5 mm de longitud y 0,1–0,2 mm de espesor. El manto tiene 25 μm de espesor, superficie lisa, marrón claro a marrón amarillento (2.5Y 8/10; 2.5Y 8/8) y partes marrones (5YR 1/1), con ápices rectos u ocasionalmente curvos (Fig. 1. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_clavulina">Capa externa del manto plecténquima en vista superficial. Hifas de 3,0–5,0(–7,0) μm de espesor, hialinas, lisas, de pared delgada, aglutinadas; sin fíbulas (Fig. 1. C). Hifas emanantes hialinas, de pared delgada, 3,0–5,0 µm de diámetro, con fíbulas. Cordones hifales indiferenciados, con márgenes lisos (Fig. 1. D). Cistidios no observados.</string>
+
+    <string name="ecm_color_description_inocybe">blanco amarillento con ápices gris violáceo</string>
+    <string name="ecm_morphological_characters_inocybe">Sistema ectomicorrícico irregularmente pinnado, a veces dicotómico, con aproximadamente 15 mm de longitud y 0,1–0,3 mm de espesor. El manto tiene 25–50 μm de espesor, superficie lisa, blanco amarillento (10YR 9/2) con ápices gris violáceo (2.5P 9/4), ápices rectos, curvos u ocasionalmente tortuosos (Fig. 2. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_inocybe">Capa externa del manto plecténquima, con hifas irregulares que crecen sobre la superficie del manto. Hifas de 3,0–5,0 μm de espesor, hialinas, lisas, de pared delgada, sin fíbulas (Fig. 2. E). Hifas emanantes hialinas, 2,0–4,0 µm de diámetro, ramificadas; sin fíbulas. Cordones hifales ausentes. Cistidios no observados.</string>
+
+    <string name="ecm_color_description_thelephoraceae_sp">marrón claro o marrón amarillento</string>
+    <string name="ecm_morphological_characters_thelephoraceae_sp">Sistema ectomicorrícico irregularmente pinnado, sin ramificación en los ápices radiculares, con colonización en raíces secundarias y terciarias. Las raíces colonizadas miden 0,5–5,7 mm de longitud y 0,1–0,3 mm de espesor. El manto tiene 25–50 μm de espesor, superficie lisa, marrón claro (7.5YR 3/6) o marrón amarillento (2.5Y 8/8), con ápices rectos o ligeramente curvos (Fig. 3. A-D).</string>
+    <string name="ecm_mantle_anatomical_characters_thelephoraceae_sp">Capa externa del manto plecténquima en vista superficial. Hifas de 3,0–6,0 μm de espesor, marrón anaranjado (7.5Y 6/6), lisas, de pared delgada, aglutinadas; sin fíbulas (Fig. 3. E). Hifas emanantes hialinas, con fíbulas, de pared delgada, 3,0–5,0 µm de diámetro. Cordones hifales ausentes. Cistidios no observados.</string>
+
+    <string name="ecm_color_description_thelephora_sp1">marrón oscuro</string>
+    <string name="ecm_morphological_characters_thelephora_sp1">Sistema ectomicorrícico simple y monopodial-pinnado, ocasionalmente dicotómico. Las raíces terciarias colonizadas miden 1–7,5 mm de longitud y 0,1–0,3 mm de espesor. También se observó colonización en raíces cuaternarias, con un espaciamiento de 1,8–2,5 mm y un espesor de aproximadamente 0,4 mm. La superficie del manto tiene 10–25 μm de espesor, superficie lisa, marrón oscuro (2.5YR 1/1) en la base y región media, volviéndose marrón (2.5YR 1/2) hacia los ápices ligeramente curvos y no ramificados (Fig. 4. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_thelephora_sp1">Capa externa del manto de tipo transicional entre plecténquima y pseudoparenquimático en vista superficial. Hifas de forma irregular, marrón amarillento (2.5Y 5/6), 5,0–7,0 μm de diámetro, de pared ligeramente delgada, lisas (Fig. 4. D). Hifas emanantes de 3,0–5,0 μm de espesor, marrones, de pared gruesa (1,0 μm), con fíbulas. Los cordones hifales pueden estar presentes o ser poco evidentes, formados por hifas irregulares, onduladas, de diámetro uniforme, con fíbulas (Fig. 4. E). Cistidios no observados.</string>
+
+    <string name="ecm_color_description_thelephora_sp2">marrón a marrón claro en los ápices</string>
+    <string name="ecm_morphological_characters_thelephora_sp2">Sistema ectomicorrícico irregularmente pinnado, sin ramificación en los ápices radiculares, con 0,7–11,8 mm de longitud y 0,1–0,3 mm de espesor. El manto tiene 20–25 μm de espesor, superficie lisa, marrón (5YR 1/1) a marrón claro en los ápices (7.5YR 3/6), y marrón oscuro (7.5YR 1/1) por encima del ápice; los ápices son rectos, tortuosos o curvos (Fig. 5. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_thelephora_sp2">Capa externa del manto de tipo transicional entre plecténquima y pseudoparenquimático en vista superficial. Hifas de 5,0–8,0 μm de espesor, parduzcas (10YR 5/6), lisas, de pared delgada, aglutinadas; sin fíbulas. Hifas emanantes parduzcas, de pared gruesa (1,0 μm), (2,0–)3,0–4,0 µm de diámetro, ramificadas; a veces con contenido marrón homogéneo; con fíbulas (Fig. 5. D). Cordones hifales densamente entretejidos y agregados, formados por hifas marrones: una hifa central, 7,0–10,0 μm de diámetro, de pared gruesa (1 μm), con fíbulas; hifas marrones periféricas, 3,0–4,0 μm de diámetro, de paredes ligeramente engrosadas, tortuosas, densamente entretejidas, ramificadas, con fíbulas (Fig. 5. E). Cistidios no observados.</string>
 </resources>
 
 

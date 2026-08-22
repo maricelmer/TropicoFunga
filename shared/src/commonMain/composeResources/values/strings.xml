@@ -1,7 +1,7 @@
 <resources>
     <string name="host">Host</string>
     <string name="fungus">Fungus</string>
-    <string name="type">Type</string>\
+    <string name="type">Type</string>
     <string name="specie">Specie</string>
     <string name="family">Family</string>
 
@@ -27,7 +27,6 @@
     <string name="pseudoparenchymatous_term">Pseudoparenchymatous</string>
     <string name="root_hair_term">Root hair</string>
     <string name="outer_surface_of_mantle_term">Outer surface of mantle</string>
-    <string name="reference">Reference</string>
 
     <string name="agglutinated_definition">Hyphae fixed together as if with glue</string>
     <string name="clamp_or_clamp_connection_definition">Hyphal outgrowth which makes a connection between two neighbouring cells of a hypha, and contains two septa.</string>
@@ -50,7 +49,6 @@
     <string name="pseudoparenchymatous_definition">Mantle hyphae, in surface view or in section, arranged so closely that they resemble parenchymatous tissue.</string>
     <string name="root_hair_definition">Elongated root epidermis cell that increases absorption area in the substrate.</string>
     <string name="outer_surface_of_mantle_definition">The outermost part of the mantle as observed from the surface.</string>
-    <string name="reference_definition">Agerer, 1987, Apezzato da Glória &amp; Carmello-Guerreiro, 2012.</string>
 
     <!-- Shared views -->
     <string name="filters_label">Filters</string>
@@ -65,11 +63,15 @@
     <string name="search_icon_content_description">Search icon</string>
     <string name="clear_field_button_content_description">Clear field button</string>
     <string name="back_button_content_description">Back button</string>
+    <string name="close_button_content_description">Close button</string>
     <string name="filter_button_content_description">Filter button</string>
     <string name="still_being_built_message">Still being built...</string>
     <string name="results_found_format">%1$d results found</string>
     <string name="order_by_format">Order by: %1$s</string>
     <string name="required_materials_and_equipment_label">Required materials and equipment:</string>
+    <string name="empty_state_icon_content_description">Empty state icon</string>
+    <string name="no_results_found_title">No results found</string>
+    <string name="no_results_found_message">Try a different search term or filter.</string>
 
     <!-- Order options -->
     <string name="order_name_asc">Name (A-Z)</string>
@@ -103,10 +105,15 @@
     <string name="about_thank_you">Thank you!</string>
     <string name="about_curatorship_label">Curatorship</string>
     <string name="about_section_icon_content_description">About section icon</string>
+    <string name="about_curator_1_name">Marivane Celmer Slodkowski</string>
+    <string name="about_curator_2_name">Fernanda Maria Cordeiro de Oliveira</string>
+    <string name="about_curator_3_name">Maria Alice Neves</string>
 
     <!-- Home -->
     <string name="atlas_title_prefix">Atlas of Neotropical </string>
     <string name="atlas_title_highlight">Mycorrhizae</string>
+    <!-- Intentionally empty in English: "Neotropical" already sits in atlas_title_prefix here.
+         Other languages put the equivalent adjective in this suffix instead - keep translations consistent with their own word order. -->
     <string name="atlas_title_suffix"></string>
     <string name="illustrated_guide_subtitle">Illustrated guide to mycorrhiza identification</string>
     <string name="ectomycorrhizae_feature_title">Ectomycorrhizae</string>
@@ -210,6 +217,8 @@
     <string name="theme_option_light">Light</string>
     <string name="theme_option_dark">Dark</string>
     <string name="theme_option_system">System</string>
+    <string name="legal_section_title">Legal</string>
+    <string name="privacy_policy_button">Privacy Policy</string>
 
     <!-- Errors -->
     <string name="failed_to_load_hosts_error">Failed to load hosts</string>
@@ -283,4 +292,27 @@
     <string name="ecm_legend_thelephora_sp2_c">C. Transverse section showing the mantle and its direct contact with cortical cells, MAN = mantle; COR = cortex; x = xylem.</string>
     <string name="ecm_legend_thelephora_sp2_d">D. Outer mantle layer in plan view.</string>
     <string name="ecm_legend_thelephora_sp2_e">E. Hyphal strands.</string>
+
+    <!-- Ectomycorrhiza scientific descriptions -->
+    <string name="ecosystem_restinga_mata_atlantica_brazil">Restinga, Mata Atlântica, Brazil</string>
+
+    <string name="ecm_color_description_clavulina">light brown to yellowish-brown</string>
+    <string name="ecm_morphological_characters_clavulina">Ectomycorrhizal system is simple, sometimes irregularly pinnate, with no branching at the root tips. Some roots are not completely covered by the mantle. Colonized roots measure 1.5–5.5 mm in length and 0.1–0.2 mm in thickness. The mantle is 25 μm thick, mantle surface smooth, light brown to yellowish-brown (2.5Y 8/10; 2.5Y 8/8) and parts brown (5YR 1/1), with tips that are straight or occasionally curved (Fig. 1. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_clavulina">Outer mantle layer plectenchymatous in plane view. Hyphae 3.0–5.0(–7.0) μm thick, hyaline, smooth, thin-walled, agglutinated; clampless (Fig. 1. C). Emanating hyphae hyaline, thin-walled, 3.0–5.0 µm in diameter, clamped. Hyphal strands undifferentiated with smooth margins (Fig. 1. D). Cystidia not observed.</string>
+
+    <string name="ecm_color_description_inocybe">yellowish-white with tips greyish-purple</string>
+    <string name="ecm_morphological_characters_inocybe">Ectomycorrhizal system is irregularly pinnate, sometimes dichotomous, measuring approximately 15 mm in length and 0.1–0.3 mm in thickness. The mantle is 25–50 μm thick, mantle surface smooth, yellowish-white (10YR 9/2) with tips greyish-purple (2.5P 9/4), tips are straight, curved, or occasionally tortuous (Fig.2 A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_inocybe">Outer mantle layer plectenchymatous, irregular hyphae growing over the mantle surface. Hyphae 3.0–5.0 μm thick, hyaline, smooth, thin-walled, clampless (Fig. 2. E). Emanating hyphae hyaline, 2.0–4.0 µm in diameter, ramified; clampless. Hyphal strands absent. Cystidia not observed.</string>
+
+    <string name="ecm_color_description_thelephoraceae_sp">light brown or yellowish-brown</string>
+    <string name="ecm_morphological_characters_thelephoraceae_sp">Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, and colonization occurs in secondary and tertiary roots. Colonized roots measure 0.5–5.7 mm in length and 0.1–0.3 mm in thickness. The mantle is 25–50 μm thick, mantle surface smooth, light brown (7.5YR 3/6) or yellowish-brown (2.5Y 8/8), and tips straight or slightly curved (Fig. 3. A-D).</string>
+    <string name="ecm_mantle_anatomical_characters_thelephoraceae_sp">Outer mantle layer plectenchymatous in plane view. Hyphae 3.0–6.0 μm thick, orangish-brown (7.5Y 6/6), smooth, thin-walled, agglutinated; clampless (Fig. 3. E). Emanating hyphae hyaline, clamped, thin-walled, 3.0–5.0 µm in diameter. Hyphal strands absent. Cystidia not observed.</string>
+
+    <string name="ecm_color_description_thelephora_sp1">dark brown</string>
+    <string name="ecm_morphological_characters_thelephora_sp1">Ectomycorrhizal system is simple and monopodial-pinnate, occasionally dichotomous. Colonized tertiary roots measure 1–7.5 mm in length and 0.1–0.3 mm in thickness. Colonization of quaternary roots was also observed, with spacing of 1.8–2.5 mm and thickness of approximately 0.4 mm. The mantle surface is 10–25 μm thick, mantle surface smooth, dark brown (2.5YR 1/1) at the base and median region, becoming brown (2.5YR 1/2) toward the slightly curved, unbranched tips (Fig. 4. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_thelephora_sp1">Outer mantle layer transitional type between plectenchymatous and pseudoparenchymatous in plane view. Hyphae irregularly shaped, yellowish-brown (2.5Y 5/6), 5.0–7.0 μm in diameter, slightly thin-walled, smooth (Fig. 4. D). Emanating hyphae 3.0–5.0 μm thick, brown, thick-walled (1.0 μm thick), clamped. Hyphal strands can be present or be less evident, formed by irregular, wavy hyphae of the uniform diameter, clamped (Fig. 4. E). Cystidia not observed.</string>
+
+    <string name="ecm_color_description_thelephora_sp2">brown to light brown at the tips</string>
+    <string name="ecm_morphological_characters_thelephora_sp2">Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, measuring 0.7–11.8 mm in length and 0.1–0.3 mm in thickness. The mantle is 20–25 μm thick, mantle surface smooth, brown (5YR 1/1) to light brown at the tips (7.5YR 3/6), and dark brown (7.5YR 1/1) above the tip, the tips are straight, tortuous, or curved (Fig. 5. A-C).</string>
+    <string name="ecm_mantle_anatomical_characters_thelephora_sp2">Outer mantle layer transitional type between plectenchymatous and pseudoparenchymatous in plane view. Hyphae 5.0–8.0 μm thick, brownish (10YR 5/6), smooth, thin-walled, agglutinated; clampless. Emanating hyphae brownish, thick-walled (1.0 μm thick), (2.0–)3.0–4.0 µm in diameter, ramified; sometimes filled with homogeneous brown content; clamped (Fig. 5. D). Hyphal strands densely interwoven and aggregated, formed by brown hyphae: one central hyphae, 7.0–10.0 μm in diameter, thick-walled (1 μm thick), clamped; peripheral brown hyphae, 3.0–4.0 μm in diameter, slightly thickened walls, tortuous, densely woven, branched, clamped (Fig. 5. E). Cystidia not observed.</string>
 </resources>

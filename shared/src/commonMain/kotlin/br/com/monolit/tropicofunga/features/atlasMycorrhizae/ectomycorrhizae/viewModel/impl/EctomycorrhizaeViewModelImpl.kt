@@ -10,6 +10,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.dat
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.viewModel.EctomycorrhizaeViewModel
 import br.com.monolit.tropicofunga.features.shared.utils.toAnnotatedString
+import br.com.monolit.tropicofunga.log.AppLogger
 import br.com.monolit.tropicofunga.repository.AppRepository
 import kotlinx.collections.immutable.PersistentMap
 import kotlinx.collections.immutable.persistentMapOf
@@ -126,7 +127,7 @@ class EctomycorrhizaeViewModelImpl(
                     _viewState.update {
                         EctomycorrhizaeViewState.Error(getString(Res.string.failed_to_load_ectomycorrhizae_error))
                     }
-                    println("Error occurred while loading ectomycorrhizae: ${exception.message}")
+                    AppLogger.e("EctomycorrhizaeViewModel", "Error occurred while loading ectomycorrhizae", exception)
                 }
         }
     }
@@ -147,7 +148,7 @@ class EctomycorrhizaeViewModelImpl(
     }
 }
 
-internal fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<EctomycorrhizaItem> {
+internal suspend fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<EctomycorrhizaItem> {
     return when (order) {
         EctomycorrhizaeOrder.FUNGUS_ASC -> this.sortedBy { it.fungus.text }
         EctomycorrhizaeOrder.FUNGUS_DESC -> this.sortedByDescending { it.fungus.text }
@@ -155,12 +156,15 @@ internal fun List<EctomycorrhizaItem>.order(order: EctomycorrhizaeOrder): List<E
         EctomycorrhizaeOrder.HOST_DESC -> this.sortedByDescending { it.host.text }
         EctomycorrhizaeOrder.TYPE_ASC -> this.sortedBy { it.type.name }
         EctomycorrhizaeOrder.TYPE_DESC -> this.sortedByDescending { it.type.name }
-        EctomycorrhizaeOrder.ECOSYSTEM_ASC -> this.sortedBy { it.ecosystem }
-        EctomycorrhizaeOrder.ECOSYSTEM_DESC -> this.sortedByDescending { it.ecosystem }
+        EctomycorrhizaeOrder.ECOSYSTEM_ASC ->
+            this.map { it to getString(it.ecosystem) }.sortedBy { it.second }.map { it.first }
+
+        EctomycorrhizaeOrder.ECOSYSTEM_DESC ->
+            this.map { it to getString(it.ecosystem) }.sortedByDescending { it.second }.map { it.first }
     }
 }
 
-internal fun List<Ectomycorrhiza>.filter(
+internal suspend fun List<Ectomycorrhiza>.filter(
     query: String,
     filters: Map<EctomycorrhizaeFilterType, EctomycorrhizaeFilter>
 ): List<Ectomycorrhiza> {
@@ -191,13 +195,13 @@ internal fun List<Ectomycorrhiza>.filter(
             append(' ')
             append(item.type.name)
             append(' ')
-            append(item.colorDescription)
+            append(getString(item.colorDescription))
             append(' ')
-            append(item.ecosystem)
+            append(getString(item.ecosystem))
             append(' ')
-            append(item.morphologicalCharacters)
+            append(getString(item.morphologicalCharacters))
             append(' ')
-            append(item.mantleAnatomicalCharacters)
+            append(getString(item.mantleAnatomicalCharacters))
             if (item.genBankAccessionNumbers.isNotEmpty()) {
                 append(' ')
                 append(item.genBankAccessionNumbers.joinToString(" "))

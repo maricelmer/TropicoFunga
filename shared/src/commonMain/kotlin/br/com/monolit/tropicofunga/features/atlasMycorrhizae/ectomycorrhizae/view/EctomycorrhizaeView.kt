@@ -2,6 +2,7 @@ package br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.vi
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,6 +28,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.dat
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.ectomycorrhizae.data.EctomycorrhizaeViewState
 import br.com.monolit.tropicofunga.features.shared.views.DefaultDropdownMenuView
 import br.com.monolit.tropicofunga.features.shared.views.DefaultSearchableView
+import br.com.monolit.tropicofunga.features.shared.views.EmptyStateView
 import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
 import br.com.monolit.tropicofunga.features.shared.views.LoadView
 import br.com.monolit.tropicofunga.features.shared.views.filterSection
@@ -106,7 +108,7 @@ fun EctomycorrhizaeView(
         onBackPressed = onBackPressed,
         onFilterPressed = onFilterPressed,
     ) {
-        val contentModifier = Modifier.fillMaxSize().padding(vertical = 8.dp)
+        val contentModifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp)
         AnimatedContent(viewState) { state ->
             when (state) {
                 EctomycorrhizaeViewState.Loading -> {
@@ -131,7 +133,7 @@ fun EctomycorrhizaeView(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                            modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
@@ -150,19 +152,27 @@ fun EctomycorrhizaeView(
                             )
                         }
 
-                        LazyColumn(
-                            modifier = Modifier.fillMaxWidth().weight(1f)
-                                .padding(horizontal = 16.dp),
-                            verticalArrangement = Arrangement.spacedBy(8.dp),
-                        ) {
-                            items(
-                                items = list,
-                                key = { item -> item.id }
-                            ) { ectomycorrhiza ->
-                                EctomycorrhizaItemView(
-                                    modifier = Modifier.fillMaxWidth().animateItem(),
-                                    item = ectomycorrhiza,
-                                    onClick = { openEctomycorrhizaDetails(ectomycorrhiza.id) })
+                        if (list.isEmpty()) {
+                            Box(
+                                modifier = Modifier.fillMaxWidth().weight(1f),
+                                contentAlignment = Alignment.Center,
+                            ) {
+                                EmptyStateView(modifier = Modifier.fillMaxWidth())
+                            }
+                        } else {
+                            LazyColumn(
+                                modifier = Modifier.fillMaxWidth().weight(1f),
+                                verticalArrangement = Arrangement.spacedBy(8.dp),
+                            ) {
+                                items(
+                                    items = list,
+                                    key = { item -> item.id }
+                                ) { ectomycorrhiza ->
+                                    EctomycorrhizaItemView(
+                                        modifier = Modifier.fillMaxWidth().animateItem(),
+                                        item = ectomycorrhiza,
+                                        onClick = { openEctomycorrhizaDetails(ectomycorrhiza.id) })
+                                }
                             }
                         }
                     }

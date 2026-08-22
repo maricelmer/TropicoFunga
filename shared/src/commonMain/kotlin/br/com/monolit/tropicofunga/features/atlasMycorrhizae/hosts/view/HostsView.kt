@@ -2,6 +2,7 @@ package br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.view
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,6 +30,7 @@ import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsOrd
 import br.com.monolit.tropicofunga.features.atlasMycorrhizae.hosts.data.HostsViewState
 import br.com.monolit.tropicofunga.features.shared.views.DefaultDropdownMenuView
 import br.com.monolit.tropicofunga.features.shared.views.DefaultSearchableView
+import br.com.monolit.tropicofunga.features.shared.views.EmptyStateView
 import br.com.monolit.tropicofunga.features.shared.views.ErrorMessageView
 import br.com.monolit.tropicofunga.features.shared.views.LoadView
 import br.com.monolit.tropicofunga.features.shared.views.filterSection
@@ -107,7 +109,7 @@ fun HostsView(
         onBackPressed = onBackPressed,
         onFilterPressed = onFilterPressed,
     ) {
-        val contentModifier = Modifier.fillMaxSize().padding(vertical = 8.dp)
+        val contentModifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp)
         AnimatedContent(viewState) { state ->
             when (state) {
                 is HostsViewState.Loading -> {
@@ -132,7 +134,7 @@ fun HostsView(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                            modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
@@ -151,24 +153,32 @@ fun HostsView(
                             )
                         }
 
-                        LazyVerticalStaggeredGrid(
-                            modifier = Modifier.fillMaxWidth().weight(1f)
-                                .padding(horizontal = 16.dp),
-                            columns = StaggeredGridCells.Fixed(2),
-                            verticalItemSpacing = 8.dp,
-                            horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        ) {
-                            items(
-                                items = list,
-                                key = { item -> item.id }
-                            ) { host ->
-                                HostItemView(
-                                    modifier = Modifier.height(250.dp).animateItem(),
-                                    item = host,
-                                    onClick = {
-                                        host.image?.let { openImageRequest(it) }
-                                    }
-                                )
+                        if (list.isEmpty()) {
+                            Box(
+                                modifier = Modifier.fillMaxWidth().weight(1f),
+                                contentAlignment = Alignment.Center,
+                            ) {
+                                EmptyStateView(modifier = Modifier.fillMaxWidth())
+                            }
+                        } else {
+                            LazyVerticalStaggeredGrid(
+                                modifier = Modifier.fillMaxWidth().weight(1f),
+                                columns = StaggeredGridCells.Fixed(2),
+                                verticalItemSpacing = 8.dp,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            ) {
+                                items(
+                                    items = list,
+                                    key = { item -> item.id }
+                                ) { host ->
+                                    HostItemView(
+                                        modifier = Modifier.height(250.dp).animateItem(),
+                                        item = host,
+                                        onClick = {
+                                            host.image?.let { openImageRequest(it) }
+                                        }
+                                    )
+                                }
                             }
                         }
                     }

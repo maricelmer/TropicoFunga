@@ -51,6 +51,7 @@ import tropicofunga.shared.generated.resources.atlas_mycorrhizae_background
 import tropicofunga.shared.generated.resources.atlas_title_highlight
 import tropicofunga.shared.generated.resources.atlas_title_prefix
 import tropicofunga.shared.generated.resources.atlas_title_suffix
+import tropicofunga.shared.generated.resources.back_button_content_description
 import tropicofunga.shared.generated.resources.ecm_icon
 import tropicofunga.shared.generated.resources.ectomycorrhizae_feature_title
 import tropicofunga.shared.generated.resources.fungi_feature_title
@@ -97,7 +98,7 @@ fun AtlasMycorrhizaeHomeView(
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             tint = Color.White,
-                            contentDescription = null,
+                            contentDescription = stringResource(Res.string.back_button_content_description),
                         )
                     }
                 },

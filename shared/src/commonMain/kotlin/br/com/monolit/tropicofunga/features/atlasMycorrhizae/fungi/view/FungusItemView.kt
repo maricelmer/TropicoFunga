@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -57,6 +58,8 @@ fun FungusItemView(
                 model = bytes,
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.Center,
+                placeholder = ColorPainter(MaterialTheme.colorScheme.surfaceVariant),
+                error = ColorPainter(MaterialTheme.colorScheme.surfaceVariant),
                 contentDescription = stringResource(Res.string.fungus_image_content_description)
             )
 

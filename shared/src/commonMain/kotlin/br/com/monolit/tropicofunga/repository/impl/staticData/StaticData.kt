@@ -54,6 +54,22 @@ import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_b
 import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_c
 import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_d
 import tropicofunga.shared.generated.resources.ecm_legend_thelephoraceae_sp_e
+import tropicofunga.shared.generated.resources.ecm_color_description_clavulina
+import tropicofunga.shared.generated.resources.ecm_color_description_inocybe
+import tropicofunga.shared.generated.resources.ecm_color_description_thelephora_sp1
+import tropicofunga.shared.generated.resources.ecm_color_description_thelephora_sp2
+import tropicofunga.shared.generated.resources.ecm_color_description_thelephoraceae_sp
+import tropicofunga.shared.generated.resources.ecm_mantle_anatomical_characters_clavulina
+import tropicofunga.shared.generated.resources.ecm_mantle_anatomical_characters_inocybe
+import tropicofunga.shared.generated.resources.ecm_mantle_anatomical_characters_thelephora_sp1
+import tropicofunga.shared.generated.resources.ecm_mantle_anatomical_characters_thelephora_sp2
+import tropicofunga.shared.generated.resources.ecm_mantle_anatomical_characters_thelephoraceae_sp
+import tropicofunga.shared.generated.resources.ecm_morphological_characters_clavulina
+import tropicofunga.shared.generated.resources.ecm_morphological_characters_inocybe
+import tropicofunga.shared.generated.resources.ecm_morphological_characters_thelephora_sp1
+import tropicofunga.shared.generated.resources.ecm_morphological_characters_thelephora_sp2
+import tropicofunga.shared.generated.resources.ecm_morphological_characters_thelephoraceae_sp
+import tropicofunga.shared.generated.resources.ecosystem_restinga_mata_atlantica_brazil
 import tropicofunga.shared.generated.resources.emanating_hyphae_definition
 import tropicofunga.shared.generated.resources.emanating_hyphae_term
 import tropicofunga.shared.generated.resources.epidermis_definition
@@ -906,17 +922,17 @@ val ectomycorrhizaeData = listOf(
         fungus = clavulinaSpHydnaceaeFungus,
         host = guapiraOppositaNyctaginaceaeHost,
         type = guapirioidType,
-        colorDescription = "light brown to yellowish-brown",
+        colorDescription = Res.string.ecm_color_description_clavulina,
         hartigNet = HartigNet.ABSENT,
         mantleThickness = "25 µm",
         hyphaeMantle = HyphaeMantle.CLAMPLESS,
         outerMantleLayer = OuterMantleLayer.PLECTENCHYMATOUS,
         hyphalStrands = HyphalStrands.PRESENT,
-        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        ecosystem = Res.string.ecosystem_restinga_mata_atlantica_brazil,
         genBankAccessionNumbers = listOf("PX105292", "PX105293"),
         references = listOf("Slodkowski et al., unpublished data"),
-        morphologicalCharacters = "Ectomycorrhizal system is simple, sometimes irregularly pinnate, with no branching at the root tips. Some roots are not completely covered by the mantle. Colonized roots measure 1.5–5.5 mm in length and 0.1–0.2 mm in thickness. The mantle is 25 μm thick, mantle surface smooth, light brown to yellowish-brown (2.5Y 8/10; 2.5Y 8/8) and parts brown (5YR 1/1), with tips that are straight or occasionally curved (Fig. 1. A-C).",
-        mantleAnatomicalCharacters = "Outer mantle layer plectenchymatous in plane view. Hyphae 3.0–5.0(–7.0) μm thick, hyaline, smooth, thin-walled, agglutinated; clampless (Fig. 1. C). Emanating hyphae hyaline, thin-walled, 3.0–5.0 µm in diameter, clamped. Hyphal strands undifferentiated with smooth margins (Fig. 1. D). Cystidia not observed.",
+        morphologicalCharacters = Res.string.ecm_morphological_characters_clavulina,
+        mantleAnatomicalCharacters = Res.string.ecm_mantle_anatomical_characters_clavulina,
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/clavulina/clavulina_A.png",
@@ -950,17 +966,17 @@ val ectomycorrhizaeData = listOf(
         fungus = inocybeSpInocybaceaeFungus,
         host = guapiraOppositaNyctaginaceaeHost,
         type = guapirioidType,
-        colorDescription = "yellowish-white with tips greyish-purple",
+        colorDescription = Res.string.ecm_color_description_inocybe,
         hartigNet = HartigNet.ABSENT,
         mantleThickness = "25–50 μm",
         hyphaeMantle = HyphaeMantle.CLAMPLESS,
         outerMantleLayer = OuterMantleLayer.PLECTENCHYMATOUS,
         hyphalStrands = HyphalStrands.ABSENT,
-        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        ecosystem = Res.string.ecosystem_restinga_mata_atlantica_brazil,
         genBankAccessionNumbers = listOf("PX097979", "PX097982"),
         references = listOf("Slodkowski et al., unpublished data"),
-        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, sometimes dichotomous, measuring approximately 15 mm in length and 0.1–0.3 mm in thickness. The mantle is 25–50 μm thick, mantle surface smooth, yellowish-white (10YR 9/2) with tips greyish-purple (2.5P 9/4), tips are straight, curved, or occasionally tortuous (Fig.2 A-C). ",
-        mantleAnatomicalCharacters = "Outer mantle layer plectenchymatous, irregular hyphae growing over the mantle surface. Hyphae 3.0–5.0 μm thick, hyaline, smooth, thin-walled, clampless (Fig. 2. E). Emanating hyphae hyaline, 2.0–4.0 µm in diameter, ramified; clampless. Hyphal strands absent. Cystidia not observed.",
+        morphologicalCharacters = Res.string.ecm_morphological_characters_inocybe,
+        mantleAnatomicalCharacters = Res.string.ecm_mantle_anatomical_characters_inocybe,
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/inocybe/inocybe_A.png",
@@ -994,13 +1010,13 @@ val ectomycorrhizaeData = listOf(
         fungus = thelephoraceaeSpFungus,
         host = guapiraOppositaNyctaginaceaeHost,
         type = guapirioidType,
-        colorDescription = "light brown or yellowish-brown",
+        colorDescription = Res.string.ecm_color_description_thelephoraceae_sp,
         hartigNet = HartigNet.ABSENT,
         mantleThickness = "25–50 μm",
         hyphaeMantle = HyphaeMantle.CLAMPLESS,
         outerMantleLayer = OuterMantleLayer.PLECTENCHYMATOUS,
         hyphalStrands = HyphalStrands.ABSENT,
-        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        ecosystem = Res.string.ecosystem_restinga_mata_atlantica_brazil,
         genBankAccessionNumbers = listOf(
             "PX097976",
             "PX097977",
@@ -1009,8 +1025,8 @@ val ectomycorrhizaeData = listOf(
             "PX097981"
         ),
         references = listOf("Slodkowski et al., unpublished data"),
-        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, and colonization occurs in secondary and tertiary roots. Colonized roots measure 0.5–5.7 mm in length and 0.1–0.3 mm in thickness. The mantle is 25–50 μm thick, mantle surface smooth, light brown (7.5YR 3/6) or yellowish-brown (2.5Y 8/8), and tips straight or slightly curved (Fig. 3. A-D).",
-        mantleAnatomicalCharacters = "Outer mantle layer plectenchymatous in plane view. Hyphae 3.0–6.0 μm thick, orangish-brown (7.5Y 6/6), smooth, thin-walled, agglutinated; clampless (Fig. 3. E). Emanating hyphae hyaline, clamped, thin-walled, 3.0–5.0 µm in diameter, clamped. Hyphal strands absent. Cystidia not observed.",
+        morphologicalCharacters = Res.string.ecm_morphological_characters_thelephoraceae_sp,
+        mantleAnatomicalCharacters = Res.string.ecm_mantle_anatomical_characters_thelephoraceae_sp,
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephoraceae/thelephoraceae_A.png",
@@ -1044,17 +1060,17 @@ val ectomycorrhizaeData = listOf(
         fungus = thelephoraSp1ThelephoraceaeFungus,
         host = guapiraOppositaNyctaginaceaeHost,
         type = guapirioidType,
-        colorDescription = "dark brown",
+        colorDescription = Res.string.ecm_color_description_thelephora_sp1,
         hartigNet = HartigNet.ABSENT,
         mantleThickness = "10–25 μm",
         hyphaeMantle = HyphaeMantle.CLAMPLESS,
         outerMantleLayer = OuterMantleLayer.TRANSITIONAL,
         hyphalStrands = HyphalStrands.PRESENT,
-        ecosystem = "Restinga, Mata Atlântica, Brazil",
-        genBankAccessionNumbers = listOf("PX097971", "PX097972", "PX097973 "),
+        ecosystem = Res.string.ecosystem_restinga_mata_atlantica_brazil,
+        genBankAccessionNumbers = listOf("PX097971", "PX097972", "PX097973"),
         references = listOf("Slodkowski et al., unpublished data"),
-        morphologicalCharacters = "Ectomycorrhizal system is simple and monopodial-pinnate, occasionally dichotomous. Colonized tertiary roots measure 1–7.5 mm in length and 0.1–0.3 mm in thickness. Colonization of quaternary roots was also observed, with spacing of 1.8–2.5 mm and thickness of approximately 0.4 mm. The mantle surface is 10–25 μm thick, mantle surface smooth, dark brown (2.5YR 1/1) at the base and median region, becoming brown (2.5YR 1/2) toward the slightly curved, unbranched tips (Fig. 4. A-C).",
-        mantleAnatomicalCharacters = "Outer mantle layer transitional type between plectenchymatous and pseudoparenchymatous in plane view. Hyphae irregularly shaped, yellowish-brown (2.5Y 5/6), 5,0–7,0 μm in diameter, slightly thin-walled, smooth (Fig. 4. D). Emanating hyphae 3.0–5.0 μm thick, brown, thick-walled (1.0 μm thick), clamped. Hyphal strands can be present or be less evident, formed by irregular, wavy hyphae of the uniform diameter, clamped (Fig. 4. E). Cystidia not observed.",
+        morphologicalCharacters = Res.string.ecm_morphological_characters_thelephora_sp1,
+        mantleAnatomicalCharacters = Res.string.ecm_mantle_anatomical_characters_thelephora_sp1,
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-1/thelephora-sp-1_A.png",
@@ -1088,17 +1104,17 @@ val ectomycorrhizaeData = listOf(
         fungus = thelephoraSp2ThelephoraceaeFungus,
         host = guapiraOppositaNyctaginaceaeHost,
         type = guapirioidType,
-        colorDescription = "brown to light brown at the tips",
+        colorDescription = Res.string.ecm_color_description_thelephora_sp2,
         hartigNet = HartigNet.ABSENT,
         mantleThickness = "20–25 μm",
         hyphaeMantle = HyphaeMantle.CLAMPLESS,
         outerMantleLayer = OuterMantleLayer.TRANSITIONAL,
         hyphalStrands = HyphalStrands.PRESENT,
-        ecosystem = "Restinga, Mata Atlântica, Brazil",
+        ecosystem = Res.string.ecosystem_restinga_mata_atlantica_brazil,
         genBankAccessionNumbers = listOf("PX097974", "PX097975"),
         references = listOf("Slodkowski et al., unpublished data"),
-        morphologicalCharacters = "Ectomycorrhizal system is irregularly pinnate, with no branching at the root tips, measuring 0.7–11.8 mm in length and 0.1–0.3 mm in thickness. The mantle is 20–25 μm thick, mantle surface smooth, brown (5YR 1/1) to light brown at the tips (7.5YR 3/6), and dark brown (7.5YR 1/1) above the tip, the tips are straight, tortuous, or curved (Fig. 5. A-C).",
-        mantleAnatomicalCharacters = "Outer mantle layer transitional type between plectenchymatous and pseudoparenchymatous in plane view. Hyphae 5.0–8.0 μm thick, brownish (10YR 5/6), smooth, thin-walled, agglutinated; clampless. Emanating hyphae brownish, thick-walled (1.0 μm thick), (2.0–)3.0–4.0 µm in diameter, ramified; sometimes filled with homogeneous brown content; clamped (Fig. 5. D). Hyphal strands densely interwoven and aggregated, formed by brown hyphae: one central hyphae, 7.0–10.0 μm in diameter, thick-walled (1 μm thick), clamped; peripheral brown hyphae, 3.0–4.0 μm in diameter, slightly thickened walls, tortuous, densely woven, branched, clamped (Fig. 5. E). Cystidia not observed.",
+        morphologicalCharacters = Res.string.ecm_morphological_characters_thelephora_sp2,
+        mantleAnatomicalCharacters = Res.string.ecm_mantle_anatomical_characters_thelephora_sp2,
         images = listOf(
             DataImage(
                 path = "files/atlas/ectomycorrhiza/thelephora-sp-2/thelephora-sp-2_A.png",

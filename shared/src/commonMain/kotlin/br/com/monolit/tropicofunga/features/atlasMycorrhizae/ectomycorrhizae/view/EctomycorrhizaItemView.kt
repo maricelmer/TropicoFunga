@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -60,6 +61,8 @@ fun EctomycorrhizaItemView(
                 model = bytes,
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.Center,
+                placeholder = ColorPainter(MaterialTheme.colorScheme.surfaceVariant),
+                error = ColorPainter(MaterialTheme.colorScheme.surfaceVariant),
                 contentDescription = stringResource(Res.string.ectomycorrhiza_image_content_description)
             )
             Column(
@@ -91,7 +94,7 @@ fun EctomycorrhizaItemView(
                         tint = MaterialTheme.colorScheme.outline,
                     )
                     Text(
-                        text = item.ecosystem,
+                        text = stringResource(item.ecosystem),
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.outline,
                     )
